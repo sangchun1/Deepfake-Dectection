@@ -211,3 +211,5 @@ data/raw/
 data/processed/
 # data/splits/
 outputs/checkpoints/
+
+command.md
