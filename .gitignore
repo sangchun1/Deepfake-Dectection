@@ -209,7 +209,7 @@ __marimo__/
 # Large Files
 data/raw/
 data/processed/
-# data/splits/
-outputs/checkpoints/
+outputs/*/*/wandb/
+outputs/*/*/*.pth
 
 command.md
