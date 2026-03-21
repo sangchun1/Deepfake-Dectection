@@ -212,5 +212,6 @@ data/processed/
 outputs/*/*/wandb/
 outputs/*/*/*.pth
 *pth
+outputs/*/*/sweeps/
 
 command.md

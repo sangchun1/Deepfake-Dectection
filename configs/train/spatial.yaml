@@ -13,9 +13,13 @@ train:
 
 optimizer:
   name: adamw
-  lr: 0.0003
-  weight_decay: 0.0001
+  lr: 0.0001
+  weight_decay: 0.001
   betas: [0.9, 0.999]
+
+augmentation:
+  rotation_degrees: 0.0
+  color_jitter_prob: 0.0
 
 scheduler:
   name: cosine
