@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/imagen-4.0/best.pth",
+  "best_epoch": 5,
+  "best_monitor": "val_auc",
+  "best_score": 0.9954500000000001,
+  "val_metrics": {
+    "accuracy": 0.9675,
+    "precision": 0.9832041343669251,
+    "recall": 0.95125,
+    "f1": 0.9669631512071156,
+    "auc": 0.9954500000000001,
+    "loss": 0.11929618746042252
+  },
+  "test_metrics": {
+    "accuracy": 0.9612257661038149,
+    "precision": 0.9706445437141034,
+    "recall": 0.9512195121951219,
+    "f1": 0.9608338597599495,
+    "auc": 0.9943306107905934,
+    "loss": 0.1331447290024808
+  }
+}
