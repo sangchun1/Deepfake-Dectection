@@ -1,6 +1,6 @@
 # Toward Generalizable and Robust Deepfake Detection: A Spatial-Frequency Fusion Baseline
 
-This repository presents a deepfake image detection project focused on **generalization** and **robustness**, rather than only maximizing in-domain accuracy.  
+This repository presents a deepfake image detection project focused on **generalization** and **robustness**.  
 The core idea is to compare **spatial-only**, **frequency-only**, and **spatial-frequency fusion** models on **OpenFake**, and then evaluate whether the learned detector transfers to **Semi-Truths** and corrupted test conditions.
 
 ## Overview
@@ -29,12 +29,11 @@ We compare three detector families:
   - ResNet-18 + SPAI
   - ViT + SPAI
 
-The frequency branch uses transformed spectral representations to capture generator-specific artifacts that may be weak in pixel space.  
-The fusion model combines spatial and spectral features to produce the final binary prediction.
+The frequency branch uses transformed spectral representations to capture generator-specific artifacts that may be weak in pixel space. The fusion model combines spatial and spectral features to produce the final binary prediction.
 
 ## Datasets
 
-### OpenFake
+### [OpenFake](https://huggingface.co/datasets/ComplexDataLab/OpenFake)
 Primary dataset for training and in-domain evaluation.
 
 This project uses OpenFake under multiple evaluation settings:
@@ -43,7 +42,7 @@ This project uses OpenFake under multiple evaluation settings:
 - **by_generator**: per-generator test splits for generalization analysis
 - **logo**: generator/logo holdout setting for stronger distribution shift
 
-### Semi-Truths
+### [Semi-Truths](https://huggingface.co/datasets/semi-truths/Semi-Truths)
 External benchmark for out-of-distribution evaluation.
 
 Semi-Truths is used to assess whether a detector trained on OpenFake remains reliable across:
@@ -71,11 +70,11 @@ The project evaluates performance with:
 
 ### Main Results on OpenFake
 
-| Model | Merged (AUC / F1) | By-generator (AUC / F1) | Logo holdout (AUC / F1) |
+| Model | Merged (AUC / F1) | By-generator (AUC / F1) | LOGO holdout (AUC / F1) |
 |---|---:|---:|---:|
-| ResNet18 | 99.06 / 95.50 | - / - | - / - |
+| ResNet18 | 99.06 / 95.50 | 0.9949 / 0.9695 | 0.9587 / 0.8543 |
 | ViT | - / - | - / - | - / - |
-| SPAI | 99.46 / 97.09 | - / - | - / - |
+| SPAI | 99.46 / 97.09 | 0.9969 / 0.9810 | - / - |
 | ResNet18 + SPAI | - / - | - / - | - / - |
 | ViT + SPAI | - / - | - / - | - / - |
 
@@ -118,8 +117,7 @@ Example(CUDA 12.8):
 pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 ```
 
-> If your CUDA version or platform is different, use the official PyTorch install guide:
-> [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/)
+> If your CUDA version or platform is different, use [the official PyTorch install guide](https://pytorch.org/get-started/locally/)
 
 ### 3) Install dependencies
 
@@ -139,36 +137,36 @@ pip install -e ".[dev]"
 ### Spatial baseline (ResNet-18 on OpenFake)
 
 ```bash
-python scripts/train.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/resnet18.yaml ^
+python scripts/train.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/resnet18.yaml `
   --train_config configs/train/spatial_resnet_openfake.yaml
 ```
 
 ### Frequency baseline (SPAI on OpenFake)
 
 ```bash
-python scripts/train.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/spai.yaml ^
+python scripts/train.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/spai.yaml `
   --train_config configs/train/frequency_spai_openfake.yaml
 ```
 
 ### Fusion baseline (ResNet-18 + SPAI on OpenFake)
 
 ```bash
-python scripts/train.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/fusion.yaml ^
+python scripts/train.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/fusion.yaml `
   --train_config configs/train/fusion_resnet_spai_openfake.yaml
 ```
 
 ### Fusion baseline (ViT + SPAI on OpenFake)
 
 ```bash
-python scripts/train.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/fusion.yaml ^
+python scripts/train.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/fusion.yaml `
   --train_config configs/train/fusion_vit_spai_openfake.yaml
 ```
 
@@ -177,29 +175,29 @@ python scripts/train.py ^
 ### Standard evaluation
 
 ```bash
-python scripts/evaluate.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/fusion.yaml ^
+python scripts/evaluate.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/fusion.yaml `
   --train_config configs/train/fusion_resnet_spai_openfake.yaml
 ```
 
 ### Robustness evaluation
 
 ```bash
-python scripts/evaluate_robustness.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/fusion.yaml ^
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml ^
-  --robustness_config configs/train/robustness.yaml ^
+python scripts/evaluate_robustness.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/fusion.yaml `
+  --train_config configs/train/fusion_resnet_spai_openfake.yaml `
+  --robustness_config configs/train/robustness.yaml `
   --split test
 ```
 
 ### Semi-Truths evaluation
 
 ```bash
-python scripts/evaluate_semitruths.py ^
-  --data_config configs/data/semitruths_eval.yaml ^
-  --model_config configs/model/fusion.yaml ^
+python scripts/evaluate_semitruths.py `
+  --data_config configs/data/semitruths_eval.yaml `
+  --model_config configs/model/fusion.yaml `
   --train_config configs/train/fusion_resnet_spai_openfake.yaml
 ```
 
@@ -208,10 +206,10 @@ python scripts/evaluate_semitruths.py ^
 ### Standard explanation
 
 ```bash
-python scripts/explain.py ^
-  --data_config configs/data/openfake.yaml ^
-  --model_config configs/model/fusion.yaml ^
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml ^
+python scripts/explain.py `
+  --data_config configs/data/openfake.yaml `
+  --model_config configs/model/fusion.yaml `
+  --train_config configs/train/fusion_resnet_spai_openfake.yaml `
   --split test
 ```
 
