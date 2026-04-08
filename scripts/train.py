@@ -213,6 +213,7 @@ def build_datasets_and_loaders(cfg, seed: int):
         )
 
     test_loader = None
+    test_dataset = None
     if path_exists(cfg.data.paths.test_csv):
         test_dataset = build_single_dataset(
             dataset_cls=dataset_cls,
@@ -359,7 +360,7 @@ def main() -> None:
         print("=" * 80)
         print("Evaluate Best Checkpoint")
         print("=" * 80)
-        trainer.load_checkpoint(best_ckpt_path, strict=True)
+        best_checkpoint = trainer.load_checkpoint(best_ckpt_path, strict=True)
 
         if val_loader is not None:
             val_metrics = trainer.evaluate(val_loader, split="val")
@@ -370,6 +371,23 @@ def main() -> None:
             test_metrics = trainer.evaluate(test_loader, split="test")
             final_results["test_metrics"] = test_metrics
             print(f"[Best Test] {format_metrics(test_metrics)}")
+
+
+            eval_test_result = {
+                "dataset_name": getattr(cfg.data, "name", "unknown"),
+                "dataset_class": dataset_cls.__name__,
+                "split": "test",
+                "checkpoint": best_ckpt_path.as_posix(),
+                "metrics": test_metrics,
+                "dataset_size": len(test_dataset),
+                "class_counts": test_dataset.class_counts,
+                "best_score_in_checkpoint": best_checkpoint.get("best_score", None),
+                "best_epoch_in_checkpoint": best_checkpoint.get("best_epoch", None),
+                "saved_epoch": best_checkpoint.get("epoch", None),
+            }
+            eval_test_path = output_dir / "eval_test.json"
+            save_json(eval_test_result, eval_test_path)
+            print(f"Saved test evaluation to: {eval_test_path}")
 
     results_path = output_dir / "final_results.json"
     save_json(final_results, results_path)

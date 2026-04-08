@@ -609,10 +609,23 @@ def main() -> None:
                         )
                         result["eval_status"] = "skipped_existing"
                     else:
+                        generated_eval_in_train = (
+                        args.eval_split == "test"
+                        and result["train_status"] == "done"
+                        and eval_json_path.exists()
+                    )
+
+                    if generated_eval_in_train:
+                        print(
+                            "Skip explicit evaluation because train.py already "
+                            f"saved {eval_json_path}"
+                        )
+                        result["eval_status"] = "generated_in_train"
+                    else:
                         if not checkpoint_path.exists():
                             raise FileNotFoundError(
-                                f"Checkpoint for evaluation not found: {checkpoint_path}"
-                            )
+                                    f"Checkpoint for evaluation not found: {checkpoint_path}"
+                                )
 
                         eval_cmd = make_eval_command(
                             python_executable=args.python,
@@ -624,6 +637,7 @@ def main() -> None:
                             output_json=eval_json_path,
                             device=args.device,
                         )
+
                         run_command(eval_cmd, cwd=project_root)
                         result["eval_status"] = "done"
 
