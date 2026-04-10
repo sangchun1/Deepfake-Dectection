@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_logo_midjourney-6",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/midjourney-6/best.pth",
+  "metrics": {
+    "accuracy": 0.792125,
+    "precision": 0.9587750294464076,
+    "recall": 0.6105,
+    "f1": 0.7459905300137467,
+    "auc": 0.9426955312499999,
+    "loss": 1.4998465115129949
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.994552524535124,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
+}
