@@ -97,8 +97,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--split",
         type=str,
-        default="test",
-        choices=["train", "val", "test"],
+        default=None,
+        choices=["train", "val", "test", "custom"],
+        help="Split label. If --split_csv is omitted, defaults to test. If --split_csv is provided and --split is omitted, custom is used.",
+    )
+    parser.add_argument(
+        "--split_csv",
+        type=str,
+        default=None,
+        help="Direct path to the evaluation split CSV. Overrides cfg.data.paths.<split>_csv.",
     )
     parser.add_argument("--device", type=str, default=None, help="cuda / cpu / mps")
     parser.add_argument("--batch_size", type=int, default=None)
@@ -272,14 +279,24 @@ def get_dataset_class(cfg: Any):
     return DATASET_REGISTRY[dataset_key]
 
 
-def get_split_csv_path(cfg: Any, split: str) -> str:
+def resolve_effective_split(split: Optional[str], split_csv: Optional[str]) -> str:
+    if split_csv is not None:
+        return str(split or "custom")
+    return str(split or "test")
+
+
+def get_split_csv_path(cfg: Any, split: str, split_csv: Optional[str] = None) -> str:
+    if split_csv is not None:
+        return str(split_csv)
     if split == "train":
         return cfg.data.paths.train_csv
     if split == "val":
         return cfg.data.paths.val_csv
     if split == "test":
         return cfg.data.paths.test_csv
-    raise ValueError(f"Unsupported split: {split}")
+    raise ValueError(
+        f"Unsupported split: {split}. When using a custom split name, provide --split_csv."
+    )
 
 
 def resolve_robustness_cfg(args: argparse.Namespace) -> Optional[Any]:
@@ -313,6 +330,7 @@ def build_dataset(
     cfg: Any,
     split: str,
     *,
+    split_csv: Optional[str] = None,
     corruption_name: str = "clean",
     severity: int = 1,
     robustness_cfg: Optional[Any] = None,
@@ -328,7 +346,7 @@ def build_dataset(
             robustness_cfg=robustness_cfg,
         )
 
-    csv_path = get_split_csv_path(cfg, split)
+    csv_path = get_split_csv_path(cfg, split, split_csv=split_csv)
     csv_path_resolved = resolve_path(csv_path)
     if not csv_path_resolved.exists():
         raise FileNotFoundError(f"{split} split CSV not found: {csv_path_resolved}")
@@ -362,6 +380,22 @@ def build_loader(
         generator=get_torch_generator(seed),
         persistent_workers=use_workers,
     )
+
+
+def build_split_to_csv_map(
+    cfg: Any,
+    *,
+    effective_split: str,
+    split_csv: Optional[str],
+) -> Dict[str, Path]:
+    split_to_csv = build_split_to_csv_map(
+        cfg,
+        effective_split=effective_split,
+        split_csv=args.split_csv,
+    )
+    if split_csv is not None:
+        split_to_csv[effective_split] = resolve_path(split_csv)
+    return split_to_csv
 
 
 def load_checkpoint_to_model(
@@ -776,6 +810,8 @@ def main() -> None:
     if args.num_workers is not None:
         cfg.data.dataloader.num_workers = args.num_workers
 
+    effective_split = resolve_effective_split(args.split, args.split_csv)
+
     normalized_corruption = _normalize_corruption_name(args.corruption)
     robustness_cfg = resolve_robustness_cfg(args)
     corruption_params = resolve_corruption_params(
@@ -795,7 +831,8 @@ def main() -> None:
 
     dataset_cls, dataset = build_dataset(
         cfg,
-        args.split,
+        effective_split,
+        split_csv=args.split_csv,
         corruption_name=normalized_corruption,
         severity=int(args.severity),
         robustness_cfg=robustness_cfg,
@@ -813,7 +850,8 @@ def main() -> None:
     print("=" * 80)
     print(f"dataset name: {getattr(cfg.data, 'name', 'unknown')}")
     print(f"dataset class: {dataset_cls.__name__}")
-    print(f"split: {args.split}")
+    print(f"split: {effective_split}")
+    print(f"split_csv: {resolve_path(args.split_csv).as_posix() if args.split_csv is not None else resolve_path(get_split_csv_path(cfg, effective_split)).as_posix()}")
     print(f"condition: {condition_name}")
     print(f"size: {len(dataset)}")
     print(f"class counts: {dataset.class_counts}")
@@ -839,17 +877,17 @@ def main() -> None:
     )
 
     experiment_name = Path(cfg.train.experiment.output_dir).name
-    save_root = ensure_dir(Path(args.save_dir) / experiment_name / condition_name / args.split)
+    save_root = ensure_dir(Path(args.save_dir) / experiment_name / condition_name / effective_split)
     predictions_dir = ensure_dir(save_root / "predictions")
     metrics_dir = ensure_dir(save_root / "metrics")
     cases_dir = ensure_dir(save_root / "cases")
     split_audit_dir = ensure_dir(save_root / "split_audit")
 
-    split_to_csv = {
-        "train": resolve_path(cfg.data.paths.train_csv),
-        "val": resolve_path(cfg.data.paths.val_csv),
-        "test": resolve_path(cfg.data.paths.test_csv),
-    }
+    split_to_csv = build_split_to_csv_map(
+        cfg,
+        effective_split=effective_split,
+        split_csv=args.split_csv,
+    )
     split_audit_report = save_split_audit_artifacts(split_to_csv, split_audit_dir)
 
     print("=" * 80)
@@ -860,7 +898,7 @@ def main() -> None:
         loader,
         device=device,
         threshold=threshold,
-        split=args.split,
+        split=effective_split,
         condition_name=condition_name,
         corruption_name=normalized_corruption,
         severity=0 if is_clean_corruption(normalized_corruption) else int(args.severity),
@@ -874,13 +912,13 @@ def main() -> None:
         cm_count,
         metrics_dir / "confusion_matrix_count.png",
         normalize=False,
-        title=f"Confusion Matrix ({args.split}, {condition_name})",
+        title=f"Confusion Matrix ({effective_split}, {condition_name})",
     )
     save_confusion_matrix_plot(
         cm_count,
         metrics_dir / "confusion_matrix_normalized.png",
         normalize=True,
-        title=f"Confusion Matrix Normalized ({args.split}, {condition_name})",
+        title=f"Confusion Matrix Normalized ({effective_split}, {condition_name})",
     )
 
     group_columns = infer_group_columns(predictions_df)
@@ -944,7 +982,8 @@ def main() -> None:
     summary = {
         "dataset_name": getattr(cfg.data, "name", "unknown"),
         "dataset_class": dataset_cls.__name__,
-        "split": args.split,
+        "split": effective_split,
+        "split_csv": resolve_path(args.split_csv).as_posix() if args.split_csv is not None else resolve_path(get_split_csv_path(cfg, effective_split)).as_posix(),
         "condition": condition_name,
         "corruption": normalized_corruption,
         "severity": 0 if is_clean_corruption(normalized_corruption) else int(args.severity),
