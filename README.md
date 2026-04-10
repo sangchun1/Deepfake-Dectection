@@ -72,9 +72,9 @@ The project evaluates performance with:
 
 | Model | Merged (AUC / F1) | By-generator (AUC / F1) | LOGO holdout (AUC / F1) |
 |---|---:|---:|---:|
-| ResNet18 | 99.06 / 95.50 | 0.9949 / 0.9695 | 0.9587 / 0.8543 |
+| ResNet18 | 0.9906 / 0.9550 | 0.9949 / 0.9695 | 0.9587 / 0.8543 |
 | ViT | - / - | - / - | - / - |
-| SPAI | 99.46 / 97.09 | 0.9969 / 0.9810 | - / - |
+| SPAI | 0.9946 / 0.9709 | 0.9969 / 0.9810 | - / - |
 | ResNet18 + SPAI | - / - | - / - | - / - |
 | ViT + SPAI | - / - | - / - | - / - |
 
