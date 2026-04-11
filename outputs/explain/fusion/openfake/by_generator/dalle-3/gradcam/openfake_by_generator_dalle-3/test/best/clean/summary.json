@@ -1,0 +1,315 @@
+{
+  "dataset_name": "openfake_by_generator_dalle-3",
+  "dataset_class": "OpenFakeDataset",
+  "checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/dalle-3/best.pth",
+  "split": "test",
+  "method": "gradcam",
+  "target_type": "pred",
+  "corruption": "clean",
+  "severity": 0,
+  "condition": "clean",
+  "corruption_params": {
+    "name": "clean"
+  },
+  "robustness_config": null,
+  "target_layer": "Conv2d(3, 384, kernel_size=(16, 16), stride=(16, 16))",
+  "rollout": null,
+  "frequency": null,
+  "resolved_save_dir": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean",
+  "saved_counts": {
+    "correct_real": 4,
+    "correct_fake": 4,
+    "wrong_real": 4,
+    "wrong_fake": 4
+  },
+  "records": [
+    {
+      "index": 0,
+      "group": "correct_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.999977707862854,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__004696.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_real/00000_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 1,
+      "group": "correct_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999830722808838,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__017884.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_real/00001_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 2,
+      "group": "correct_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999574422836304,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__018345.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_real/00002_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 3,
+      "group": "correct_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999736547470093,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__056718.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_real/00003_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 19,
+      "group": "wrong_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.7722129821777344,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__050621.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_real/00019_true-real_pred-fake_prob-0.7722.png"
+    },
+    {
+      "index": 36,
+      "group": "wrong_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9552379250526428,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__060155.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_real/00036_true-real_pred-fake_prob-0.9552.png"
+    },
+    {
+      "index": 113,
+      "group": "wrong_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9999604225158691,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__060612.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_real/00113_true-real_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 143,
+      "group": "wrong_real",
+      "method": "gradcam",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9927846193313599,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/real/real__008258.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_real/00143_true-real_pred-fake_prob-0.9928.png"
+    },
+    {
+      "index": 1599,
+      "group": "correct_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9999899864196777,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__05693.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_fake/01599_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 1600,
+      "group": "correct_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9999963045120239,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__04066.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_fake/01600_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 1601,
+      "group": "correct_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9999953508377075,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__07372.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_fake/01601_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 1602,
+      "group": "correct_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9989181756973267,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__04197.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/correct_fake/01602_true-fake_pred-fake_prob-0.9989.png"
+    },
+    {
+      "index": 1645,
+      "group": "wrong_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.6444942355155945,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__00526.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_fake/01645_true-fake_pred-real_prob-0.6445.png"
+    },
+    {
+      "index": 1649,
+      "group": "wrong_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.9994115829467773,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__02253.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_fake/01649_true-fake_pred-real_prob-0.9994.png"
+    },
+    {
+      "index": 1732,
+      "group": "wrong_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.8931593298912048,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__05339.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_fake/01732_true-fake_pred-real_prob-0.8932.png"
+    },
+    {
+      "index": 1734,
+      "group": "wrong_fake",
+      "method": "gradcam",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.9530957937240601,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "C:/Deepfake-Fusion/data/raw/openfake/fake/dalle-3/dalle-3__00792.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/dalle-3/gradcam/openfake_by_generator_dalle-3/test/best/clean/wrong_fake/01734_true-fake_pred-real_prob-0.9531.png"
+    }
+  ]
+}

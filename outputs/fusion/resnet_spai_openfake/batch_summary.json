@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-04-11T09:18:36",
+  "mode": "by_generator",
+  "resolved_modes": [
+    "by_generator"
+  ],
+  "base_data_config": "C:/Deepfake-Fusion/configs/data/openfake.yaml",
+  "model_config": "C:/Deepfake-Fusion/configs/model/fusion.yaml",
+  "train_config": "C:/Deepfake-Fusion/configs/train/fusion_resnet_spai_openfake.yaml",
+  "splits_root": "C:/Deepfake-Fusion/data/splits/openfake",
+  "generated_config_dir": "C:/Deepfake-Fusion/configs/_generated/openfake_batch",
+  "output_root": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake",
+  "explain_root": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake",
+  "root_dir_override": null,
+  "train_only": false,
+  "eval_only": false,
+  "explain_only": false,
+  "run_explain": true,
+  "eval_split": "test",
+  "explain_split": "test",
+  "checkpoint_name": "best.pth",
+  "selected_names": [
+    "midjourney-6",
+    "sd-3.5",
+    "sdxl-epic-realism"
+  ],
+  "results": [
+    {
+      "mode": "by_generator",
+      "experiment_name": "midjourney-6",
+      "split_dir": "C:/Deepfake-Fusion/data/splits/openfake/by_generator/midjourney-6",
+      "generated_data_config": "C:/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/midjourney-6.yaml",
+      "generated_train_config": "C:/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/midjourney-6.yaml",
+      "wandb_run_name": "fusion_resnet_spai_openfake_midjourney_6",
+      "output_dir": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/midjourney-6",
+      "train_status": "done",
+      "eval_status": "generated_in_train",
+      "explain_status": "done",
+      "checkpoint_path": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/midjourney-6/best.pth",
+      "eval_json_path": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/midjourney-6/eval_test.json",
+      "explain_summary_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/midjourney-6/openfake_by_generator_midjourney-6/test/best/clean/summary.json",
+      "error": null
+    },
+    {
+      "mode": "by_generator",
+      "experiment_name": "sd-3.5",
+      "split_dir": "C:/Deepfake-Fusion/data/splits/openfake/by_generator/sd-3.5",
+      "generated_data_config": "C:/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/sd-3.5.yaml",
+      "generated_train_config": "C:/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/sd-3.5.yaml",
+      "wandb_run_name": "fusion_resnet_spai_openfake_sd_3_5",
+      "output_dir": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/sd-3.5",
+      "train_status": "done",
+      "eval_status": "generated_in_train",
+      "explain_status": "done",
+      "checkpoint_path": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/sd-3.5/best.pth",
+      "eval_json_path": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/sd-3.5/eval_test.json",
+      "explain_summary_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/sd-3.5/openfake_by_generator_sd-3.5/test/best/clean/summary.json",
+      "error": null
+    },
+    {
+      "mode": "by_generator",
+      "experiment_name": "sdxl-epic-realism",
+      "split_dir": "C:/Deepfake-Fusion/data/splits/openfake/by_generator/sdxl-epic-realism",
+      "generated_data_config": "C:/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/sdxl-epic-realism.yaml",
+      "generated_train_config": "C:/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/sdxl-epic-realism.yaml",
+      "wandb_run_name": "fusion_resnet_spai_openfake_sdxl_epic_realism",
+      "output_dir": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/sdxl-epic-realism",
+      "train_status": "done",
+      "eval_status": "generated_in_train",
+      "explain_status": "done",
+      "checkpoint_path": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/sdxl-epic-realism/best.pth",
+      "eval_json_path": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/sdxl-epic-realism/eval_test.json",
+      "explain_summary_path": "C:/Deepfake-Fusion/outputs/explain/fusion/openfake/by_generator/sdxl-epic-realism/openfake_by_generator_sdxl-epic-realism/test/best/clean/summary.json",
+      "error": null
+    }
+  ]
+}
