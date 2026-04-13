@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/grok-2-image-1212/best.pth",
+  "best_epoch": 9,
+  "best_monitor": "val_auc",
+  "best_score": 0.993172339876033,
+  "val_metrics": {
+    "accuracy": 0.9610795454545454,
+    "precision": 0.9632378125356776,
+    "recall": 0.95875,
+    "f1": 0.9609886667805684,
+    "auc": 0.993172339876033,
+    "loss": 0.15797477101060478
+  },
+  "test_metrics": {
+    "accuracy": 0.7391875,
+    "precision": 0.9457255998136501,
+    "recall": 0.5075,
+    "f1": 0.6605385178556902,
+    "auc": 0.9237773125000002,
+    "loss": 1.5918538154661654
+  }
+}

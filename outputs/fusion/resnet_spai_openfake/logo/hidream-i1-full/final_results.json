@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/hidream-i1-full/best.pth",
+  "best_epoch": 9,
+  "best_monitor": "val_auc",
+  "best_score": 0.9947051717458678,
+  "val_metrics": {
+    "accuracy": 0.9675568181818182,
+    "precision": 0.972659391154509,
+    "recall": 0.9621590909090909,
+    "f1": 0.9673807483576121,
+    "auc": 0.9947051717458678,
+    "loss": 0.13650753739882598
+  },
+  "test_metrics": {
+    "accuracy": 0.9418125,
+    "precision": 0.9733494040444624,
+    "recall": 0.9085,
+    "f1": 0.9398073317385401,
+    "auc": 0.9895626953125,
+    "loss": 0.2690281007140875
+  }
+}

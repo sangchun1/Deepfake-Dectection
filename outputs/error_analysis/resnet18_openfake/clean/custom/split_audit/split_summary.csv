@@ -1,0 +1,5 @@
+﻿split,csv_path,num_rows,num_unique_filepath,num_duplicate_filepath,num_real,num_fake
+train,C:/Deepfake-Fusion/data/splits/openfake/merged/train.csv,134388,134388,0,67194,67194
+val,C:/Deepfake-Fusion/data/splits/openfake/merged/val.csv,19198,19198,0,9599,9599
+test,C:/Deepfake-Fusion/data/splits/openfake/merged/test.csv,38396,38396,0,19198,19198
+custom,C:/Deepfake-Fusion/data/splits/openfake/merged/test.csv,38396,38396,0,19198,19198

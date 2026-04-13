@@ -1,0 +1,7 @@
+﻿split_a,split_b,overlap_count,example_1,example_2,example_3
+train,val,0,,,
+train,test,0,,,
+train,custom,0,,,
+val,test,0,,,
+val,custom,0,,,
+test,custom,38396,data/raw/openfake/fake/dalle-3/dalle-3__00006.jpg,data/raw/openfake/fake/dalle-3/dalle-3__00007.jpg,data/raw/openfake/fake/dalle-3/dalle-3__00009.jpg

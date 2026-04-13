@@ -1,0 +1,3 @@
+﻿group_column,generator,num_samples,num_real,num_fake,accuracy,precision,recall,f1,auc,tn,fp,fn,tp,confusion_matrix
+generator,fake,19198,0,19198,0.9514011876237108,1.0,0.9514011876237108,0.9750954274884552,,0,0,933,18265,"[[0, 0], [933, 18265]]"
+generator,real,19198,19198,0,0.9589540577143453,0.0,0.0,0.0,,18410,788,0,0,"[[18410, 788], [0, 0]]"

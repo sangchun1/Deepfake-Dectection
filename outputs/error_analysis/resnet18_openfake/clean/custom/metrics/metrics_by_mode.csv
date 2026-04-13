@@ -1,0 +1,2 @@
+﻿group_column,mode,num_samples,num_real,num_fake,accuracy,precision,recall,f1,auc,tn,fp,fn,tp,confusion_matrix
+mode,merged,38396,19198,19198,0.9551776226690281,0.9586416837243479,0.9514011876237108,0.955007712216674,0.9914025804377369,18410,788,933,18265,"[[18410, 788], [933, 18265]]"

@@ -1,0 +1,34 @@
+{
+  "available_splits": [
+    "train",
+    "val",
+    "test",
+    "custom"
+  ],
+  "summary_csv": "outputs/error_analysis/resnet18_openfake/clean/custom/split_audit/split_summary.csv",
+  "overlap_csvs": {
+    "filepath_overlap": "outputs/error_analysis/resnet18_openfake/clean/custom/split_audit/filepath_overlap.csv",
+    "filename_overlap": "outputs/error_analysis/resnet18_openfake/clean/custom/split_audit/filename_overlap.csv"
+  },
+  "distribution_csvs": {
+    "generator": "outputs/error_analysis/resnet18_openfake/clean/custom/split_audit/distribution_by_generator.csv",
+    "group": "outputs/error_analysis/resnet18_openfake/clean/custom/split_audit/distribution_by_group.csv",
+    "mode": "outputs/error_analysis/resnet18_openfake/clean/custom/split_audit/distribution_by_mode.csv"
+  },
+  "num_exact_filepath_overlaps": {
+    "train__val": 0,
+    "train__test": 0,
+    "train__custom": 0,
+    "val__test": 0,
+    "val__custom": 0,
+    "test__custom": 38396
+  },
+  "num_filename_overlaps": {
+    "train__val": 0,
+    "train__test": 0,
+    "train__custom": 0,
+    "val__test": 0,
+    "val__custom": 0,
+    "test__custom": 38396
+  }
+}
