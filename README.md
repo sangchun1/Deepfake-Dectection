@@ -1,7 +1,7 @@
 # Toward Generalizable and Robust Deepfake Detection: A Spatial-Frequency Fusion Baseline
 
 This repository presents a deepfake image detection project focused on **generalization** and **robustness**.  
-The core idea is to compare **spatial-only**, **frequency-only**, and **spatial-frequency fusion** models on **OpenFake**, and then evaluate whether the learned detector transfers to **Semi-Truths** and corrupted test conditions.
+The core idea is to compare **spatial-only**, **frequency-only**, and **spatial-frequency fusion** models on **OpenFake**, and then evaluate whether the learned detector transfers to <!--**Semi-Truths** and--> corrupted test conditions.
 
 ## Overview
 
@@ -12,7 +12,7 @@ The project is organized around three questions:
 
 - Can a spatial model alone generalize to unseen generators?
 - Does a frequency-based model capture useful artifacts missed by RGB-only models?
-- Does fusion improve robustness under distribution shift and external benchmarks?
+- Does fusion improve robustness under distribution shift<!-- and external benchmarks-->?
 
 ## Methods
 
@@ -42,7 +42,7 @@ This project uses OpenFake under multiple evaluation settings:
 - **by_generator**: per-generator test splits for generalization analysis
 - **logo**: generator/logo holdout setting for stronger distribution shift
 
-### [Semi-Truths](https://huggingface.co/datasets/semi-truths/Semi-Truths)
+<!-- ### [Semi-Truths](https://huggingface.co/datasets/semi-truths/Semi-Truths)
 External benchmark for out-of-distribution evaluation.
 
 Semi-Truths is used to assess whether a detector trained on OpenFake remains reliable across:
@@ -51,7 +51,7 @@ Semi-Truths is used to assess whether a detector trained on OpenFake remains rel
 - semantic edit magnitude
 - area ratio
 - scene complexity/diversity
-- other grouped metadata conditions
+- other grouped metadata conditions -->
 
 ## Evaluation
 
@@ -62,7 +62,7 @@ The project evaluates performance with:
 - Recall
 - F1-score
 - ROC-AUC
-- Grouped metrics on Semi-Truths
+<!-- - Grouped metrics on Semi-Truths -->
 - Corruption robustness under JPEG, blur, noise, and resize degradations
 - Explainability with Grad-CAM, attention rollout, and frequency visualizations
 
@@ -74,8 +74,8 @@ The project evaluates performance with:
 |---|---:|---:|---:|
 | ResNet18 | 99.06 / 95.50 | 99.49 / 96.95 | 95.87 / **85.43** |
 | ViT | - / - | - / - | - / - |
-| SPAI | **99.46** / **97.09** | **99.69** / **98.10** | **96.56** / 83.97 |
-| ResNet18 + SPAI | 99.40 / 96.47 | - / - | - / - |
+| SPAI | **99.46** / **97.09** | 99.69 / **98.10** | **96.56** / 83.97 |
+| ResNet18 + SPAI | 99.40 / 96.47 | **99.76** / 97.69 | - / - |
 | ViT + SPAI | - / - | - / - | - / - |
 
 ### Robustness on OpenFake Corruptions
@@ -88,7 +88,7 @@ The project evaluates performance with:
 | ResNet18 + SPAI | - | - | - | - |
 | ViT + SPAI | - | - | - | - |
 
-### External Generalization on Semi-Truths
+<!-- ### External Generalization on Semi-Truths
 
 | Model | Overall AUC | Overall F1 | Worst Group AUC | Group Gap ↓ |
 |---|---:|---:|---:|---:|
@@ -96,7 +96,7 @@ The project evaluates performance with:
 | ViT | - | - | - | - |
 | SPAI | - | - | - | - |
 | ResNet18 + SPAI | - | - | - | - |
-| ViT + SPAI | - | - | - | - |
+| ViT + SPAI | - | - | - | - | -->
 
 ## Installation
 
@@ -192,14 +192,14 @@ python scripts/evaluate_robustness.py `
   --split test
 ```
 
-### Semi-Truths evaluation
+<!-- ### Semi-Truths evaluation
 
 ```bash
 python scripts/evaluate_semitruths.py `
   --data_config configs/data/semitruths_eval.yaml `
   --model_config configs/model/fusion.yaml `
   --train_config configs/train/fusion_resnet_spai_openfake.yaml
-```
+``` -->
 
 ## Explainability
 
@@ -231,4 +231,4 @@ The final aim is to build a **simple but strong baseline for generalizable and r
 
 ## Citation
 
-If you use this repository or build on this project, please cite the repository and acknowledge the OpenFake and Semi-Truths datasets accordingly.
+If you use this repository or build on this project, please cite the repository and acknowledge the OpenFake dataset<!-- and Semi-Truths datasets--> accordingly.
