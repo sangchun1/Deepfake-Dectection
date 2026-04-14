@@ -98,8 +98,7 @@ def parse_args() -> argparse.Namespace:
         "--split",
         type=str,
         default=None,
-        choices=["train", "val", "test", "custom"],
-        help="Split label. If --split_csv is omitted, defaults to test. If --split_csv is provided and --split is omitted, custom is used.",
+        help="Split label for logging/save-dir naming. If --split_csv is omitted, defaults to test. If --split_csv is provided and --split is omitted, custom is used.",
     )
     parser.add_argument(
         "--split_csv",
@@ -388,13 +387,21 @@ def build_split_to_csv_map(
     effective_split: str,
     split_csv: Optional[str],
 ) -> Dict[str, Path]:
-    split_to_csv = build_split_to_csv_map(
-        cfg,
-        effective_split=effective_split,
-        split_csv=args.split_csv,
-    )
+    split_to_csv: Dict[str, Path] = {}
+
+    for split_name in ("train", "val", "test"):
+        try:
+            csv_path = resolve_path(get_split_csv_path(cfg, split_name))
+        except Exception:
+            continue
+        if csv_path.exists():
+            split_to_csv[split_name] = csv_path
+
     if split_csv is not None:
-        split_to_csv[effective_split] = resolve_path(split_csv)
+        split_to_csv[str(effective_split)] = resolve_path(split_csv)
+    elif str(effective_split) not in split_to_csv:
+        split_to_csv[str(effective_split)] = resolve_path(get_split_csv_path(cfg, effective_split))
+
     return split_to_csv
 
 
