@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Any, Dict, Type
+from typing import Any, Dict, Optional, Type
 
 from torch.utils.data import DataLoader
 
@@ -92,6 +92,15 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional path to save evaluation result JSON.",
     )
+    parser.add_argument(
+        "--split_csv_override",
+        type=str,
+        default=None,
+        help=(
+            "Optional CSV path to evaluate instead of cfg.data.paths.<split>_csv. "
+            "Useful for per-generator test evaluation."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -147,6 +156,19 @@ def get_split_csv_path(cfg, split: str) -> str:
     if split == "test":
         return cfg.data.paths.test_csv
     raise ValueError(f"Unsupported split: {split}")
+
+
+def get_effective_split_csv_path(cfg, split: str, split_csv_override: Optional[str]) -> str:
+    if split_csv_override is not None:
+        return split_csv_override
+    return get_split_csv_path(cfg, split)
+
+
+def infer_generator_name_from_csv(csv_path: Path) -> Optional[str]:
+    stem = csv_path.stem.strip()
+    if not stem:
+        return None
+    return stem
 
 
 def get_split_shuffle(cfg, split: str) -> bool:
@@ -215,10 +237,18 @@ def main() -> None:
     print(pretty_print_config(cfg))
 
     transforms = build_transforms_from_config(cfg)
-    split_csv = get_split_csv_path(cfg, args.split)
+    split_csv = get_effective_split_csv_path(
+        cfg=cfg,
+        split=args.split,
+        split_csv_override=args.split_csv_override,
+    )
     split_csv_path = resolve_path(split_csv)
 
     if not split_csv_path.exists():
+        if args.split_csv_override is not None:
+            raise FileNotFoundError(
+                f"Override split CSV not found for {args.split}: {split_csv_path}"
+            )
         raise FileNotFoundError(f"{args.split} split CSV not found: {split_csv_path}")
 
     dataset_cls = get_dataset_class(cfg)
@@ -244,6 +274,7 @@ def main() -> None:
     print(f"dataset name: {getattr(cfg.data, 'name', 'unknown')}")
     print(f"dataset class: {dataset_cls.__name__}")
     print(f"split: {args.split}")
+    print(f"evaluated csv: {split_csv_path}")
     print(f"size: {len(dataset)}")
     print(f"class counts: {dataset.class_counts}")
 
@@ -289,6 +320,13 @@ def main() -> None:
         "dataset_name": getattr(cfg.data, "name", "unknown"),
         "dataset_class": dataset_cls.__name__,
         "split": args.split,
+        "evaluated_csv": split_csv_path.as_posix(),
+        "split_csv_override_used": args.split_csv_override is not None,
+        "generator_name": (
+            infer_generator_name_from_csv(split_csv_path)
+            if args.split_csv_override is not None and args.split == "test"
+            else None
+        ),
         "checkpoint": checkpoint_path.as_posix(),
         "metrics": metrics,
         "dataset_size": len(dataset),

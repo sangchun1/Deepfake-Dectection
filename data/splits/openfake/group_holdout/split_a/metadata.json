@@ -1,0 +1,138 @@
+{
+  "split_name": "split_a",
+  "seed": 42,
+  "train_generators": [
+    "sd-3.5",
+    "flux.1-dev",
+    "flux-mvc5000",
+    "midjourney-6",
+    "dalle-3",
+    "imagen-4.0"
+  ],
+  "test_generators": [
+    "flux-1.1-pro",
+    "sdxl-epic-realism",
+    "gpt-image-1",
+    "ideogram-3.0",
+    "hidream-i1-full",
+    "grok-2-image-1212"
+  ],
+  "requested_counts": {
+    "train_per_seen_generator": 5598,
+    "val_per_seen_generator": 800,
+    "test_per_unseen_generator": 7997
+  },
+  "seen_fake_counts": {
+    "sd-3.5": {
+      "available": 8000,
+      "train": 5598,
+      "val": 800
+    },
+    "flux.1-dev": {
+      "available": 8000,
+      "train": 5598,
+      "val": 800
+    },
+    "flux-mvc5000": {
+      "available": 8000,
+      "train": 5598,
+      "val": 800
+    },
+    "midjourney-6": {
+      "available": 8000,
+      "train": 5598,
+      "val": 800
+    },
+    "dalle-3": {
+      "available": 8000,
+      "train": 5598,
+      "val": 800
+    },
+    "imagen-4.0": {
+      "available": 7997,
+      "train": 5598,
+      "val": 800
+    }
+  },
+  "unseen_fake_counts": {
+    "flux-1.1-pro": {
+      "available": 8000,
+      "requested_test": 7997,
+      "used_test": 7997
+    },
+    "sdxl-epic-realism": {
+      "available": 8000,
+      "requested_test": 7997,
+      "used_test": 7997
+    },
+    "gpt-image-1": {
+      "available": 8000,
+      "requested_test": 7997,
+      "used_test": 7997
+    },
+    "ideogram-3.0": {
+      "available": 8000,
+      "requested_test": 7997,
+      "used_test": 7997
+    },
+    "hidream-i1-full": {
+      "available": 8000,
+      "requested_test": 7997,
+      "used_test": 7997
+    },
+    "grok-2-image-1212": {
+      "available": 8000,
+      "requested_test": 7997,
+      "used_test": 7997
+    }
+  },
+  "csv_counts": {
+    "train": 67176,
+    "val": 9600,
+    "test_pooled": 95964
+  },
+  "real_counts": {
+    "train": 33588,
+    "val": 4800,
+    "test_total": 47982
+  },
+  "per_generator_test_csv_counts": {
+    "flux-1.1-pro": {
+      "fake": 7997,
+      "real": 7997,
+      "csv_total": 15994
+    },
+    "sdxl-epic-realism": {
+      "fake": 7997,
+      "real": 7997,
+      "csv_total": 15994
+    },
+    "gpt-image-1": {
+      "fake": 7997,
+      "real": 7997,
+      "csv_total": 15994
+    },
+    "ideogram-3.0": {
+      "fake": 7997,
+      "real": 7997,
+      "csv_total": 15994
+    },
+    "hidream-i1-full": {
+      "fake": 7997,
+      "real": 7997,
+      "csv_total": 15994
+    },
+    "grok-2-image-1212": {
+      "fake": 7997,
+      "real": 7997,
+      "csv_total": 15994
+    }
+  },
+  "files": {
+    "train_csv": "C:/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/train.csv",
+    "val_csv": "C:/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/val.csv",
+    "test_csv": "C:/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/test.csv",
+    "tests_dir": "C:/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests"
+  },
+  "note": "train/val use only seen generators. tests/*.csv contains one unseen-generator evaluation CSV per generator. test.csv is the pooled union of all unseen tests."
+}

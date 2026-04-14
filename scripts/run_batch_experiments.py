@@ -33,8 +33,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Run batch experiments for merged / by_generator / "
-            "leave-one-generator-out (logo) splits, including optional evaluation "
-            "and explanation."
+            "leave-one-generator-out (logo) / group_holdout splits, "
+            "including optional evaluation and explanation."
         )
     )
 
@@ -42,7 +42,7 @@ def parse_args() -> argparse.Namespace:
         "--mode",
         type=str,
         default="by_generator",
-        choices=["merged", "by_generator", "logo", "all"],
+        choices=["merged", "by_generator", "logo", "group_holdout", "all"],
         help="Which experiment family to run.",
     )
     parser.add_argument(
@@ -67,7 +67,7 @@ def parse_args() -> argparse.Namespace:
         "--splits_root",
         type=str,
         default="data/splits/openfake",
-        help="Root directory containing merged/by_generator/logo split folders.",
+        help="Root directory containing merged/by_generator/logo/group_holdout split folders.",
     )
     parser.add_argument(
         "--generated_config_dir",
@@ -353,6 +353,37 @@ def build_generated_train_config(
     save_yaml(cfg, generated_train_config_path)
     return cfg
 
+def discover_group_holdout_test_csvs(exp_dir: Path) -> List[Path]:
+    tests_dir = exp_dir / "tests"
+    if not tests_dir.exists():
+        raise FileNotFoundError(
+            f"group_holdout tests directory not found: {tests_dir}"
+        )
+
+    csv_paths = sorted(p for p in tests_dir.glob("*.csv") if p.is_file())
+    if not csv_paths:
+        raise RuntimeError(
+            f"No per-generator test csv files found under: {tests_dir}"
+        )
+    return csv_paths
+
+
+def get_group_holdout_eval_paths(
+    output_dir: Path,
+    eval_split: str,
+    test_csv_paths: Sequence[Path],
+) -> Dict[str, Path]:
+    paths: Dict[str, Path] = {
+        "pooled": output_dir / f"eval_{eval_split}_pooled.json",
+    }
+    per_generator_root = output_dir / "per_generator"
+    for test_csv in test_csv_paths:
+        generator_name = test_csv.stem
+        paths[generator_name] = (
+            per_generator_root / generator_name / f"eval_{eval_split}.json"
+        )
+    return paths
+
 
 def make_train_command(
     python_executable: str,
@@ -387,6 +418,7 @@ def make_eval_command(
     checkpoint_path: Path,
     eval_split: str,
     output_json: Path,
+    split_csv_override: Path | None,
     device: str | None,
 ) -> List[str]:
     cmd = [
@@ -405,6 +437,9 @@ def make_eval_command(
         "--output_json",
         output_json.as_posix(),
     ]
+    if split_csv_override is not None:
+        cmd.extend(["--split_csv_override", split_csv_override.as_posix()])
+
     if device is not None:
         cmd.extend(["--device", device])
     return cmd
@@ -466,7 +501,7 @@ def run_command(cmd: Sequence[str], cwd: Path) -> None:
 
 def resolve_modes(mode: str) -> List[str]:
     if mode == "all":
-        return ["merged", "by_generator", "logo"]
+        return ["merged", "by_generator", "logo", "group_holdout"]
     return [mode]
 
 
@@ -526,6 +561,16 @@ def main() -> None:
             checkpoint_path = output_dir / args.checkpoint_name
             eval_json_path = output_dir / f"eval_{args.eval_split}.json"
 
+            group_holdout_test_csvs: List[Path] = []
+            group_holdout_eval_paths: Dict[str, Path] = {}
+            if mode == "group_holdout":
+                group_holdout_test_csvs = discover_group_holdout_test_csvs(exp_dir)
+                group_holdout_eval_paths = get_group_holdout_eval_paths(
+                    output_dir=output_dir,
+                    eval_split=args.eval_split,
+                    test_csv_paths=group_holdout_test_csvs,
+                )
+
             generated_data_cfg = build_generated_data_config(
                 base_cfg=base_data_cfg,
                 exp_dir=exp_dir,
@@ -572,6 +617,8 @@ def main() -> None:
                 "eval_status": "not_run",
                 "explain_status": "not_run",
                 "checkpoint_path": checkpoint_path.as_posix(),
+                "group_holdout_test_csvs": [p.as_posix() for p in group_holdout_test_csvs],
+                "group_holdout_eval_paths": {k: v.as_posix() for k, v in group_holdout_eval_paths.items()},
                 "eval_json_path": eval_json_path.as_posix(),
                 "explain_summary_path": explain_summary_path.as_posix(),
                 "error": None,
@@ -603,43 +650,113 @@ def main() -> None:
                         result["train_status"] = "done"
 
                 if not args.train_only and not args.explain_only:
-                    if args.skip_existing_eval and eval_json_path.exists():
-                        print(
-                            f"Skip evaluation because eval json already exists: {eval_json_path}"
-                        )
-                        result["eval_status"] = "skipped_existing"
-                    else:
-                        generated_eval_in_train = (
-                        args.eval_split == "test"
-                        and result["train_status"] == "done"
-                        and eval_json_path.exists()
-                    )
+                    if mode == "group_holdout" and args.eval_split == "test":
+                        pooled_eval_json_path = group_holdout_eval_paths["pooled"]
+                        per_generator_eval_paths = {
+                            k: v
+                            for k, v in group_holdout_eval_paths.items()
+                            if k != "pooled"
+                        }
 
-                    if generated_eval_in_train:
-                        print(
-                            "Skip explicit evaluation because train.py already "
-                            f"saved {eval_json_path}"
+                        all_exist = pooled_eval_json_path.exists() and all(
+                            p.exists() for p in per_generator_eval_paths.values()
                         )
-                        result["eval_status"] = "generated_in_train"
-                    else:
-                        if not checkpoint_path.exists():
-                            raise FileNotFoundError(
+                        if args.skip_existing_eval and all_exist:
+                            print(
+                                "Skip group_holdout evaluation because pooled and "
+                                "per-generator eval json files already exist."
+                            )
+                            result["eval_status"] = "skipped_existing"
+                        else:
+                            if not checkpoint_path.exists():
+                                raise FileNotFoundError(
                                     f"Checkpoint for evaluation not found: {checkpoint_path}"
                                 )
 
-                        eval_cmd = make_eval_command(
-                            python_executable=args.python,
-                            data_config=generated_data_config_path,
-                            model_config=model_config_path,
-                            train_config=generated_train_config_path,
-                            checkpoint_path=checkpoint_path,
-                            eval_split=args.eval_split,
-                            output_json=eval_json_path,
-                            device=args.device,
-                        )
+                            if args.skip_existing_eval and pooled_eval_json_path.exists():
+                                print(
+                                    "Skip pooled evaluation because eval json already "
+                                    f"exists: {pooled_eval_json_path}"
+                                )
+                            else:
+                                pooled_eval_cmd = make_eval_command(
+                                    python_executable=args.python,
+                                    data_config=generated_data_config_path,
+                                    model_config=model_config_path,
+                                    train_config=generated_train_config_path,
+                                    checkpoint_path=checkpoint_path,
+                                    eval_split=args.eval_split,
+                                    output_json=pooled_eval_json_path,
+                                    split_csv_override=None,
+                                    device=args.device,
+                                )
+                                run_command(pooled_eval_cmd, cwd=project_root)
 
-                        run_command(eval_cmd, cwd=project_root)
-                        result["eval_status"] = "done"
+                            for test_csv in group_holdout_test_csvs:
+                                generator_name = test_csv.stem
+                                generator_eval_json_path = per_generator_eval_paths[generator_name]
+
+                                if args.skip_existing_eval and generator_eval_json_path.exists():
+                                    print(
+                                        "Skip per-generator evaluation because eval json "
+                                        f"already exists: {generator_eval_json_path}"
+                                    )
+                                    continue
+
+                                eval_cmd = make_eval_command(
+                                    python_executable=args.python,
+                                    data_config=generated_data_config_path,
+                                    model_config=model_config_path,
+                                    train_config=generated_train_config_path,
+                                    checkpoint_path=checkpoint_path,
+                                    eval_split=args.eval_split,
+                                    output_json=generator_eval_json_path,
+                                    split_csv_override=test_csv,
+                                    device=args.device,
+                                )
+                                run_command(eval_cmd, cwd=project_root)
+
+                            result["eval_status"] = "done"
+                    else:
+                        if args.skip_existing_eval and eval_json_path.exists():
+                            print(
+                                f"Skip evaluation because eval json already exists: {eval_json_path}"
+                            )
+                            result["eval_status"] = "skipped_existing"
+                        else:
+                            generated_eval_in_train = (
+                                mode != "group_holdout"
+                                and args.eval_split == "test"
+                                and result["train_status"] == "done"
+                                and eval_json_path.exists()
+                            )
+
+                            if generated_eval_in_train:
+                                print(
+                                    "Skip explicit evaluation because train.py already "
+                                    f"saved {eval_json_path}"
+                                )
+                                result["eval_status"] = "generated_in_train"
+                            else:
+                                if not checkpoint_path.exists():
+                                    raise FileNotFoundError(
+                                        f"Checkpoint for evaluation not found: {checkpoint_path}"
+                                    )
+
+                                eval_cmd = make_eval_command(
+                                    python_executable=args.python,
+                                    data_config=generated_data_config_path,
+                                    model_config=model_config_path,
+                                    train_config=generated_train_config_path,
+                                    checkpoint_path=checkpoint_path,
+                                    eval_split=args.eval_split,
+                                    output_json=eval_json_path,
+                                    split_csv_override=None,
+                                    device=args.device,
+                                )
+
+                                run_command(eval_cmd, cwd=project_root)
+                                result["eval_status"] = "done"
 
                 if args.run_explain:
                     if args.skip_existing_explain and explain_summary_path.exists():
