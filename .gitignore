@@ -218,3 +218,5 @@ command.md
 archive/
 
 *.wandb
+
+logs/
