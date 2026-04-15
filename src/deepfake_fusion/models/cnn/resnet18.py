@@ -146,11 +146,11 @@ class ResNet18Classifier(nn.Module):
         """
         for param in self.backbone.parameters():
             param.requires_grad = True
-
-    def extract_features(self, x: torch.Tensor) -> torch.Tensor:
+    
+    def extract_feature_map(self, x: torch.Tensor) -> torch.Tensor:
         """
-        fc 직전 global pooled feature 추출.
-        shape: [B, feature_dim]
+        layer4 출력 feature map 추출.
+        shape: [B, C, H, W]
         """
         x = self.backbone.conv1(x)
         x = self.backbone.bn1(x)
@@ -161,7 +161,24 @@ class ResNet18Classifier(nn.Module):
         x = self.backbone.layer2(x)
         x = self.backbone.layer3(x)
         x = self.backbone.layer4(x)
+        return x
 
+    def extract_token_sequence(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        fusion용 spatial token sequence 추출.
+        shape: [B, H*W, C]
+        """
+        x = self.extract_feature_map(x)
+        x = x.flatten(2).transpose(1, 2).contiguous()
+        return x
+
+
+    def extract_features(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        fc 직전 global pooled feature 추출.
+        shape: [B, feature_dim]
+        """
+        x = self.extract_feature_map(x)
         x = self.backbone.avgpool(x)
         x = torch.flatten(x, 1)
         return x

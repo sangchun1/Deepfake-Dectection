@@ -184,7 +184,7 @@ def _build_spectral_branch(spectral_cfg: Any) -> nn.Module:
 
 class FusionClassifier(nn.Module):
     """
-    Late fusion v1.
+    Fusion classifier.
 
     흐름:
       x
@@ -220,7 +220,12 @@ class FusionClassifier(nn.Module):
             raise AttributeError(
                 f"Spatial branch '{self.spatial_name}' must implement extract_features()."
             )
-
+        self.fusion_type = str(
+            _cfg_get(fusion_cfg, "type", default="gated_late")
+        ).strip().lower()
+        self.spectral_token_key = str(
+            _cfg_get(fusion_cfg, "spectral_token_key", default="context_stack")
+        ).strip()
         self.spectral_feature_mode = str(
             _cfg_get(
                 spectral_cfg,
@@ -290,6 +295,8 @@ class FusionClassifier(nn.Module):
         self.fusion_block = build_fusion_block(
             block_cfg=fusion_cfg,
             feature_dim=self.projection_dim,
+            spatial_token_dim=self.spatial_feature_dim,
+            spectral_token_dim=self.spectral_feature_dim,
         )
 
         self.feature_dim = int(self.fusion_block.get_output_dim())
@@ -353,6 +360,24 @@ class FusionClassifier(nn.Module):
             )
         return feature
 
+    def _extract_spatial_tokens(self, x: torch.Tensor) -> torch.Tensor:
+        if not hasattr(self.spatial_branch, "extract_token_sequence"):
+            raise AttributeError(
+                f"Spatial branch '{self.spatial_name}' must implement "
+                "extract_token_sequence() for cross_attention_gate fusion."
+            )
+        tokens = self.spatial_branch.extract_token_sequence(x)
+        if not isinstance(tokens, torch.Tensor):
+            raise TypeError(
+                f"Expected torch.Tensor from spatial token extractor, got: {type(tokens)}"
+            )
+        if tokens.ndim != 3:
+            raise ValueError(
+                "Spatial tokens must have shape [B, N, C], "
+                f"got: {tuple(tokens.shape)}"
+            )
+        return tokens
+    
     def _extract_spectral_feature(
         self,
         x: torch.Tensor,
@@ -370,6 +395,27 @@ class FusionClassifier(nn.Module):
         if not return_dict:
             return spectral_feature
         return {"spectral_feature": spectral_feature}
+    
+    def _extract_spectral_tokens(
+        self,
+        spectral_out: Mapping[str, torch.Tensor],
+    ) -> torch.Tensor:
+        if self.spectral_token_key not in spectral_out:
+            raise KeyError(
+                f"'{self.spectral_token_key}' not found in spectral output. "
+                f"Available keys: {list(spectral_out.keys())}"
+            )
+        tokens = spectral_out[self.spectral_token_key]
+        if not isinstance(tokens, torch.Tensor):
+            raise TypeError(
+                f"Expected torch.Tensor for spectral tokens, got: {type(tokens)}"
+            )
+        if tokens.ndim != 3:
+            raise ValueError(
+                "Spectral tokens must have shape [B, N, C], "
+                f"got: {tuple(tokens.shape)}"
+            )
+        return tokens
 
     def extract_features(
         self,
@@ -399,11 +445,26 @@ class FusionClassifier(nn.Module):
         projected_spatial = self.proj_spa(spatial_feature)
         projected_spectral = self.proj_spec(spectral_feature)
 
-        fusion_out = self.fusion_block(
-            projected_spatial,
-            projected_spectral,
-            return_dict=True,
-        )
+        spatial_tokens = None
+        spectral_tokens = None
+
+        if self.fusion_type == "cross_attention_gate":
+            spatial_tokens = self._extract_spatial_tokens(x)
+            spectral_tokens = self._extract_spectral_tokens(spectral_out)
+            fusion_out = self.fusion_block(
+                p_spa=projected_spatial,
+                p_spec=projected_spectral,
+                spa_tokens=spatial_tokens,
+                spec_tokens=spectral_tokens,
+                return_dict=True,
+            )
+        else:
+            fusion_out = self.fusion_block(
+                projected_spatial,
+                projected_spectral,
+                return_dict=True,
+            )
+
         fused_feature = fusion_out["fused"]
 
         if not return_dict:
@@ -421,6 +482,20 @@ class FusionClassifier(nn.Module):
             "abs_diff": fusion_out["abs_diff"],
             "elementwise_prod": fusion_out["elementwise_prod"],
         }
+        if spatial_tokens is not None:
+            output["spatial_tokens"] = spatial_tokens
+        if spectral_tokens is not None:
+            output["spectral_tokens"] = spectral_tokens
+        for key in [
+            "refined_p_spa",
+            "refined_p_spec",
+            "refined_spa_tokens",
+            "refined_spec_tokens",
+            "spa_attn_weights",
+            "spec_attn_weights",
+        ]:
+            if key in fusion_out and isinstance(fusion_out[key], torch.Tensor):
+                output[key] = fusion_out[key]
 
         for key in [
             "x_low",
