@@ -75,7 +75,7 @@ The project evaluates performance with:
 | ResNet18 | 99.06 / 95.50 | 99.49 / 96.95 | 95.87 / **85.43** |
 | ViT | - / - | - / - | - / - |
 | SPAI | **99.46** / **97.09** | 99.69 / **98.10** | **96.56** / 83.97 |
-| ResNet18 + SPAI | 99.40 / 96.47 | **99.76** / 97.69 | - / - |
+| ResNet18 + SPAI | 99.41 / 96.49 | **99.76** / 97.69 | 96.47 / 84.20 |
 | ViT + SPAI | - / - | - / - | - / - |
 
 ### Robustness on OpenFake Corruptions

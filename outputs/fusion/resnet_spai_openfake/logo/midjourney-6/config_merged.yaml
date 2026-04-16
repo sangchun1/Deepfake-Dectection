@@ -90,10 +90,14 @@ model:
     activation: gelu
     use_layernorm: true
   fusion:
+    type: cross_attention_gate
     gate_hidden_dim: 256
     dropout: 0.1
     gate_mode: channel
     use_layernorm: true
+    num_heads: 4
+    attn_dropout: 0.1
+    spectral_token_key: context_stack
   head:
     num_classes: 2
     hidden_dim: null
@@ -111,7 +115,7 @@ train:
     device: cuda
     use_amp: true
   train:
-    epochs: 10
+    epochs: 15
     grad_accum_steps: 1
     clip_grad_norm: null
   optimizer:
@@ -126,7 +130,7 @@ train:
     color_jitter_prob: 0.0
   scheduler:
     name: cosine
-    t_max: 10
+    t_max: 15
     eta_min: 1.0e-06
   loss:
     name: cross_entropy

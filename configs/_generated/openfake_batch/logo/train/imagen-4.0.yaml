@@ -6,7 +6,7 @@ experiment:
   device: cuda
   use_amp: true
 train:
-  epochs: 10
+  epochs: 15
   grad_accum_steps: 1
   clip_grad_norm: null
 optimizer:
@@ -21,7 +21,7 @@ augmentation:
   color_jitter_prob: 0.0
 scheduler:
   name: cosine
-  t_max: 10
+  t_max: 15
   eta_min: 1.0e-06
 loss:
   name: cross_entropy

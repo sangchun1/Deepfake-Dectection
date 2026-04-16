@@ -1,22 +1,22 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/flux-mvc5000/best.pth",
-  "best_epoch": 10,
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/flux-mvc5000/best.pth",
+  "best_epoch": 12,
   "best_monitor": "val_auc",
-  "best_score": 0.9929595364152892,
+  "best_score": 0.9927031314566115,
   "val_metrics": {
-    "accuracy": 0.9624431818181818,
-    "precision": 0.9630219592672659,
-    "recall": 0.9618181818181818,
-    "f1": 0.9624196941270112,
-    "auc": 0.9929595364152892,
-    "loss": 0.1610350966318087
+    "accuracy": 0.9622727272727273,
+    "precision": 0.9558493948901837,
+    "recall": 0.9693181818181819,
+    "f1": 0.9625366734371473,
+    "auc": 0.9927031314566115,
+    "loss": 0.16975729315118357
   },
   "test_metrics": {
-    "accuracy": 0.8468125,
-    "precision": 0.949748743718593,
-    "recall": 0.732375,
-    "f1": 0.8270167266567859,
-    "auc": 0.9553883750000001,
-    "loss": 0.8391796247661114
+    "accuracy": 0.8666875,
+    "precision": 0.9446718205244808,
+    "recall": 0.779,
+    "f1": 0.8538740837158321,
+    "auc": 0.95817003125,
+    "loss": 0.7544600870609284
   }
 }

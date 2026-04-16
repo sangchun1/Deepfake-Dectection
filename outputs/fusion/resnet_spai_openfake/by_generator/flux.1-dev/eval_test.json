@@ -2,21 +2,21 @@
   "dataset_name": "openfake_by_generator_flux.1-dev",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/flux.1-dev/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/flux.1-dev/best.pth",
   "metrics": {
-    "accuracy": 0.9590368980612883,
-    "precision": 0.9576059850374065,
-    "recall": 0.9606003752345216,
-    "f1": 0.9591008429597253,
-    "auc": 0.9932327545241104,
-    "loss": 0.14883943059580113
+    "accuracy": 0.9659161976235147,
+    "precision": 0.9621588089330024,
+    "recall": 0.9699812382739212,
+    "f1": 0.9660541887262535,
+    "auc": 0.993189145342168,
+    "loss": 0.14398329834068768
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.99255,
-  "best_epoch_in_checkpoint": 10,
-  "saved_epoch": 10
+  "best_score_in_checkpoint": 0.9941,
+  "best_epoch_in_checkpoint": 14,
+  "saved_epoch": 14
 }

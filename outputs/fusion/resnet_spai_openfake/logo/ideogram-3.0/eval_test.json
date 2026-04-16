@@ -2,21 +2,21 @@
   "dataset_name": "openfake_logo_ideogram-3.0",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/ideogram-3.0/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/ideogram-3.0/best.pth",
   "metrics": {
-    "accuracy": 0.949625,
-    "precision": 0.9698275862068966,
-    "recall": 0.928125,
-    "f1": 0.9485181400102197,
-    "auc": 0.991011109375,
-    "loss": 0.225390545360744
+    "accuracy": 0.95075,
+    "precision": 0.9700208550573514,
+    "recall": 0.93025,
+    "f1": 0.9497192445125063,
+    "auc": 0.9912243515624999,
+    "loss": 0.21726021885871888
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9944159542871901,
-  "best_epoch_in_checkpoint": 10,
-  "saved_epoch": 10
+  "best_score_in_checkpoint": 0.9944556689049587,
+  "best_epoch_in_checkpoint": 12,
+  "saved_epoch": 12
 }

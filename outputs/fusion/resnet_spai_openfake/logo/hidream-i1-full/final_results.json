@@ -1,22 +1,22 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/hidream-i1-full/best.pth",
-  "best_epoch": 9,
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/hidream-i1-full/best.pth",
+  "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.9947051717458678,
+  "best_score": 0.9941280668904957,
   "val_metrics": {
-    "accuracy": 0.9675568181818182,
-    "precision": 0.972659391154509,
-    "recall": 0.9621590909090909,
-    "f1": 0.9673807483576121,
-    "auc": 0.9947051717458678,
-    "loss": 0.13650753739882598
+    "accuracy": 0.9643181818181819,
+    "precision": 0.9681484876260311,
+    "recall": 0.9602272727272727,
+    "f1": 0.9641716111364673,
+    "auc": 0.9941280668904957,
+    "loss": 0.13562925921245056
   },
   "test_metrics": {
-    "accuracy": 0.9418125,
-    "precision": 0.9733494040444624,
-    "recall": 0.9085,
-    "f1": 0.9398073317385401,
-    "auc": 0.9895626953125,
-    "loss": 0.2690281007140875
+    "accuracy": 0.9373125,
+    "precision": 0.9666533279978659,
+    "recall": 0.905875,
+    "f1": 0.935277795702394,
+    "auc": 0.9867733359374998,
+    "loss": 0.268452616147697
   }
 }
