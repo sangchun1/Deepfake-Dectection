@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-04-17T15:41:25",
+  "mode": "by_generator",
+  "resolved_modes": [
+    "by_generator"
+  ],
+  "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
+  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/resnet18.yaml",
+  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/spatial_resnet_openfake.yaml",
+  "robustness_config": "/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml",
+  "splits_root": "/home/user/SC/Deepfake-Fusion/data/splits/openfake",
+  "generated_config_dir": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch",
+  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake",
+  "root_dir_override": "/home/user/DATA/deepfake",
+  "split": "test",
+  "checkpoint_name": "best.pth",
+  "selected_names": null,
+  "results": [
+    {
+      "mode": "by_generator",
+      "exp_name": "dalle-3",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/dalle-3",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/dalle-3.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/dalle-3/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/dalle-3/robustness_test"
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "flux-1.1-pro",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-1.1-pro",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-1.1-pro.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-1.1-pro/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-1.1-pro/robustness_test"
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "flux-mvc5000",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-mvc5000",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-mvc5000.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-mvc5000/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-mvc5000/robustness_test"
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "flux.1-dev",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux.1-dev",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux.1-dev.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux.1-dev/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux.1-dev/robustness_test"
+    }
+  ]
+}

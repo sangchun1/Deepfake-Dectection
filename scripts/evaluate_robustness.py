@@ -4,7 +4,6 @@ import argparse
 import csv
 import json
 import math
-# import sys
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Type
 
@@ -12,13 +11,7 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 
-# PROJECT_ROOT = Path(__file__).resolve().parents[1]
-# if str(PROJECT_ROOT) not in sys.path:
-#     sys.path.insert(0, str(PROJECT_ROOT))
-
-from deepfake_fusion.datasets.cifake_dataset import CIFAKEDataset
-from deepfake_fusion.datasets.face130k_dataset import FACE130KDataset
-from archive.genimage_dataset import GenImageDataset
+from deepfake_fusion.datasets.openfake_dataset import OpenFakeDataset
 from deepfake_fusion.engine.trainer import Trainer
 from deepfake_fusion.metrics.classification import (
     ClassificationMeter,
@@ -52,12 +45,8 @@ except Exception:
 
 
 DATASET_REGISTRY: Dict[str, Type] = {
-    "cifake": CIFAKEDataset,
-    "CIFAKEDataset": CIFAKEDataset,
-    "face130k": FACE130KDataset,
-    "FACE130KDataset": FACE130KDataset,
-    "genimage": GenImageDataset,
-    "GenImageDataset": GenImageDataset,
+    "openfake": OpenFakeDataset,
+    "OpenFakeDataset": OpenFakeDataset,
 }
 
 
