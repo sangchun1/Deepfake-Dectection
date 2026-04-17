@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_logo_dalle-3",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/dalle-3/best.pth",
+  "metrics": {
+    "accuracy": 0.790875,
+    "precision": 0.9720081135902637,
+    "recall": 0.599,
+    "f1": 0.7412219644238206,
+    "auc": 0.9584769609374999,
+    "loss": 1.3512620799019932
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.9943457838326445,
+  "best_epoch_in_checkpoint": 11,
+  "saved_epoch": 11
+}

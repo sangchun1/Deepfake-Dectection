@@ -1,0 +1,319 @@
+{
+  "dataset_name": "openfake_by_generator_flux-mvc5000",
+  "dataset_class": "OpenFakeDataset",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000/best.pth",
+  "split": "test",
+  "method": "rollout",
+  "target_type": "pred",
+  "corruption": "clean",
+  "severity": 0,
+  "condition": "clean",
+  "corruption_params": {
+    "name": "clean"
+  },
+  "robustness_config": null,
+  "target_layer": null,
+  "rollout": {
+    "head_fusion": "mean",
+    "discard_ratio": 0.0,
+    "start_layer": 0
+  },
+  "frequency": null,
+  "resolved_save_dir": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean",
+  "saved_counts": {
+    "correct_real": 4,
+    "correct_fake": 4,
+    "wrong_real": 4,
+    "wrong_fake": 4
+  },
+  "records": [
+    {
+      "index": 0,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999992847442627,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__004696.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_real/00000_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 1,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 1.0,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__017884.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_real/00001_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 2,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 1.0,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__018345.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_real/00002_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 3,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 1.0,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__056718.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_real/00003_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 39,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9976152181625366,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__007431.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_real/00039_true-real_pred-fake_prob-0.9976.png"
+    },
+    {
+      "index": 159,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9963082075119019,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__038815.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_real/00159_true-real_pred-fake_prob-0.9963.png"
+    },
+    {
+      "index": 165,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.798219621181488,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__025928.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_real/00165_true-real_pred-fake_prob-0.7982.png"
+    },
+    {
+      "index": 209,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.702068030834198,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__066298.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_real/00209_true-real_pred-fake_prob-0.7021.png"
+    },
+    {
+      "index": 1599,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9999998807907104,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__03333.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_fake/01599_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 1600,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9999983310699463,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__01766.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_fake/01600_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 1601,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 1.0,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__02515.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_fake/01601_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 1602,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.999948263168335,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__06298.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/correct_fake/01602_true-fake_pred-fake_prob-0.9999.png"
+    },
+    {
+      "index": 1661,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.9797510504722595,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__07125.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_fake/01661_true-fake_pred-real_prob-0.9798.png"
+    },
+    {
+      "index": 1821,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.9497030973434448,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__06225.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_fake/01821_true-fake_pred-real_prob-0.9497.png"
+    },
+    {
+      "index": 1916,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.7028883099555969,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__01728.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_fake/01916_true-fake_pred-real_prob-0.7029.png"
+    },
+    {
+      "index": 1982,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.7375634908676147,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/flux-mvc5000/flux-mvc5000__04291.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/rollout/openfake_by_generator_flux-mvc5000/test/best/clean/wrong_fake/01982_true-fake_pred-real_prob-0.7376.png"
+    }
+  ]
+}

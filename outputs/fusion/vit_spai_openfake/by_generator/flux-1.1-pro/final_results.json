@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-1.1-pro/best.pth",
+  "best_epoch": 10,
+  "best_monitor": "val_auc",
+  "best_score": 0.990165625,
+  "val_metrics": {
+    "accuracy": 0.9425,
+    "precision": 0.9609375,
+    "recall": 0.9225,
+    "f1": 0.9413265306122449,
+    "auc": 0.990165625,
+    "loss": 0.22943691439926625
+  },
+  "test_metrics": {
+    "accuracy": 0.960287679799875,
+    "precision": 0.9717948717948718,
+    "recall": 0.9480925578486554,
+    "f1": 0.9597974042418487,
+    "auc": 0.9919156790066962,
+    "loss": 0.1723130694622543
+  }
+}

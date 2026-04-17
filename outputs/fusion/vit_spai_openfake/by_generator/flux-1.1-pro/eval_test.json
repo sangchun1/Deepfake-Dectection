@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_by_generator_flux-1.1-pro",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-1.1-pro/best.pth",
+  "metrics": {
+    "accuracy": 0.960287679799875,
+    "precision": 0.9717948717948718,
+    "recall": 0.9480925578486554,
+    "f1": 0.9597974042418487,
+    "auc": 0.9919156790066962,
+    "loss": 0.1723130694622543
+  },
+  "dataset_size": 3198,
+  "class_counts": {
+    "0": 1599,
+    "1": 1599
+  },
+  "best_score_in_checkpoint": 0.990165625,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

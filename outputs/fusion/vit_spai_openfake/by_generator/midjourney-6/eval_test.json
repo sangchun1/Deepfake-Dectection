@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_by_generator_midjourney-6",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/midjourney-6/best.pth",
+  "metrics": {
+    "accuracy": 0.9840525328330206,
+    "precision": 0.9867924528301887,
+    "recall": 0.9812382739212008,
+    "f1": 0.9840075258701787,
+    "auc": 0.9986238663079372,
+    "loss": 0.06046728967509003
+  },
+  "dataset_size": 3198,
+  "class_counts": {
+    "0": 1599,
+    "1": 1599
+  },
+  "best_score_in_checkpoint": 0.99805390625,
+  "best_epoch_in_checkpoint": 11,
+  "saved_epoch": 11
+}
