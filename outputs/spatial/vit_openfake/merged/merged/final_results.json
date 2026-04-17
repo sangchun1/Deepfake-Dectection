@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/merged/merged/best.pth",
+  "best_epoch": 9,
+  "best_monitor": "val_auc",
+  "best_score": 0.9948537510543238,
+  "val_metrics": {
+    "accuracy": 0.9679133243046151,
+    "precision": 0.9764506205579718,
+    "recall": 0.9589540577143453,
+    "f1": 0.9676232523914643,
+    "auc": 0.9948537510543238,
+    "loss": 0.14531494853570817
+  },
+  "test_metrics": {
+    "accuracy": 0.9693718095634962,
+    "precision": 0.9756651182432432,
+    "recall": 0.9627565371392853,
+    "f1": 0.96916784646846,
+    "auc": 0.9950116683378951,
+    "loss": 0.1425810694719357
+  }
+}

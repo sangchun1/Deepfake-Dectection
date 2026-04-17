@@ -73,9 +73,9 @@ The project evaluates performance with:
 | Model | Merged (AUC / F1) | By-generator (AUC / F1) | LOGO holdout (AUC / F1) |
 |---|---:|---:|---:|
 | ResNet18 | 99.06 / 95.50 | 99.49 / 96.95 | 95.87 / **85.43** |
-| ViT | - / - | - / - | - / - |
-| SPAI | **99.46** / **97.09** | 99.69 / **98.10** | **96.56** / 83.97 |
-| ResNet18 + SPAI | 99.41 / 96.49 | **99.76** / 97.69 | 96.47 / 84.20 |
+| ViT | **99.50** / <U>96.92</U> | - / - | - / - |
+| SPAI | <U>99.46</U> / **97.09** | **99.69** / **98.10** | **96.56** / 83.97 |
+| ResNet18 + SPAI | 99.41 / 96.49 | <U>99.68</U> / <U>97.82</U> | <U>96.50</U> / <U>84.49</U> |
 | ViT + SPAI | - / - | - / - | - / - |
 
 ### Robustness on OpenFake Corruptions

@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_logo_gpt-image-1",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/gpt-image-1/best.pth",
+  "metrics": {
+    "accuracy": 0.9673125,
+    "precision": 0.9748507557474915,
+    "recall": 0.959375,
+    "f1": 0.967050967050967,
+    "auc": 0.9941850312499999,
+    "loss": 0.1630236346721649
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.9946185175619837,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

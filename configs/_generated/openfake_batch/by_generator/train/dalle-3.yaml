@@ -1,12 +1,12 @@
 experiment:
-  name: fusion_resnet_spai_openfake
-  task: fusion_classification
-  output_dir: /home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/by_generator/dalle-3
+  name: spatial_vit_openfake
+  task: spatial_classification
+  output_dir: /home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/dalle-3
   seed: 42
   device: cuda
   use_amp: true
 train:
-  epochs: 15
+  epochs: 10
   grad_accum_steps: 1
   clip_grad_norm: null
 optimizer:
@@ -21,7 +21,7 @@ augmentation:
   color_jitter_prob: 0.0
 scheduler:
   name: cosine
-  t_max: 15
+  t_max: 10
   eta_min: 1.0e-06
 loss:
   name: cross_entropy
@@ -51,11 +51,10 @@ wandb:
   enabled: true
   project: Deepfake-Fusion
   entity: null
-  name: fusion_resnet_spai_openfake_dalle_3
+  name: spatial_vit_openfake_dalle_3
   tags:
   - openfake
-  - fusion
-  - resnet18
-  - spai
+  - vit
+  - spatial
   mode: online
   log_model: false

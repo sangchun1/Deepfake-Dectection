@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_logo_grok-2-image-1212",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/grok-2-image-1212/best.pth",
+  "metrics": {
+    "accuracy": 0.7176875,
+    "precision": 0.9687752355316286,
+    "recall": 0.449875,
+    "f1": 0.6144259496372172,
+    "auc": 0.9237306718749999,
+    "loss": 1.8479671269059181
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.9946835356404958,
+  "best_epoch_in_checkpoint": 8,
+  "saved_epoch": 8
+}

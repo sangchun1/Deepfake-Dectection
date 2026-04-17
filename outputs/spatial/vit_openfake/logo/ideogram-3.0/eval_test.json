@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_logo_ideogram-3.0",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/ideogram-3.0/best.pth",
+  "metrics": {
+    "accuracy": 0.94475,
+    "precision": 0.9663171690694626,
+    "recall": 0.921625,
+    "f1": 0.9434420985284709,
+    "auc": 0.988812125,
+    "loss": 0.26941753733158114
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.9950668001033058,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

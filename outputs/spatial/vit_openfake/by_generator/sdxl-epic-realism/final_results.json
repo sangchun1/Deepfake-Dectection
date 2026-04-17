@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/sdxl-epic-realism/best.pth",
+  "best_epoch": 4,
+  "best_monitor": "val_auc",
+  "best_score": 0.9993890624999999,
+  "val_metrics": {
+    "accuracy": 0.989375,
+    "precision": 0.9936948297604036,
+    "recall": 0.985,
+    "f1": 0.9893283113622097,
+    "auc": 0.9993890624999999,
+    "loss": 0.0332679995149374
+  },
+  "test_metrics": {
+    "accuracy": 0.9915572232645403,
+    "precision": 0.993099121706399,
+    "recall": 0.9899937460913071,
+    "f1": 0.9915440025054807,
+    "auc": 0.9992944308141306,
+    "loss": 0.024379919977943698
+  }
+}
