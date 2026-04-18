@@ -76,17 +76,17 @@ The project evaluates performance with:
 | ViT | 99.50 / 96.92 | 99.75 / 98.09 | 96.61 / 84.43 |
 | SPAI | 99.46 / 97.09 | 99.69 / 98.10 | 96.56 / 83.97 |
 | ResNet18 + SPAI | 99.41 / 96.49 | 99.68 / 97.82 | 96.50 / 84.49 |
-| ViT + SPAI | 99.42 / 96.60 | 99.70 / 97.97 | - / - |
+| ViT + SPAI | 99.42 / 96.60 | 99.70 / 97.97 | 96.17 / 82.84 |
 
 ### Robustness on OpenFake Corruptions
 
-| Model | Clean AUC | Corruption Mean AUC | AUC Drop ↓ | Worst-case AUC |
-|---|---:|---:|---:|---:|
-| ResNet18 | - | - | - | - |
-| ViT | - | - | - | - |
-| SPAI | - | - | - | - |
-| ResNet18 + SPAI | - | - | - | - |
-| ViT + SPAI | - | - | - | - |
+| Model | Clean AUC | JPEG | Blur | Noise | Resize | Mean Corruption AUC | AUC Drop ↓ | Worst-case AUC |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| ResNet18 | 99.06 | 96.89 | 94.68 | 96.46 | 97.92 | 96.49 | 2.57 | 87.32 |
+| ViT | 99.50 | ... | ... | ... | ... | ... | ... | ... |
+| SPAI | 99.46 | ... | ... | ... | ... | ... | ... | ... |
+| ResNet18 + SPAI | 99.41 | ... | ... | ... | ... | ... | ... | ... |
+| ViT + SPAI | 99.42 | ... | ... | ... | ... | ... | ... | ... |
 
 <!-- ### External Generalization on Semi-Truths
 

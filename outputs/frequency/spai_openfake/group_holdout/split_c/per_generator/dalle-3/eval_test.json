@@ -1,0 +1,25 @@
+{
+  "dataset_name": "openfake_group_holdout_split_c",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/dalle-3.csv",
+  "split_csv_override_used": true,
+  "generator_name": "dalle-3",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_c/best.pth",
+  "metrics": {
+    "accuracy": 0.8675753407527823,
+    "precision": 0.9527183120283382,
+    "recall": 0.7735400775290734,
+    "f1": 0.8538302277432712,
+    "auc": 0.9646977392062851,
+    "loss": 0.7873772071185106
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9936918619791668,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

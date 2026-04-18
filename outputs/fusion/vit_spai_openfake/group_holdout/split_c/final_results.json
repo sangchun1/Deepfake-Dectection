@@ -1,0 +1,22 @@
+{
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
+  "best_epoch": 14,
+  "best_monitor": "val_auc",
+  "best_score": 0.9932800564236112,
+  "val_metrics": {
+    "accuracy": 0.961875,
+    "precision": 0.9695044472681067,
+    "recall": 0.95375,
+    "f1": 0.9615626969124134,
+    "auc": 0.9932800564236112,
+    "loss": 0.18116945943484702
+  },
+  "test_metrics": {
+    "accuracy": 0.8556229419365595,
+    "precision": 0.9585113529490796,
+    "recall": 0.7434246175649202,
+    "f1": 0.8373769029425919,
+    "auc": 0.9614329894537705,
+    "loss": 0.9070859188052843
+  }
+}

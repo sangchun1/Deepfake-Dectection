@@ -1,0 +1,25 @@
+{
+  "dataset_name": "openfake_group_holdout_split_c",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/flux.1-dev.csv",
+  "split_csv_override_used": true,
+  "generator_name": "flux.1-dev",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_c/best.pth",
+  "metrics": {
+    "accuracy": 0.9123421282981118,
+    "precision": 0.9581770182020286,
+    "recall": 0.8623233712642241,
+    "f1": 0.9077267342371989,
+    "auc": 0.9721892943191197,
+    "loss": 0.5740421779963379
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9936918619791668,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_name": "openfake_group_holdout_split_a",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/gpt-image-1.csv",
+  "split_csv_override_used": true,
+  "generator_name": "gpt-image-1",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/group_holdout/split_a/best.pth",
+  "metrics": {
+    "accuracy": 0.931849443541328,
+    "precision": 0.9566309665476662,
+    "recall": 0.904714267850444,
+    "f1": 0.9299485861182519,
+    "auc": 0.9822589154314135,
+    "loss": 0.2717703291516282
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9911427951388889,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

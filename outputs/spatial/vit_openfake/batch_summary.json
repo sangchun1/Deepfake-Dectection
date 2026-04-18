@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-17T17:14:46",
+  "timestamp": "2026-04-18T15:41:28",
   "mode": "group_holdout",
   "resolved_modes": [
     "group_holdout"
@@ -29,9 +29,9 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_a.yaml",
       "wandb_run_name": "spatial_vit_openfake_group_holdout_split_a",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a",
-      "train_status": "failed",
-      "eval_status": "failed",
-      "explain_status": "failed",
+      "train_status": "done",
+      "eval_status": "done",
+      "explain_status": "done",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a/best.pth",
       "group_holdout_test_csvs": [
         "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/flux-1.1-pro.csv",
@@ -52,7 +52,7 @@
       },
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/rollout/openfake/group_holdout/split_a/openfake_group_holdout_split_a/test/best/clean/summary.json",
-      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_a.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_a.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a', '--device', 'cuda']' died with <Signals.SIGTERM: 15>."
+      "error": null
     },
     {
       "mode": "group_holdout",
@@ -62,9 +62,9 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_b.yaml",
       "wandb_run_name": "spatial_vit_openfake_group_holdout_split_b",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_b",
-      "train_status": "failed",
-      "eval_status": "failed",
-      "explain_status": "failed",
+      "train_status": "done",
+      "eval_status": "done",
+      "explain_status": "done",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_b/best.pth",
       "group_holdout_test_csvs": [
         "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/dalle-3.csv",
@@ -85,7 +85,7 @@
       },
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_b/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/rollout/openfake/group_holdout/split_b/openfake_group_holdout_split_b/test/best/clean/summary.json",
-      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_b.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_b.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_b', '--device', 'cuda']' died with <Signals.SIGTERM: 15>."
+      "error": null
     },
     {
       "mode": "group_holdout",
@@ -118,7 +118,7 @@
       },
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_c/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/rollout/openfake/group_holdout/split_c/openfake_group_holdout_split_c/test/best/clean/summary.json",
-      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_c.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_c.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_c', '--device', 'cuda']' died with <Signals.SIGTERM: 15>."
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_c.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_c.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_c', '--device', 'cuda']' returned non-zero exit status 1."
     }
   ]
 }
