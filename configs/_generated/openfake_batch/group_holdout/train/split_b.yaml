@@ -1,12 +1,12 @@
 experiment:
-  name: frequency_spai_openfake
-  task: frequency_classification
-  output_dir: /home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_b
+  name: fusion_resnet_spai_openfake
+  task: fusion_classification
+  output_dir: /home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_b
   seed: 42
   device: cuda
   use_amp: true
 train:
-  epochs: 10
+  epochs: 15
   grad_accum_steps: 1
   clip_grad_norm: null
 optimizer:
@@ -21,7 +21,7 @@ augmentation:
   color_jitter_prob: 0.0
 scheduler:
   name: cosine
-  t_max: 10
+  t_max: 15
   eta_min: 1.0e-06
 loss:
   name: cross_entropy
@@ -51,10 +51,11 @@ wandb:
   enabled: true
   project: Deepfake-Fusion
   entity: null
-  name: frequency_spai_openfake_group_holdout_split_b
+  name: fusion_resnet_spai_openfake_group_holdout_split_b
   tags:
   - openfake
+  - fusion
+  - resnet18
   - spai
-  - frequency
   mode: online
   log_model: false
