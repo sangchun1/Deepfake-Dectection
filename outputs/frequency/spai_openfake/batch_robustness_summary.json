@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-04-18T16:24:39",
+  "timestamp": "2026-04-18T14:50:55",
   "mode": "merged",
   "resolved_modes": [
     "merged"
   ],
   "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
-  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml",
-  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_spai_openfake.yaml",
+  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/spai.yaml",
+  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/frequency_spai_openfake.yaml",
   "robustness_config": "/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml",
   "splits_root": "/home/user/SC/Deepfake-Fusion/data/splits/openfake",
   "generated_config_dir": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch",
-  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake",
+  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake",
   "root_dir_override": "/home/user/DATA/deepfake",
   "split": "test",
   "checkpoint_name": "best.pth",
@@ -21,8 +21,9 @@
       "exp_name": "merged",
       "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/merged",
       "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/merged/data/merged.yaml",
-      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/merged/merged/best.pth",
-      "robustness_status": "skipped_existing"
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/merged/merged/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/merged/merged/robustness_test"
     }
   ]
 }
