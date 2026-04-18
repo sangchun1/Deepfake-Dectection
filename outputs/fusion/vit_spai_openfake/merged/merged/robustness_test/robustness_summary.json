@@ -1,0 +1,221 @@
+{
+  "primary_metric": "auc",
+  "clean_primary_metric": 0.9941310920989279,
+  "mpc": 0.9728240333237389,
+  "rpc": 0.9785671538245494,
+  "avg_drop": 0.021307058775189014,
+  "num_conditions": 21,
+  "num_corrupted_conditions": 20,
+  "worst_case": {
+    "condition": "gaussian_blur_s5",
+    "corruption": "gaussian_blur",
+    "severity": 5,
+    "auc": 0.873390778044137,
+    "metrics": {
+      "accuracy": 0.7228357120533389,
+      "precision": 0.6485416666666667,
+      "recall": 0.9729138451922075,
+      "f1": 0.7782824284345181,
+      "auc": 0.873390778044137,
+      "loss": 1.7610414594144843
+    },
+    "params": {
+      "name": "gaussian_blur",
+      "sigma": 3.0
+    }
+  },
+  "per_corruption": {
+    "jpeg": {
+      "mean_primary_metric": 0.9751539735909176,
+      "worst_primary_metric": 0.9283569420022733,
+      "best_primary_metric": 0.9936957881991931,
+      "num_severities": 5,
+      "records": [
+        {
+          "severity": 1,
+          "condition": "jpeg_s1",
+          "auc": 0.9936957881991931,
+          "accuracy": 0.961975205750599,
+          "f1": 0.9613122052043034,
+          "loss": 0.17519373787059203
+        },
+        {
+          "severity": 2,
+          "condition": "jpeg_s2",
+          "auc": 0.9912318756595138,
+          "accuracy": 0.9314511928325867,
+          "f1": 0.9273610421151405,
+          "loss": 0.34695924008956913
+        },
+        {
+          "severity": 3,
+          "condition": "jpeg_s3",
+          "auc": 0.9878585112365149,
+          "accuracy": 0.855349515574539,
+          "f1": 0.8317887213035314,
+          "loss": 0.8918255955797395
+        },
+        {
+          "severity": 4,
+          "condition": "jpeg_s4",
+          "auc": 0.9746267508570932,
+          "accuracy": 0.747447650796958,
+          "f1": 0.663263534395944,
+          "loss": 1.9653464067862771
+        },
+        {
+          "severity": 5,
+          "condition": "jpeg_s5",
+          "auc": 0.9283569420022733,
+          "accuracy": 0.6090999062402334,
+          "f1": 0.3596023381832146,
+          "loss": 4.023729454472557
+        }
+      ]
+    },
+    "resize_down_up": {
+      "mean_primary_metric": 0.9874657511931115,
+      "worst_primary_metric": 0.9747179509542141,
+      "best_primary_metric": 0.9933306038874135,
+      "num_severities": 5,
+      "records": [
+        {
+          "severity": 1,
+          "condition": "resize_down_up_s1",
+          "auc": 0.9933306038874135,
+          "accuracy": 0.9645015105740181,
+          "f1": 0.9641589313418707,
+          "loss": 0.16288630012199648
+        },
+        {
+          "severity": 2,
+          "condition": "resize_down_up_s2",
+          "auc": 0.9929133755848291,
+          "accuracy": 0.9637983123242004,
+          "f1": 0.9635323748557036,
+          "loss": 0.16500506986987032
+        },
+        {
+          "severity": 3,
+          "condition": "resize_down_up_s3",
+          "auc": 0.9896828876058936,
+          "accuracy": 0.9565579747890405,
+          "f1": 0.9567472253915569,
+          "loss": 0.19433400105071422
+        },
+        {
+          "severity": 4,
+          "condition": "resize_down_up_s4",
+          "auc": 0.9866839379332073,
+          "accuracy": 0.9454630690696948,
+          "f1": 0.9464723926380368,
+          "loss": 0.23851497944183234
+        },
+        {
+          "severity": 5,
+          "condition": "resize_down_up_s5",
+          "auc": 0.9747179509542141,
+          "accuracy": 0.9065788102927388,
+          "f1": 0.9120121667034611,
+          "loss": 0.42144590294498346
+        }
+      ]
+    },
+    "gaussian_blur": {
+      "mean_primary_metric": 0.9521728099585329,
+      "worst_primary_metric": 0.873390778044137,
+      "best_primary_metric": 0.994099134215254,
+      "num_severities": 5,
+      "records": [
+        {
+          "severity": 1,
+          "condition": "gaussian_blur_s1",
+          "auc": 0.994099134215254,
+          "accuracy": 0.9653349307219502,
+          "f1": 0.9648840461177216,
+          "loss": 0.15907203676284806
+        },
+        {
+          "severity": 2,
+          "condition": "gaussian_blur_s2",
+          "auc": 0.9897685472693036,
+          "accuracy": 0.9554641108448797,
+          "f1": 0.9555011970438222,
+          "loss": 0.1983147186498516
+        },
+        {
+          "severity": 3,
+          "condition": "gaussian_blur_s3",
+          "auc": 0.9681304892281108,
+          "accuracy": 0.8972549223877487,
+          "f1": 0.9034389915555011,
+          "loss": 0.5033611784229143
+        },
+        {
+          "severity": 4,
+          "condition": "gaussian_blur_s4",
+          "auc": 0.9354751010358593,
+          "accuracy": 0.8410771955412022,
+          "f1": 0.8586387434554974,
+          "loss": 0.9025028706317222
+        },
+        {
+          "severity": 5,
+          "condition": "gaussian_blur_s5",
+          "auc": 0.873390778044137,
+          "accuracy": 0.7228357120533389,
+          "f1": 0.7782824284345181,
+          "loss": 1.7610414594144843
+        }
+      ]
+    },
+    "gaussian_noise": {
+      "mean_primary_metric": 0.9765035985523938,
+      "worst_primary_metric": 0.946584435759355,
+      "best_primary_metric": 0.9872949715294964,
+      "num_severities": 5,
+      "records": [
+        {
+          "severity": 1,
+          "condition": "gaussian_noise_s1",
+          "auc": 0.9857373255307386,
+          "accuracy": 0.945410980310449,
+          "f1": 0.9461099398364786,
+          "loss": 0.25056696780889853
+        },
+        {
+          "severity": 2,
+          "condition": "gaussian_noise_s2",
+          "auc": 0.9872949715294964,
+          "accuracy": 0.9463225335972497,
+          "f1": 0.946178152664978,
+          "loss": 0.23970356454748898
+        },
+        {
+          "severity": 3,
+          "condition": "gaussian_noise_s3",
+          "auc": 0.9854936020688597,
+          "accuracy": 0.9075164079591624,
+          "f1": 0.9001658747785993,
+          "loss": 0.49261640653546646
+        },
+        {
+          "severity": 4,
+          "condition": "gaussian_noise_s4",
+          "auc": 0.9774076578735191,
+          "accuracy": 0.8166996562141889,
+          "f1": 0.7779110129378353,
+          "loss": 1.2298087016041421
+        },
+        {
+          "severity": 5,
+          "condition": "gaussian_noise_s5",
+          "auc": 0.946584435759355,
+          "accuracy": 0.6816855922491927,
+          "f1": 0.5351791283182475,
+          "loss": 2.8082691917246563
+        }
+      ]
+    }
+  }
+}
