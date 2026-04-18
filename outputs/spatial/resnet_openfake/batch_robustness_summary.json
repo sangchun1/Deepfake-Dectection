@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-17T15:41:25",
-  "mode": "by_generator",
+  "timestamp": "2026-04-17T15:50:45",
+  "mode": "logo",
   "resolved_modes": [
-    "by_generator"
+    "logo"
   ],
   "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
   "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/resnet18.yaml",
@@ -17,40 +17,112 @@
   "selected_names": null,
   "results": [
     {
-      "mode": "by_generator",
+      "mode": "logo",
       "exp_name": "dalle-3",
-      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/dalle-3",
-      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/dalle-3.yaml",
-      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/dalle-3/best.pth",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/dalle-3",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/dalle-3.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/dalle-3/best.pth",
       "robustness_status": "done",
-      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/dalle-3/robustness_test"
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/dalle-3/robustness_test"
     },
     {
-      "mode": "by_generator",
+      "mode": "logo",
       "exp_name": "flux-1.1-pro",
-      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-1.1-pro",
-      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-1.1-pro.yaml",
-      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-1.1-pro/best.pth",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/flux-1.1-pro",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux-1.1-pro.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux-1.1-pro/best.pth",
       "robustness_status": "done",
-      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-1.1-pro/robustness_test"
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux-1.1-pro/robustness_test"
     },
     {
-      "mode": "by_generator",
+      "mode": "logo",
       "exp_name": "flux-mvc5000",
-      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-mvc5000",
-      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-mvc5000.yaml",
-      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-mvc5000/best.pth",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/flux-mvc5000",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux-mvc5000.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux-mvc5000/best.pth",
       "robustness_status": "done",
-      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-mvc5000/robustness_test"
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux-mvc5000/robustness_test"
     },
     {
-      "mode": "by_generator",
+      "mode": "logo",
       "exp_name": "flux.1-dev",
-      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux.1-dev",
-      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux.1-dev.yaml",
-      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux.1-dev/best.pth",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/flux.1-dev",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux.1-dev.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux.1-dev/best.pth",
       "robustness_status": "done",
-      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux.1-dev/robustness_test"
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux.1-dev/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "gpt-image-1",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/gpt-image-1",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/gpt-image-1.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/gpt-image-1/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/gpt-image-1/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "grok-2-image-1212",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/grok-2-image-1212",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/grok-2-image-1212.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/grok-2-image-1212/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/grok-2-image-1212/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "hidream-i1-full",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/hidream-i1-full",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/hidream-i1-full.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/hidream-i1-full/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/hidream-i1-full/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "ideogram-3.0",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/ideogram-3.0",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/ideogram-3.0.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/ideogram-3.0/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/ideogram-3.0/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "imagen-4.0",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/imagen-4.0",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/imagen-4.0.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/imagen-4.0/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/imagen-4.0/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "midjourney-6",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/midjourney-6",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/midjourney-6.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/midjourney-6/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/midjourney-6/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "sd-3.5",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/sd-3.5",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/sd-3.5.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/sd-3.5/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/sd-3.5/robustness_test"
+    },
+    {
+      "mode": "logo",
+      "exp_name": "sdxl-epic-realism",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/sdxl-epic-realism",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/sdxl-epic-realism.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/sdxl-epic-realism/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/sdxl-epic-realism/robustness_test"
     }
   ]
 }
