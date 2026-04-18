@@ -1,0 +1,275 @@
+{
+  "timestamp": "2026-04-18T11:01:49",
+  "mode": "all",
+  "resolved_modes": [
+    "merged",
+    "by_generator",
+    "logo",
+    "group_holdout"
+  ],
+  "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
+  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml",
+  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml",
+  "robustness_config": "/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml",
+  "splits_root": "/home/user/SC/Deepfake-Fusion/data/splits/openfake",
+  "generated_config_dir": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch",
+  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake",
+  "root_dir_override": "/home/user/DATA/deepfake",
+  "split": "test",
+  "checkpoint_name": "best.pth",
+  "selected_names": null,
+  "results": [
+    {
+      "mode": "merged",
+      "exp_name": "merged",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/merged",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/merged/data/merged.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/merged/merged/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/merged/data/merged.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/merged/merged/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/merged/merged/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "dalle-3",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/dalle-3",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/dalle-3.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/dalle-3/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/dalle-3.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/dalle-3/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/dalle-3/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "flux-1.1-pro",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-1.1-pro",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-1.1-pro.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux-1.1-pro/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-1.1-pro.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux-1.1-pro/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux-1.1-pro/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "flux-mvc5000",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-mvc5000",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-mvc5000.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux-mvc5000/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux-mvc5000.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux-mvc5000/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux-mvc5000/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "flux.1-dev",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux.1-dev",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux.1-dev.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux.1-dev/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/flux.1-dev.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux.1-dev/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/flux.1-dev/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "gpt-image-1",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/gpt-image-1",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/gpt-image-1.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/gpt-image-1/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/gpt-image-1.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/gpt-image-1/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/gpt-image-1/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "grok-2-image-1212",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/grok-2-image-1212",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/grok-2-image-1212.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/grok-2-image-1212/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/grok-2-image-1212.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/grok-2-image-1212/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/grok-2-image-1212/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "hidream-i1-full",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/hidream-i1-full",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/hidream-i1-full.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/hidream-i1-full/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/hidream-i1-full.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/hidream-i1-full/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/hidream-i1-full/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "ideogram-3.0",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/ideogram-3.0",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/ideogram-3.0.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/ideogram-3.0/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/ideogram-3.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/ideogram-3.0/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/ideogram-3.0/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "imagen-4.0",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/imagen-4.0",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/imagen-4.0.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/imagen-4.0/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/imagen-4.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/imagen-4.0/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/imagen-4.0/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "midjourney-6",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/midjourney-6",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/midjourney-6.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/midjourney-6/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/midjourney-6.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/midjourney-6/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/midjourney-6/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "sd-3.5",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/sd-3.5",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/sd-3.5.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/sd-3.5/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/sd-3.5.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/sd-3.5/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/sd-3.5/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "by_generator",
+      "exp_name": "sdxl-epic-realism",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/sdxl-epic-realism",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/sdxl-epic-realism.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/sdxl-epic-realism/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/by_generator/data/sdxl-epic-realism.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/sdxl-epic-realism/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/by_generator/sdxl-epic-realism/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "dalle-3",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/dalle-3",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/dalle-3.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/dalle-3/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/dalle-3.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/dalle-3/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/dalle-3/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "flux-1.1-pro",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/flux-1.1-pro",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux-1.1-pro.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux-1.1-pro/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux-1.1-pro.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux-1.1-pro/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux-1.1-pro/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "flux-mvc5000",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/flux-mvc5000",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux-mvc5000.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux-mvc5000/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux-mvc5000.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux-mvc5000/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux-mvc5000/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "flux.1-dev",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/flux.1-dev",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux.1-dev.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux.1-dev/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/flux.1-dev.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux.1-dev/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/flux.1-dev/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "gpt-image-1",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/gpt-image-1",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/gpt-image-1.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/gpt-image-1/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/gpt-image-1.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/gpt-image-1/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/gpt-image-1/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "grok-2-image-1212",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/grok-2-image-1212",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/grok-2-image-1212.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/grok-2-image-1212/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/grok-2-image-1212.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/grok-2-image-1212/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/grok-2-image-1212/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "hidream-i1-full",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/hidream-i1-full",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/hidream-i1-full.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/hidream-i1-full/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/hidream-i1-full.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/hidream-i1-full/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/hidream-i1-full/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "ideogram-3.0",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/ideogram-3.0",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/ideogram-3.0.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/ideogram-3.0/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/ideogram-3.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/ideogram-3.0/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/ideogram-3.0/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "imagen-4.0",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/imagen-4.0",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/imagen-4.0.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/imagen-4.0/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/imagen-4.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/imagen-4.0/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/imagen-4.0/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "midjourney-6",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/midjourney-6",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/midjourney-6.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/midjourney-6/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/midjourney-6.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/midjourney-6/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/midjourney-6/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "sd-3.5",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/sd-3.5",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/sd-3.5.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/sd-3.5/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/sd-3.5.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/sd-3.5/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/sd-3.5/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "logo",
+      "exp_name": "sdxl-epic-realism",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/sdxl-epic-realism",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/sdxl-epic-realism.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/sdxl-epic-realism/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/logo/data/sdxl-epic-realism.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/sdxl-epic-realism/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/logo/sdxl-epic-realism/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "group_holdout",
+      "exp_name": "split_a",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/group_holdout/data/split_a.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_a/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/group_holdout/data/split_a.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_a/robustness_test_pooled', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_a/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "group_holdout",
+      "exp_name": "split_b",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/group_holdout/data/split_b.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_b/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/group_holdout/data/split_b.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_b/robustness_test_pooled', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_b/best.pth']' returned non-zero exit status 1."
+    },
+    {
+      "mode": "group_holdout",
+      "exp_name": "split_c",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/group_holdout/data/split_c.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_c/best.pth",
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/group_holdout/data/split_c.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_vit_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_c/robustness_test_pooled', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_vit_openfake/group_holdout/split_c/best.pth']' returned non-zero exit status 1."
+    }
+  ]
+}

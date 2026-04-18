@@ -1,12 +1,12 @@
 experiment:
-  name: spatial_vit_openfake
-  task: spatial_classification
-  output_dir: /home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/hidream-i1-full
+  name: fusion_vit_spai_openfake
+  task: fusion_classification
+  output_dir: /home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full
   seed: 42
   device: cuda
   use_amp: true
 train:
-  epochs: 10
+  epochs: 15
   grad_accum_steps: 1
   clip_grad_norm: null
 optimizer:
@@ -21,7 +21,7 @@ augmentation:
   color_jitter_prob: 0.0
 scheduler:
   name: cosine
-  t_max: 10
+  t_max: 15
   eta_min: 1.0e-06
 loss:
   name: cross_entropy
@@ -51,10 +51,11 @@ wandb:
   enabled: true
   project: Deepfake-Fusion
   entity: null
-  name: spatial_vit_openfake_holdout_hidream_i1_full
+  name: fusion_vit_spai_openfake_holdout_hidream_i1_full
   tags:
   - openfake
+  - fusion
   - vit
-  - spatial
+  - spai
   mode: online
   log_model: false

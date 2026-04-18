@@ -1,0 +1,22 @@
+{
+  "dataset_name": "openfake_logo_hidream-i1-full",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full/best.pth",
+  "metrics": {
+    "accuracy": 0.940875,
+    "precision": 0.9701412956544921,
+    "recall": 0.90975,
+    "f1": 0.938975616049542,
+    "auc": 0.9873741328125001,
+    "loss": 0.3066270308047533
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.9936637138429751,
+  "best_epoch_in_checkpoint": 12,
+  "saved_epoch": 12
+}

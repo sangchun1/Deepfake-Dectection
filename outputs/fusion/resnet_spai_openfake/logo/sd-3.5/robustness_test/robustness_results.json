@@ -1,0 +1,1096 @@
+{
+  "dataset_name": "openfake",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/sd-3.5/best.pth",
+  "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/sd-3.5/robustness_test",
+  "robustness_config": "/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml",
+  "selected_corruptions": [
+    "jpeg",
+    "resize_down_up",
+    "gaussian_blur",
+    "gaussian_noise"
+  ],
+  "selected_severities": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.9932425684400826,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7,
+  "records": [
+    {
+      "condition": "clean",
+      "corruption": "clean",
+      "severity": 0,
+      "split": "test",
+      "params": {
+        "name": "clean"
+      },
+      "metrics": {
+        "accuracy": 0.7613125,
+        "precision": 0.959349593495935,
+        "recall": 0.54575,
+        "f1": 0.6957214564576528,
+        "auc": 0.9450610624999999,
+        "loss": 1.058331306643784
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7815,
+            185
+          ],
+          [
+            3634,
+            4366
+          ]
+        ],
+        "tn": 7815,
+        "fp": 185,
+        "fn": 3634,
+        "tp": 4366
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "jpeg_s1",
+      "corruption": "jpeg",
+      "severity": 1,
+      "split": "test",
+      "params": {
+        "name": "jpeg",
+        "quality": 95
+      },
+      "metrics": {
+        "accuracy": 0.7361875,
+        "precision": 0.9589506922516395,
+        "recall": 0.4935,
+        "f1": 0.6516464471403813,
+        "auc": 0.93558821875,
+        "loss": 1.2090041795149447
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7831,
+            169
+          ],
+          [
+            4052,
+            3948
+          ]
+        ],
+        "tn": 7831,
+        "fp": 169,
+        "fn": 4052,
+        "tp": 3948
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "jpeg_s2",
+      "corruption": "jpeg",
+      "severity": 2,
+      "split": "test",
+      "params": {
+        "name": "jpeg",
+        "quality": 75
+      },
+      "metrics": {
+        "accuracy": 0.654875,
+        "precision": 0.9535139092240117,
+        "recall": 0.325625,
+        "f1": 0.4854640327991055,
+        "auc": 0.9055289375000001,
+        "loss": 1.9188727191537618
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7873,
+            127
+          ],
+          [
+            5395,
+            2605
+          ]
+        ],
+        "tn": 7873,
+        "fp": 127,
+        "fn": 5395,
+        "tp": 2605
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "jpeg_s3",
+      "corruption": "jpeg",
+      "severity": 3,
+      "split": "test",
+      "params": {
+        "name": "jpeg",
+        "quality": 50
+      },
+      "metrics": {
+        "accuracy": 0.5889375,
+        "precision": 0.9684002633311389,
+        "recall": 0.183875,
+        "f1": 0.3090660783695766,
+        "auc": 0.8933272421874999,
+        "loss": 2.8055670894235374
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7952,
+            48
+          ],
+          [
+            6529,
+            1471
+          ]
+        ],
+        "tn": 7952,
+        "fp": 48,
+        "fn": 6529,
+        "tp": 1471
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "jpeg_s4",
+      "corruption": "jpeg",
+      "severity": 4,
+      "split": "test",
+      "params": {
+        "name": "jpeg",
+        "quality": 30
+      },
+      "metrics": {
+        "accuracy": 0.534625,
+        "precision": 0.9496753246753247,
+        "recall": 0.073125,
+        "f1": 0.13579387186629527,
+        "auc": 0.8246798359374999,
+        "loss": 3.9175109430179
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7969,
+            31
+          ],
+          [
+            7415,
+            585
+          ]
+        ],
+        "tn": 7969,
+        "fp": 31,
+        "fn": 7415,
+        "tp": 585
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "jpeg_s5",
+      "corruption": "jpeg",
+      "severity": 5,
+      "split": "test",
+      "params": {
+        "name": "jpeg",
+        "quality": 15
+      },
+      "metrics": {
+        "accuracy": 0.5120625,
+        "precision": 0.9327354260089686,
+        "recall": 0.026,
+        "f1": 0.0505898090721148,
+        "auc": 0.7177747578125,
+        "loss": 4.868892274647951
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7985,
+            15
+          ],
+          [
+            7792,
+            208
+          ]
+        ],
+        "tn": 7985,
+        "fp": 15,
+        "fn": 7792,
+        "tp": 208
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "resize_down_up_s1",
+      "corruption": "resize_down_up",
+      "severity": 1,
+      "split": "test",
+      "params": {
+        "name": "resize_down_up",
+        "scale": 0.9,
+        "interpolation": "bilinear"
+      },
+      "metrics": {
+        "accuracy": 0.7695,
+        "precision": 0.9567796610169491,
+        "recall": 0.5645,
+        "f1": 0.710062893081761,
+        "auc": 0.9385418828125001,
+        "loss": 0.9996862043365836
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7796,
+            204
+          ],
+          [
+            3484,
+            4516
+          ]
+        ],
+        "tn": 7796,
+        "fp": 204,
+        "fn": 3484,
+        "tp": 4516
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "resize_down_up_s2",
+      "corruption": "resize_down_up",
+      "severity": 2,
+      "split": "test",
+      "params": {
+        "name": "resize_down_up",
+        "scale": 0.75,
+        "interpolation": "bilinear"
+      },
+      "metrics": {
+        "accuracy": 0.7736875,
+        "precision": 0.9534065023814454,
+        "recall": 0.5755,
+        "f1": 0.7177488502611271,
+        "auc": 0.9347486875,
+        "loss": 0.9681742229610681
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7775,
+            225
+          ],
+          [
+            3396,
+            4604
+          ]
+        ],
+        "tn": 7775,
+        "fp": 225,
+        "fn": 3396,
+        "tp": 4604
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "resize_down_up_s3",
+      "corruption": "resize_down_up",
+      "severity": 3,
+      "split": "test",
+      "params": {
+        "name": "resize_down_up",
+        "scale": 0.5,
+        "interpolation": "bilinear"
+      },
+      "metrics": {
+        "accuracy": 0.7905625,
+        "precision": 0.9303832623588224,
+        "recall": 0.628125,
+        "f1": 0.7499440340273114,
+        "auc": 0.9211243828124999,
+        "loss": 0.8499095739871263
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7624,
+            376
+          ],
+          [
+            2975,
+            5025
+          ]
+        ],
+        "tn": 7624,
+        "fp": 376,
+        "fn": 2975,
+        "tp": 5025
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "resize_down_up_s4",
+      "corruption": "resize_down_up",
+      "severity": 4,
+      "split": "test",
+      "params": {
+        "name": "resize_down_up",
+        "scale": 0.35,
+        "interpolation": "bilinear"
+      },
+      "metrics": {
+        "accuracy": 0.8039375,
+        "precision": 0.9073546657731614,
+        "recall": 0.677,
+        "f1": 0.7754313121912807,
+        "auc": 0.9172079375,
+        "loss": 0.7586071041449904
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7447,
+            553
+          ],
+          [
+            2584,
+            5416
+          ]
+        ],
+        "tn": 7447,
+        "fp": 553,
+        "fn": 2584,
+        "tp": 5416
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "resize_down_up_s5",
+      "corruption": "resize_down_up",
+      "severity": 5,
+      "split": "test",
+      "params": {
+        "name": "resize_down_up",
+        "scale": 0.25,
+        "interpolation": "bilinear"
+      },
+      "metrics": {
+        "accuracy": 0.8139375,
+        "precision": 0.8689584251505803,
+        "recall": 0.739375,
+        "f1": 0.7989464442493416,
+        "auc": 0.9039577578125001,
+        "loss": 0.6840414758324623
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7108,
+            892
+          ],
+          [
+            2085,
+            5915
+          ]
+        ],
+        "tn": 7108,
+        "fp": 892,
+        "fn": 2085,
+        "tp": 5915
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_blur_s1",
+      "corruption": "gaussian_blur",
+      "severity": 1,
+      "split": "test",
+      "params": {
+        "name": "gaussian_blur",
+        "sigma": 0.5
+      },
+      "metrics": {
+        "accuracy": 0.7646875,
+        "precision": 0.9610276507729153,
+        "recall": 0.55175,
+        "f1": 0.7010243786230446,
+        "auc": 0.94541840625,
+        "loss": 1.04146300021559
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7821,
+            179
+          ],
+          [
+            3586,
+            4414
+          ]
+        ],
+        "tn": 7821,
+        "fp": 179,
+        "fn": 3586,
+        "tp": 4414
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_blur_s2",
+      "corruption": "gaussian_blur",
+      "severity": 2,
+      "split": "test",
+      "params": {
+        "name": "gaussian_blur",
+        "sigma": 1.0
+      },
+      "metrics": {
+        "accuracy": 0.7754375,
+        "precision": 0.9413178449829762,
+        "recall": 0.5875,
+        "f1": 0.7234664819518202,
+        "auc": 0.9225168359375,
+        "loss": 0.947801176212728
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7707,
+            293
+          ],
+          [
+            3300,
+            4700
+          ]
+        ],
+        "tn": 7707,
+        "fp": 293,
+        "fn": 3300,
+        "tp": 4700
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_blur_s3",
+      "corruption": "gaussian_blur",
+      "severity": 3,
+      "split": "test",
+      "params": {
+        "name": "gaussian_blur",
+        "sigma": 1.5
+      },
+      "metrics": {
+        "accuracy": 0.765625,
+        "precision": 0.8513558201058201,
+        "recall": 0.643625,
+        "f1": 0.7330580865603644,
+        "auc": 0.8751331875,
+        "loss": 0.9088555034995079
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7101,
+            899
+          ],
+          [
+            2851,
+            5149
+          ]
+        ],
+        "tn": 7101,
+        "fp": 899,
+        "fn": 2851,
+        "tp": 5149
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_blur_s4",
+      "corruption": "gaussian_blur",
+      "severity": 4,
+      "split": "test",
+      "params": {
+        "name": "gaussian_blur",
+        "sigma": 2.0
+      },
+      "metrics": {
+        "accuracy": 0.750875,
+        "precision": 0.773061224489796,
+        "recall": 0.71025,
+        "f1": 0.7403257328990228,
+        "auc": 0.8397238593749999,
+        "loss": 0.9303932943344116
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            6332,
+            1668
+          ],
+          [
+            2318,
+            5682
+          ]
+        ],
+        "tn": 6332,
+        "fp": 1668,
+        "fn": 2318,
+        "tp": 5682
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_blur_s5",
+      "corruption": "gaussian_blur",
+      "severity": 5,
+      "split": "test",
+      "params": {
+        "name": "gaussian_blur",
+        "sigma": 3.0
+      },
+      "metrics": {
+        "accuracy": 0.69975,
+        "precision": 0.6674350377200335,
+        "recall": 0.79625,
+        "f1": 0.7261741906064751,
+        "auc": 0.7930413984375,
+        "loss": 1.1374773592948915
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            4826,
+            3174
+          ],
+          [
+            1630,
+            6370
+          ]
+        ],
+        "tn": 4826,
+        "fp": 3174,
+        "fn": 1630,
+        "tp": 6370
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_noise_s1",
+      "corruption": "gaussian_noise",
+      "severity": 1,
+      "split": "test",
+      "params": {
+        "name": "gaussian_noise",
+        "std": 0.008
+      },
+      "metrics": {
+        "accuracy": 0.74175,
+        "precision": 0.910964725881853,
+        "recall": 0.535875,
+        "f1": 0.6747993074138202,
+        "auc": 0.8882323671875001,
+        "loss": 1.1225520759820937
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7581,
+            419
+          ],
+          [
+            3713,
+            4287
+          ]
+        ],
+        "tn": 7581,
+        "fp": 419,
+        "fn": 3713,
+        "tp": 4287
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_noise_s2",
+      "corruption": "gaussian_noise",
+      "severity": 2,
+      "split": "test",
+      "params": {
+        "name": "gaussian_noise",
+        "std": 0.016
+      },
+      "metrics": {
+        "accuracy": 0.699875,
+        "precision": 0.9104209445585215,
+        "recall": 0.443375,
+        "f1": 0.5963349024882313,
+        "auc": 0.880854609375,
+        "loss": 1.3903095601722597
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7651,
+            349
+          ],
+          [
+            4453,
+            3547
+          ]
+        ],
+        "tn": 7651,
+        "fp": 349,
+        "fn": 4453,
+        "tp": 3547
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_noise_s3",
+      "corruption": "gaussian_noise",
+      "severity": 3,
+      "split": "test",
+      "params": {
+        "name": "gaussian_noise",
+        "std": 0.032
+      },
+      "metrics": {
+        "accuracy": 0.5999375,
+        "precision": 0.9245884227296867,
+        "recall": 0.217625,
+        "f1": 0.3523221693817667,
+        "auc": 0.8571949062499999,
+        "loss": 2.445883139885962
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7858,
+            142
+          ],
+          [
+            6259,
+            1741
+          ]
+        ],
+        "tn": 7858,
+        "fp": 142,
+        "fn": 6259,
+        "tp": 1741
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_noise_s4",
+      "corruption": "gaussian_noise",
+      "severity": 4,
+      "split": "test",
+      "params": {
+        "name": "gaussian_noise",
+        "std": 0.048
+      },
+      "metrics": {
+        "accuracy": 0.542875,
+        "precision": 0.9162621359223301,
+        "recall": 0.094375,
+        "f1": 0.17112420670897552,
+        "auc": 0.8161515546875,
+        "loss": 3.4682949953824282
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7931,
+            69
+          ],
+          [
+            7245,
+            755
+          ]
+        ],
+        "tn": 7931,
+        "fp": 69,
+        "fn": 7245,
+        "tp": 755
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    },
+    {
+      "condition": "gaussian_noise_s5",
+      "corruption": "gaussian_noise",
+      "severity": 5,
+      "split": "test",
+      "params": {
+        "name": "gaussian_noise",
+        "std": 0.08
+      },
+      "metrics": {
+        "accuracy": 0.51175,
+        "precision": 0.9272727272727272,
+        "recall": 0.0255,
+        "f1": 0.049635036496350364,
+        "auc": 0.7414339218750001,
+        "loss": 4.583322059825063
+      },
+      "details": {
+        "confusion_matrix": [
+          [
+            7984,
+            16
+          ],
+          [
+            7796,
+            204
+          ]
+        ],
+        "tn": 7984,
+        "fp": 16,
+        "fn": 7796,
+        "tp": 204
+      },
+      "dataset_size": 16000,
+      "class_counts": {
+        "0": 8000,
+        "1": 8000
+      },
+      "predictions": null
+    }
+  ],
+  "summary": {
+    "primary_metric": "auc",
+    "clean_primary_metric": 0.9450610624999999,
+    "mpc": 0.872609034375,
+    "rpc": 0.923336140912059,
+    "avg_drop": 0.07245202812499985,
+    "num_conditions": 21,
+    "num_corrupted_conditions": 20,
+    "worst_case": {
+      "condition": "jpeg_s5",
+      "corruption": "jpeg",
+      "severity": 5,
+      "auc": 0.7177747578125,
+      "metrics": {
+        "accuracy": 0.5120625,
+        "precision": 0.9327354260089686,
+        "recall": 0.026,
+        "f1": 0.0505898090721148,
+        "auc": 0.7177747578125,
+        "loss": 4.868892274647951
+      },
+      "params": {
+        "name": "jpeg",
+        "quality": 15
+      }
+    },
+    "per_corruption": {
+      "jpeg": {
+        "mean_primary_metric": 0.8553797984375,
+        "worst_primary_metric": 0.7177747578125,
+        "best_primary_metric": 0.93558821875,
+        "num_severities": 5,
+        "records": [
+          {
+            "severity": 1,
+            "condition": "jpeg_s1",
+            "auc": 0.93558821875,
+            "accuracy": 0.7361875,
+            "f1": 0.6516464471403813,
+            "loss": 1.2090041795149447
+          },
+          {
+            "severity": 2,
+            "condition": "jpeg_s2",
+            "auc": 0.9055289375000001,
+            "accuracy": 0.654875,
+            "f1": 0.4854640327991055,
+            "loss": 1.9188727191537618
+          },
+          {
+            "severity": 3,
+            "condition": "jpeg_s3",
+            "auc": 0.8933272421874999,
+            "accuracy": 0.5889375,
+            "f1": 0.3090660783695766,
+            "loss": 2.8055670894235374
+          },
+          {
+            "severity": 4,
+            "condition": "jpeg_s4",
+            "auc": 0.8246798359374999,
+            "accuracy": 0.534625,
+            "f1": 0.13579387186629527,
+            "loss": 3.9175109430179
+          },
+          {
+            "severity": 5,
+            "condition": "jpeg_s5",
+            "auc": 0.7177747578125,
+            "accuracy": 0.5120625,
+            "f1": 0.0505898090721148,
+            "loss": 4.868892274647951
+          }
+        ]
+      },
+      "resize_down_up": {
+        "mean_primary_metric": 0.9231161296874999,
+        "worst_primary_metric": 0.9039577578125001,
+        "best_primary_metric": 0.9385418828125001,
+        "num_severities": 5,
+        "records": [
+          {
+            "severity": 1,
+            "condition": "resize_down_up_s1",
+            "auc": 0.9385418828125001,
+            "accuracy": 0.7695,
+            "f1": 0.710062893081761,
+            "loss": 0.9996862043365836
+          },
+          {
+            "severity": 2,
+            "condition": "resize_down_up_s2",
+            "auc": 0.9347486875,
+            "accuracy": 0.7736875,
+            "f1": 0.7177488502611271,
+            "loss": 0.9681742229610681
+          },
+          {
+            "severity": 3,
+            "condition": "resize_down_up_s3",
+            "auc": 0.9211243828124999,
+            "accuracy": 0.7905625,
+            "f1": 0.7499440340273114,
+            "loss": 0.8499095739871263
+          },
+          {
+            "severity": 4,
+            "condition": "resize_down_up_s4",
+            "auc": 0.9172079375,
+            "accuracy": 0.8039375,
+            "f1": 0.7754313121912807,
+            "loss": 0.7586071041449904
+          },
+          {
+            "severity": 5,
+            "condition": "resize_down_up_s5",
+            "auc": 0.9039577578125001,
+            "accuracy": 0.8139375,
+            "f1": 0.7989464442493416,
+            "loss": 0.6840414758324623
+          }
+        ]
+      },
+      "gaussian_blur": {
+        "mean_primary_metric": 0.8751667375000001,
+        "worst_primary_metric": 0.7930413984375,
+        "best_primary_metric": 0.94541840625,
+        "num_severities": 5,
+        "records": [
+          {
+            "severity": 1,
+            "condition": "gaussian_blur_s1",
+            "auc": 0.94541840625,
+            "accuracy": 0.7646875,
+            "f1": 0.7010243786230446,
+            "loss": 1.04146300021559
+          },
+          {
+            "severity": 2,
+            "condition": "gaussian_blur_s2",
+            "auc": 0.9225168359375,
+            "accuracy": 0.7754375,
+            "f1": 0.7234664819518202,
+            "loss": 0.947801176212728
+          },
+          {
+            "severity": 3,
+            "condition": "gaussian_blur_s3",
+            "auc": 0.8751331875,
+            "accuracy": 0.765625,
+            "f1": 0.7330580865603644,
+            "loss": 0.9088555034995079
+          },
+          {
+            "severity": 4,
+            "condition": "gaussian_blur_s4",
+            "auc": 0.8397238593749999,
+            "accuracy": 0.750875,
+            "f1": 0.7403257328990228,
+            "loss": 0.9303932943344116
+          },
+          {
+            "severity": 5,
+            "condition": "gaussian_blur_s5",
+            "auc": 0.7930413984375,
+            "accuracy": 0.69975,
+            "f1": 0.7261741906064751,
+            "loss": 1.1374773592948915
+          }
+        ]
+      },
+      "gaussian_noise": {
+        "mean_primary_metric": 0.8367734718750001,
+        "worst_primary_metric": 0.7414339218750001,
+        "best_primary_metric": 0.8882323671875001,
+        "num_severities": 5,
+        "records": [
+          {
+            "severity": 1,
+            "condition": "gaussian_noise_s1",
+            "auc": 0.8882323671875001,
+            "accuracy": 0.74175,
+            "f1": 0.6747993074138202,
+            "loss": 1.1225520759820937
+          },
+          {
+            "severity": 2,
+            "condition": "gaussian_noise_s2",
+            "auc": 0.880854609375,
+            "accuracy": 0.699875,
+            "f1": 0.5963349024882313,
+            "loss": 1.3903095601722597
+          },
+          {
+            "severity": 3,
+            "condition": "gaussian_noise_s3",
+            "auc": 0.8571949062499999,
+            "accuracy": 0.5999375,
+            "f1": 0.3523221693817667,
+            "loss": 2.445883139885962
+          },
+          {
+            "severity": 4,
+            "condition": "gaussian_noise_s4",
+            "auc": 0.8161515546875,
+            "accuracy": 0.542875,
+            "f1": 0.17112420670897552,
+            "loss": 3.4682949953824282
+          },
+          {
+            "severity": 5,
+            "condition": "gaussian_noise_s5",
+            "auc": 0.7414339218750001,
+            "accuracy": 0.51175,
+            "f1": 0.049635036496350364,
+            "loss": 4.583322059825063
+          }
+        ]
+      }
+    }
+  }
+}

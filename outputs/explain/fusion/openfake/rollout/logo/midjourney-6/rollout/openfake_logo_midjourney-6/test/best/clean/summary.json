@@ -1,0 +1,319 @@
+{
+  "dataset_name": "openfake_logo_midjourney-6",
+  "dataset_class": "OpenFakeDataset",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6/best.pth",
+  "split": "test",
+  "method": "rollout",
+  "target_type": "pred",
+  "corruption": "clean",
+  "severity": 0,
+  "condition": "clean",
+  "corruption_params": {
+    "name": "clean"
+  },
+  "robustness_config": null,
+  "target_layer": null,
+  "rollout": {
+    "head_fusion": "mean",
+    "discard_ratio": 0.0,
+    "start_layer": 0
+  },
+  "frequency": null,
+  "resolved_save_dir": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean",
+  "saved_counts": {
+    "correct_real": 4,
+    "correct_fake": 4,
+    "wrong_real": 4,
+    "wrong_fake": 4
+  },
+  "records": [
+    {
+      "index": 0,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999980926513672,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__053207.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_real/00000_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 1,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999964237213135,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__090390.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_real/00001_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 2,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999998807907104,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__081405.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_real/00002_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 3,
+      "group": "correct_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 0,
+      "pred_prob": 0.9999794960021973,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__026172.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_real/00003_true-real_pred-real_prob-1.0000.png"
+    },
+    {
+      "index": 4,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9998038411140442,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__088302.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_real/00004_true-real_pred-fake_prob-0.9998.png"
+    },
+    {
+      "index": 8,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.7368004322052002,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__028637.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_real/00008_true-real_pred-fake_prob-0.7368.png"
+    },
+    {
+      "index": 35,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.6334338188171387,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__094689.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_real/00035_true-real_pred-fake_prob-0.6334.png"
+    },
+    {
+      "index": 38,
+      "group": "wrong_real",
+      "method": "rollout",
+      "true_label": 0,
+      "pred_label": 1,
+      "pred_prob": 0.9619641304016113,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/real/real__077873.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_real/00038_true-real_pred-fake_prob-0.9620.png"
+    },
+    {
+      "index": 8000,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9999876022338867,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__04304.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_fake/08000_true-fake_pred-fake_prob-1.0000.png"
+    },
+    {
+      "index": 8001,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.9985471367835999,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__01159.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_fake/08001_true-fake_pred-real_prob-0.9985.png"
+    },
+    {
+      "index": 8002,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.5702772736549377,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__00591.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_fake/08002_true-fake_pred-real_prob-0.5703.png"
+    },
+    {
+      "index": 8003,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9754509329795837,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__03303.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_fake/08003_true-fake_pred-fake_prob-0.9755.png"
+    },
+    {
+      "index": 8004,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9998553991317749,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__03887.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_fake/08004_true-fake_pred-fake_prob-0.9999.png"
+    },
+    {
+      "index": 8005,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.9994367957115173,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__00974.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_fake/08005_true-fake_pred-real_prob-0.9994.png"
+    },
+    {
+      "index": 8006,
+      "group": "wrong_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 0,
+      "pred_prob": 0.748568058013916,
+      "target_type": "pred",
+      "target_class": 0,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__04218.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/wrong_fake/08006_true-fake_pred-real_prob-0.7486.png"
+    },
+    {
+      "index": 8007,
+      "group": "correct_fake",
+      "method": "rollout",
+      "true_label": 1,
+      "pred_label": 1,
+      "pred_prob": 0.9988075494766235,
+      "target_type": "pred",
+      "target_class": 1,
+      "source_filepath": "/home/user/DATA/deepfake/data/raw/openfake/fake/midjourney-6/midjourney-6__00242.jpg",
+      "corruption": "clean",
+      "severity": 0,
+      "condition": "clean",
+      "corruption_params": {
+        "name": "clean"
+      },
+      "saved_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/rollout/openfake_logo_midjourney-6/test/best/clean/correct_fake/08007_true-fake_pred-fake_prob-0.9988.png"
+    }
+  ]
+}
