@@ -7,19 +7,19 @@
   "generator_name": "ideogram-3.0",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
   "metrics": {
-    "accuracy": 0.896211079154683,
-    "precision": 0.9627574120052578,
-    "recall": 0.8243091159184694,
-    "f1": 0.8881703045001348,
-    "auc": 0.9760593682053054,
-    "loss": 0.5789648827849678
+    "accuracy": 0.8832687257721645,
+    "precision": 0.958695001496558,
+    "recall": 0.8010503938977116,
+    "f1": 0.8728114994209415,
+    "auc": 0.9734891909337828,
+    "loss": 0.7157315201829102
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9932800564236112,
+  "best_score_in_checkpoint": 0.9932492187499999,
   "best_epoch_in_checkpoint": 14,
   "saved_epoch": 14
 }

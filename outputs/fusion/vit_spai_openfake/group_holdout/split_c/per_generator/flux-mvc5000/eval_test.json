@@ -7,19 +7,19 @@
   "generator_name": "flux-mvc5000",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
   "metrics": {
-    "accuracy": 0.770851569338502,
-    "precision": 0.9469665703673132,
-    "recall": 0.5738401900712767,
-    "f1": 0.7146305380362844,
-    "auc": 0.9262241941453316,
-    "loss": 1.664569190819442
+    "accuracy": 0.7591596848818307,
+    "precision": 0.9425581891949605,
+    "recall": 0.5519569838689509,
+    "f1": 0.6962145110410095,
+    "auc": 0.9241416637904212,
+    "loss": 1.904419149341204
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9932800564236112,
+  "best_score_in_checkpoint": 0.9932492187499999,
   "best_epoch_in_checkpoint": 14,
   "saved_epoch": 14
 }

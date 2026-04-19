@@ -7,19 +7,19 @@
   "generator_name": "sdxl-epic-realism",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
   "metrics": {
-    "accuracy": 0.8032387145179443,
-    "precision": 0.9532710280373832,
-    "recall": 0.6377391521820682,
-    "f1": 0.7642166779051472,
-    "auc": 0.9524233163652449,
-    "loss": 1.184412915363481
+    "accuracy": 0.8239964986870076,
+    "precision": 0.9552002810962755,
+    "recall": 0.6798799549831187,
+    "f1": 0.7943604353860764,
+    "auc": 0.9573910492788429,
+    "loss": 1.1911776544034995
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9932800564236112,
+  "best_score_in_checkpoint": 0.9932492187499999,
   "best_epoch_in_checkpoint": 14,
   "saved_epoch": 14
 }

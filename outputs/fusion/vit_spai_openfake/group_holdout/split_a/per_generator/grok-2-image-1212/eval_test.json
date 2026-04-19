@@ -7,19 +7,19 @@
   "generator_name": "grok-2-image-1212",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/best.pth",
   "metrics": {
-    "accuracy": 0.7565962235838439,
-    "precision": 0.95,
-    "recall": 0.5417031386770039,
-    "f1": 0.6899737198375409,
-    "auc": 0.9312412218355798,
-    "loss": 1.6882460410108682
+    "accuracy": 0.7547830436413655,
+    "precision": 0.9532814238042269,
+    "recall": 0.5358259347255221,
+    "f1": 0.6860390650016011,
+    "auc": 0.9282298621768081,
+    "loss": 2.0659729721278746
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9927390190972223,
+  "best_score_in_checkpoint": 0.9928875434027777,
   "best_epoch_in_checkpoint": 15,
   "saved_epoch": 15
 }
