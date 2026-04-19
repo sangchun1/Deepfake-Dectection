@@ -127,6 +127,34 @@ class ViTClassifier(nn.Module):
         for param in self.backbone.parameters():
             param.requires_grad = True
 
+    def extract_token_sequence(self, x: torch.Tensor) -> torch.Tensor:
+        """cross_attention_gate fusion용 token sequence 추출.
+
+        반환 shape: [B, N, C]
+        """
+        tokens = self.backbone.forward_features(x)
+
+        if isinstance(tokens, (tuple, list)):
+            tokens = tokens[0]
+
+        if not isinstance(tokens, torch.Tensor):
+            raise TypeError(
+                f"Expected torch.Tensor from ViT token extractor, got: {type(tokens)}"
+            )
+
+        # 일부 backbone fallback
+        if tokens.ndim == 4:
+            # [B, C, H, W] -> [B, HW, C]
+            tokens = tokens.flatten(2).transpose(1, 2)
+
+        if tokens.ndim != 3:
+            raise ValueError(
+                "ViT token sequence must have shape [B, N, C], "
+                f"got: {tuple(tokens.shape)}"
+            )
+
+        return tokens.contiguous()
+
     def extract_features(self, x: torch.Tensor) -> torch.Tensor:
         """
         classifier head 직전 feature 추출.
