@@ -292,6 +292,29 @@ class FusionClassifier(nn.Module):
             use_layernorm=projection_use_layernorm,
         )
 
+        # ------------------------------------------------------------------
+        # Branch dropout (projection 후, fusion 직전 적용)
+        # - branch_dropout_prob: 전체 샘플 중 "한 branch를 drop할 확률"
+        # - branch_dropout_mode:
+        #     * "exclusive_zero": spatial / spectral 중 하나만 zero-out
+        # ------------------------------------------------------------------
+        self.branch_dropout_prob = float(
+            _cfg_get(fusion_cfg, "branch_dropout_prob", default=0.0)
+        )
+        self.branch_dropout_mode = str(
+            _cfg_get(fusion_cfg, "branch_dropout_mode", default="exclusive_zero")
+        ).strip().lower()
+
+        if self.branch_dropout_prob < 0.0 or self.branch_dropout_prob >= 1.0:
+            raise ValueError(
+                f"branch_dropout_prob must be in [0, 1), got: {self.branch_dropout_prob}"
+            )
+        if self.branch_dropout_mode not in {"exclusive_zero"}:
+            raise ValueError(
+                "Unsupported branch_dropout_mode: "
+                f"{self.branch_dropout_mode}. Choose from ['exclusive_zero']."
+            )
+
         self.fusion_block = build_fusion_block(
             block_cfg=fusion_cfg,
             feature_dim=self.projection_dim,
@@ -314,6 +337,43 @@ class FusionClassifier(nn.Module):
             dropout=head_dropout,
             activation=head_activation,
         )
+
+        # ------------------------------------------------------------------
+        # Auxiliary branch heads
+        # - projected_spatial / projected_spectral 에서 바로 auxiliary logits 계산
+        # - 실제 loss 합산은 trainer 쪽에서 처리
+        # ------------------------------------------------------------------
+        self.use_auxiliary_heads = bool(
+            _cfg_get(head_cfg, "auxiliary", "enabled", default=False)
+        )
+        aux_hidden_dim = _cfg_get(
+            head_cfg, "auxiliary", "hidden_dim", default=head_hidden_dim
+        )
+        aux_dropout = float(
+            _cfg_get(head_cfg, "auxiliary", "dropout", default=head_dropout)
+        )
+        aux_activation = str(
+            _cfg_get(head_cfg, "auxiliary", "activation", default=head_activation)
+        )
+
+        if self.use_auxiliary_heads:
+            self.spatial_aux_head = _build_classifier_head(
+                in_dim=self.projection_dim,
+                num_classes=num_classes,
+                hidden_dim=aux_hidden_dim,
+                dropout=aux_dropout,
+                activation=aux_activation,
+            )
+            self.spectral_aux_head = _build_classifier_head(
+                in_dim=self.projection_dim,
+                num_classes=num_classes,
+                hidden_dim=aux_hidden_dim,
+                dropout=aux_dropout,
+                activation=aux_activation,
+            )
+        else:
+            self.spatial_aux_head = None
+            self.spectral_aux_head = None
 
     def freeze_spatial_backbone(self) -> None:
         if hasattr(self.spatial_branch, "freeze_backbone"):
@@ -416,6 +476,51 @@ class FusionClassifier(nn.Module):
                 f"got: {tuple(tokens.shape)}"
             )
         return tokens
+    
+    def _apply_branch_dropout(
+        self,
+        projected_spatial: torch.Tensor,
+        projected_spectral: torch.Tensor,
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        """
+        projection 이후 feature에 branch dropout 적용.
+
+        반환:
+            dropped_spatial, dropped_spectral, spatial_drop_mask, spectral_drop_mask
+
+        mask shape:
+            [B, 1]  (1이면 해당 branch가 zero-out 되었음을 의미)
+        """
+        batch_size = projected_spatial.size(0)
+        device = projected_spatial.device
+
+        spa_mask = torch.zeros(batch_size, 1, device=device, dtype=projected_spatial.dtype)
+        spec_mask = torch.zeros(batch_size, 1, device=device, dtype=projected_spectral.dtype)
+
+        if (
+            (not self.training)
+            or self.branch_dropout_prob <= 0.0
+            or batch_size == 0
+        ):
+            return projected_spatial, projected_spectral, spa_mask, spec_mask
+
+        if self.branch_dropout_mode == "exclusive_zero":
+            # 전체 p 확률로 "한 branch만" drop
+            #   [0, p/2)        -> drop spatial
+            #   [p/2, p)        -> drop spectral
+            #   [p, 1)          -> no drop
+            rand = torch.rand(batch_size, device=device)
+            spa_mask = (rand < (self.branch_dropout_prob * 0.5)).to(projected_spatial.dtype).unsqueeze(1)
+            spec_mask = (
+                (rand >= (self.branch_dropout_prob * 0.5))
+                & (rand < self.branch_dropout_prob)
+            ).to(projected_spectral.dtype).unsqueeze(1)
+
+            projected_spatial = projected_spatial * (1.0 - spa_mask)
+            projected_spectral = projected_spectral * (1.0 - spec_mask)
+            return projected_spatial, projected_spectral, spa_mask, spec_mask
+
+        raise RuntimeError(f"Unhandled branch_dropout_mode: {self.branch_dropout_mode}")
 
     def extract_features(
         self,
@@ -444,6 +549,12 @@ class FusionClassifier(nn.Module):
 
         projected_spatial = self.proj_spa(spatial_feature)
         projected_spectral = self.proj_spec(spectral_feature)
+        (
+            projected_spatial,
+            projected_spectral,
+            spatial_drop_mask,
+            spectral_drop_mask,
+        ) = self._apply_branch_dropout(projected_spatial, projected_spectral)
 
         spatial_tokens = None
         spectral_tokens = None
@@ -476,6 +587,8 @@ class FusionClassifier(nn.Module):
             "projected_spatial": projected_spatial,
             "projected_spectral": projected_spectral,
             "fused_feature": fused_feature,
+            "spatial_drop_mask": spatial_drop_mask,
+            "spectral_drop_mask": spectral_drop_mask,
             "gate": fusion_out["gate"],
             "gate_logits": fusion_out["gate_logits"],
             "interaction": fusion_out["interaction"],
@@ -517,10 +630,49 @@ class FusionClassifier(nn.Module):
 
         return output
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        fused_feature = self.extract_features(x, return_dict=False)
+    def forward(
+        self,
+        x: torch.Tensor,
+        return_dict: bool = False,
+    ) -> torch.Tensor | dict[str, torch.Tensor]:
+        """
+        기본:
+            - auxiliary head 비활성화 + return_dict=False:
+                fused logits tensor 반환
+
+        auxiliary head 사용 시:
+            - trainer가 auxiliary loss를 계산할 수 있도록 dict 반환
+        """
+        need_dict = return_dict or self.use_auxiliary_heads
+        features = self.extract_features(x, return_dict=need_dict)
+
+        if not need_dict:
+            fused_feature = features
+            logits = self.classifier(fused_feature)
+            return logits
+
+        assert isinstance(features, Mapping)
+        fused_feature = features["fused_feature"]
         logits = self.classifier(fused_feature)
-        return logits
+
+        output: dict[str, torch.Tensor] = {
+            "logits": logits,
+            "fused_logits": logits,
+            "fused_feature": fused_feature,
+        }
+
+        if self.use_auxiliary_heads:
+            projected_spatial = features["projected_spatial"]
+            projected_spectral = features["projected_spectral"]
+            output["spatial_aux_logits"] = self.spatial_aux_head(projected_spatial)
+            output["spectral_aux_logits"] = self.spectral_aux_head(projected_spectral)
+
+        if return_dict:
+            for key, value in features.items():
+                if key not in output:
+                    output[key] = value
+
+        return output
 
 
 def build_fusion(model_cfg: Any) -> FusionClassifier:

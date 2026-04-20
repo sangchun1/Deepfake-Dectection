@@ -210,6 +210,19 @@ class Trainer:
 
         self.wandb_run = wandb_run
 
+        # ------------------------------------------------------------------
+        # Auxiliary branch loss 설정
+        # ------------------------------------------------------------------
+        self.aux_enabled = bool(
+            _cfg_get(train_cfg, "loss", "auxiliary", "enabled", default=False)
+        )
+        self.aux_spatial_weight = float(
+            _cfg_get(train_cfg, "loss", "auxiliary", "spatial_weight", default=0.0)
+        )
+        self.aux_spectral_weight = float(
+            _cfg_get(train_cfg, "loss", "auxiliary", "spectral_weight", default=0.0)
+        )
+
     def _autocast_context(self):
         return torch.amp.autocast("cuda",enabled=self.use_amp)
 
@@ -221,7 +234,51 @@ class Trainer:
             else:
                 moved[key] = value
         return moved
-    
+
+    def _compute_loss(
+        self,
+        model_output: Any,
+        labels: torch.Tensor,
+        logits_override: Optional[torch.Tensor] = None,
+    ) -> tuple[torch.Tensor, Dict[str, torch.Tensor]]:
+        """
+        fused loss + auxiliary branch loss 계산.
+
+        반환:
+            total_loss, loss_dict
+        """
+        logits = logits_override if logits_override is not None else self._extract_logits(model_output)
+        fused_loss = self.criterion(logits, labels)
+
+        loss_dict: Dict[str, torch.Tensor] = {
+            "loss_total": fused_loss,
+            "loss_fused": fused_loss.detach(),
+        }
+
+        if not self.aux_enabled or not isinstance(model_output, Mapping):
+            return fused_loss, loss_dict
+
+        total_loss = fused_loss
+
+        spatial_aux_logits = model_output.get("spatial_aux_logits", None)
+        if torch.is_tensor(spatial_aux_logits):
+            spatial_aux_loss = self.criterion(spatial_aux_logits, labels)
+            total_loss = total_loss + self.aux_spatial_weight * spatial_aux_loss
+            loss_dict["loss_spatial_aux"] = spatial_aux_loss.detach()
+        else:
+            spatial_aux_loss = None
+
+        spectral_aux_logits = model_output.get("spectral_aux_logits", None)
+        if torch.is_tensor(spectral_aux_logits):
+            spectral_aux_loss = self.criterion(spectral_aux_logits, labels)
+            total_loss = total_loss + self.aux_spectral_weight * spectral_aux_loss
+            loss_dict["loss_spectral_aux"] = spectral_aux_loss.detach()
+        else:
+            spectral_aux_loss = None
+
+        loss_dict["loss_total"] = total_loss
+        return total_loss, loss_dict
+
     def _extract_logits(self, model_output: Any) -> torch.Tensor:
         """
         모델 출력에서 실제 분류 logits를 꺼낸다.
@@ -328,6 +385,10 @@ class Trainer:
         meter = ClassificationMeter()
 
         self.optimizer.zero_grad(set_to_none=True)
+        aux_loss_total = 0.0
+        spatial_aux_loss_total = 0.0
+        spectral_aux_loss_total = 0.0
+        num_steps = 0
 
         iterator = loader
         if self.use_tqdm and tqdm is not None:
@@ -341,8 +402,8 @@ class Trainer:
             with self._autocast_context():
                 model_output = self.model(images)
                 logits = self._extract_logits(model_output)
-                loss = self.criterion(logits, labels)
-                loss_to_backward = loss / self.grad_accum_steps
+                loss, loss_dict = self._compute_loss(model_output, labels)
+            loss_to_backward = loss / self.grad_accum_steps
 
             if self.use_amp:
                 self.scaler.scale(loss_to_backward).backward()
@@ -370,6 +431,12 @@ class Trainer:
                 loss=loss.detach(),
                 threshold=self.threshold,
             )
+            num_steps += 1
+            aux_loss_total += float(loss_dict["loss_total"].detach().item())
+            if "loss_spatial_aux" in loss_dict:
+                spatial_aux_loss_total += float(loss_dict["loss_spatial_aux"].item())
+            if "loss_spectral_aux" in loss_dict:
+                spectral_aux_loss_total += float(loss_dict["loss_spectral_aux"].item())
 
             if self.use_tqdm and tqdm is not None:
                 iterator.set_postfix(loss=f"{meter.loss_meter.avg:.4f}", lr=f"{self._get_current_lr():.2e}")
@@ -381,12 +448,21 @@ class Trainer:
 
         metrics = meter.compute()
         metrics["lr"] = self._get_current_lr()
+        if num_steps > 0:
+            metrics["loss_total"] = aux_loss_total / num_steps
+            if self.aux_enabled:
+                metrics["loss_spatial_aux"] = spatial_aux_loss_total / num_steps
+                metrics["loss_spectral_aux"] = spectral_aux_loss_total / num_steps
         return metrics
 
     @torch.no_grad()
     def evaluate(self, loader, split: str = "val", temperature: Optional[float] = None, threshold: Optional[float] = None,) -> Dict[str, float]:
         self.model.eval()
         meter = ClassificationMeter()
+        aux_loss_total = 0.0
+        spatial_aux_loss_total = 0.0
+        spectral_aux_loss_total = 0.0
+        num_steps = 0
         threshold_value = self.threshold if threshold is None else float(threshold)
         temperature_value = None if temperature is None else float(temperature)
 
@@ -404,12 +480,17 @@ class Trainer:
 
             with self._autocast_context():
                 model_output = self.model(images)
-                logits = self._extract_logits(model_output)
+                raw_logits = self._extract_logits(model_output)
+                logits = raw_logits
 
                 if temperature_value is not None and temperature_value != 1.0:
                    logits = logits / temperature_value
-
-                loss = self.criterion(logits, labels)
+                
+                loss, loss_dict = self._compute_loss(
+                    model_output,
+                    labels,
+                    logits_override=logits,
+                )
 
             meter.update(
                 logits=logits.detach(),
@@ -417,6 +498,12 @@ class Trainer:
                 loss=loss.detach(),
                 threshold=threshold_value,
             )
+            num_steps += 1
+            aux_loss_total += float(loss_dict["loss_total"].detach().item())
+            if "loss_spatial_aux" in loss_dict:
+                spatial_aux_loss_total += float(loss_dict["loss_spatial_aux"].item())
+            if "loss_spectral_aux" in loss_dict:
+                spectral_aux_loss_total += float(loss_dict["loss_spectral_aux"].item())
 
             if self.use_tqdm and tqdm is not None:
                 iterator.set_postfix(loss=f"{meter.loss_meter.avg:.4f}")
@@ -425,6 +512,11 @@ class Trainer:
         if temperature_value is not None:
             metrics["temperature"] = temperature_value
         metrics["threshold"] = threshold_value
+        if num_steps > 0:
+            metrics["loss_total"] = aux_loss_total / num_steps
+            if self.aux_enabled:
+                metrics["loss_spatial_aux"] = spatial_aux_loss_total / num_steps
+                metrics["loss_spectral_aux"] = spectral_aux_loss_total / num_steps
         return metrics
 
     def _step_scheduler(self, metrics_for_scheduler: Optional[Dict[str, float]] = None) -> None:
