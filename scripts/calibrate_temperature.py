@@ -3,17 +3,19 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional, Type
+from typing import Any, Dict, Optional, Tuple, Type
 
+import torch
 from torch.utils.data import DataLoader
 
 from deepfake_fusion.datasets.cifake_dataset import CIFAKEDataset
 from deepfake_fusion.datasets.face130k_dataset import FACE130KDataset
 from deepfake_fusion.datasets.openfake_dataset import OpenFakeDataset
 from deepfake_fusion.engine.trainer import Trainer
+from deepfake_fusion.metrics.classification import ClassificationMeter
 from deepfake_fusion.models.build_model import build_model, get_model_summary
 from deepfake_fusion.transforms.image_aug import build_transforms_from_config
-from deepfake_fusion.utils.calibration import load_temperature_value
+from deepfake_fusion.utils.calibration import TemperatureScaler
 from deepfake_fusion.utils.config import (
     load_experiment_config,
     pretty_print_config,
@@ -36,7 +38,9 @@ DATASET_REGISTRY: Dict[str, Type] = {
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Evaluate trained deepfake detector.")
+    parser = argparse.ArgumentParser(
+        description="Fit a post-hoc temperature scaler on a validation split."
+    )
 
     parser.add_argument(
         "--data_config",
@@ -65,9 +69,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--split",
         type=str,
-        default="test",
+        default="val",
         choices=["train", "val", "test"],
-        help="Which split to evaluate.",
+        help="Which split to use for fitting the temperature. Usually val.",
     )
     parser.add_argument(
         "--device",
@@ -88,47 +92,48 @@ def parse_args() -> argparse.Namespace:
         help="Override dataloader num_workers.",
     )
     parser.add_argument(
+        "--threshold",
+        type=float,
+        default=None,
+        help="Threshold used only for reporting before/after metrics.",
+    )
+    parser.add_argument(
+        "--temperature_init",
+        type=float,
+        default=1.0,
+        help="Initial temperature value before optimization.",
+    )
+    parser.add_argument(
+        "--max_iter",
+        type=int,
+        default=50,
+        help="Max LBFGS iterations for temperature fitting.",
+    )
+    parser.add_argument(
+        "--lr",
+        type=float,
+        default=0.01,
+        help="LBFGS learning rate for temperature fitting.",
+    )
+    parser.add_argument(
         "--output_json",
         type=str,
         default=None,
-        help="Optional path to save evaluation result JSON.",
-    )
-    parser.add_argument(
-        "--temperature_json",
-        type=str,
-        default=None,
-        help=(
-            "Optional path to temperature.json produced by "
-            "scripts/calibrate_temperature.py. If provided, logits are "
-            "scaled by 1/T before evaluation."
-        ),
-    )
-    parser.add_argument(
-        "--temperature",
-        type=float,
-        default=None,
-        help=(
-            "Optional scalar temperature override. Mutually exclusive with "
-            "--temperature_json."
-        ),
-    )
-    parser.add_argument(
-        "--threshold_override",
-        type=float,
-        default=None,
-        help=(
-            "Optional threshold override for binary prediction. If omitted, "
-            "cfg.train.evaluation.threshold is used."
-        ),
+        help="Optional path to save fitted temperature JSON.",
     )
     parser.add_argument(
         "--split_csv_override",
         type=str,
         default=None,
         help=(
-            "Optional CSV path to evaluate instead of cfg.data.paths.<split>_csv. "
-            "Useful for per-generator test evaluation."
+            "Optional CSV path to use instead of cfg.data.paths.<split>_csv. "
+            "Useful for per-generator validation calibration."
         ),
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Print additional fitting diagnostics.",
     )
     return parser.parse_args()
 
@@ -241,6 +246,94 @@ def build_single_dataset(dataset_cls, csv_path, root_dir, transform):
     )
 
 
+def _extract_logits_from_model_output(model_output: Any) -> torch.Tensor:
+    if torch.is_tensor(model_output):
+        return model_output
+
+    if isinstance(model_output, dict):
+        for key in ("logits", "fused_logits", "output", "pred"):
+            value = model_output.get(key)
+            if torch.is_tensor(value):
+                return value
+
+    raise TypeError(
+        "Model output must be a tensor or a dict containing one of: "
+        "'logits', 'fused_logits', 'output', 'pred'."
+    )
+
+
+@torch.no_grad()
+def collect_logits_and_targets(
+    trainer: Trainer,
+    loader: DataLoader,
+) -> Tuple[torch.Tensor, torch.Tensor, Dict[str, float]]:
+    trainer.model.eval()
+    meter = ClassificationMeter()
+    logits_list = []
+    targets_list = []
+
+    iterator = loader
+    if trainer.use_tqdm:
+        try:
+            from tqdm.auto import tqdm
+
+            iterator = tqdm(loader, desc="Collect logits", leave=False)
+        except Exception:
+            pass
+
+    for batch in iterator:
+        batch = trainer._move_batch_to_device(batch)
+        images = batch["image"]
+        labels = batch["label"]
+
+        with trainer._autocast_context():
+            model_output = trainer.model(images)
+            logits = _extract_logits_from_model_output(model_output)
+            loss = trainer.criterion(logits, labels)
+
+        logits_cpu = logits.detach().cpu()
+        labels_cpu = labels.detach().cpu()
+        logits_list.append(logits_cpu)
+        targets_list.append(labels_cpu)
+
+        meter.update(
+            logits=logits_cpu,
+            targets=labels_cpu,
+            loss=loss.detach().cpu(),
+            threshold=trainer.threshold,
+        )
+
+        if trainer.use_tqdm and hasattr(iterator, "set_postfix"):
+            iterator.set_postfix(loss=f"{meter.loss_meter.avg:.4f}")
+
+    if not logits_list:
+        raise ValueError("No batches were processed while collecting logits.")
+
+    logits_all = torch.cat(logits_list, dim=0)
+    targets_all = torch.cat(targets_list, dim=0)
+    metrics = meter.compute()
+    return logits_all, targets_all, metrics
+
+
+@torch.no_grad()
+def compute_metrics_with_temperature(
+    logits: torch.Tensor,
+    targets: torch.Tensor,
+    temperature_scaler: TemperatureScaler,
+    threshold: float,
+    loss_value: Optional[float] = None,
+) -> Dict[str, float]:
+    probs = temperature_scaler.predict_proba(logits).detach().cpu()
+    meter = ClassificationMeter()
+    meter.update(
+        probs=probs,
+        targets=targets.detach().cpu(),
+        loss=loss_value,
+        threshold=threshold,
+    )
+    return meter.compute()
+
+
 def main() -> None:
     args = parse_args()
 
@@ -260,6 +353,12 @@ def main() -> None:
     seed = int(cfg.train.experiment.seed)
     seed_everything(seed)
 
+    threshold = (
+        float(args.threshold)
+        if args.threshold is not None
+        else float(getattr(cfg.train.evaluation, "threshold", 0.5))
+    )
+
     print("=" * 80)
     print("Merged Config")
     print("=" * 80)
@@ -272,7 +371,6 @@ def main() -> None:
         split_csv_override=args.split_csv_override,
     )
     split_csv_path = resolve_path(split_csv)
-
     if not split_csv_path.exists():
         if args.split_csv_override is not None:
             raise FileNotFoundError(
@@ -287,7 +385,6 @@ def main() -> None:
         root_dir=cfg.data.paths.root_dir,
         transform=transforms[args.split],
     )
-
     loader = build_loader(
         dataset=dataset,
         batch_size=int(cfg.data.dataloader.batch_size),
@@ -302,14 +399,13 @@ def main() -> None:
     print("=" * 80)
     print(f"dataset name: {getattr(cfg.data, 'name', 'unknown')}")
     print(f"dataset class: {dataset_cls.__name__}")
-    print(f"split: {args.split}")
-    print(f"evaluated csv: {split_csv_path}")
+    print(f"fit split: {args.split}")
+    print(f"csv: {split_csv_path}")
     print(f"size: {len(dataset)}")
     print(f"class counts: {dataset.class_counts}")
 
     model = build_model(cfg.model)
     model_summary = get_model_summary(model)
-
     print("=" * 80)
     print("Model Summary")
     print("=" * 80)
@@ -327,7 +423,6 @@ def main() -> None:
         if args.checkpoint is not None
         else resolve_path(Path(cfg.train.experiment.output_dir) / "best.pth")
     )
-
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Checkpoint not found: {checkpoint_path}")
 
@@ -335,86 +430,78 @@ def main() -> None:
     print("Load Checkpoint")
     print("=" * 80)
     print(f"checkpoint: {checkpoint_path}")
-
     checkpoint = trainer.load_checkpoint(checkpoint_path, strict=True)
 
-    if args.temperature_json is not None and args.temperature is not None:
-        raise ValueError(
-            "Use only one of --temperature_json or --temperature."
-        )
+    print("=" * 80)
+    print(f"Collect Logits: {args.split}")
+    print("=" * 80)
+    logits, targets, metrics_before = collect_logits_and_targets(trainer, loader)
+    print("before calibration:")
+    print(format_metrics(metrics_before))
 
-    temperature = None
-    temperature_json_path = None
-    if args.temperature_json is not None:
-        temperature_json_path = resolve_path(args.temperature_json)
-        if not temperature_json_path.exists():
-            raise FileNotFoundError(
-                f"Temperature JSON not found: {temperature_json_path}"
-            )
-        temperature = load_temperature_value(temperature_json_path)
-    elif args.temperature is not None:
-        temperature = float(args.temperature)
+    scaler = TemperatureScaler(temperature=args.temperature_init).to(trainer.device)
+    fit_summary = scaler.fit(
+        logits=logits.to(trainer.device),
+        targets=targets.to(trainer.device),
+        max_iter=args.max_iter,
+        lr=args.lr,
+        verbose=args.verbose,
+    )
 
-    threshold_value = (
-        float(args.threshold_override)
-        if args.threshold_override is not None
-        else float(cfg.train.evaluation.threshold)
+    nll_after = fit_summary["nll_after"]
+    metrics_after = compute_metrics_with_temperature(
+        logits=logits,
+        targets=targets,
+        temperature_scaler=scaler.cpu(),
+        threshold=threshold,
+        loss_value=nll_after,
     )
 
     print("=" * 80)
-    print(f"Evaluate: {args.split}")
+    print("Calibration Result")
     print("=" * 80)
+    print(f"temperature={fit_summary['temperature']:.6f}")
+    print(f"nll_before={fit_summary['nll_before']:.6f}")
+    print(f"nll_after={fit_summary['nll_after']:.6f}")
+    print("after calibration:")
+    print(format_metrics(metrics_after))
 
-    if temperature is not None:
-        print(f"temperature: {temperature:.6f}")
-    else:
-        print("temperature: none")
-    print(f"threshold: {threshold_value:.4f}")
-
-    metrics = trainer.evaluate(
-        loader,
-        split=args.split,
-        temperature=temperature,
-        threshold=threshold_value,
+    default_output_name = "temperature.json" if args.split == "val" else f"temperature_{args.split}.json"
+    output_json = (
+        resolve_path(args.output_json)
+        if args.output_json is not None
+        else resolve_path(Path(cfg.train.experiment.output_dir) / default_output_name)
     )
-    print(format_metrics(metrics))
 
     result = {
         "dataset_name": getattr(cfg.data, "name", "unknown"),
         "dataset_class": dataset_cls.__name__,
-        "split": args.split,
+        "fit_split": args.split,
         "evaluated_csv": split_csv_path.as_posix(),
         "split_csv_override_used": args.split_csv_override is not None,
         "generator_name": (
             infer_generator_name_from_csv(split_csv_path)
-            if args.split_csv_override is not None and args.split == "test"
+            if args.split_csv_override is not None and args.split in {"val", "test"}
             else None
         ),
         "checkpoint": checkpoint_path.as_posix(),
-        "temperature": temperature,
-        "temperature_json": (
-            temperature_json_path.as_posix()
-            if temperature_json_path is not None
-            else None
-        ),
-        "threshold_used": threshold_value,
-        "metrics": metrics,
+        "threshold_for_reporting": threshold,
+        "temperature_init": float(args.temperature_init),
+        "temperature": fit_summary["temperature"],
+        "nll_before": fit_summary["nll_before"],
+        "nll_after": fit_summary["nll_after"],
+        "metrics_before": metrics_before,
+        "metrics_after": metrics_after,
         "dataset_size": len(dataset),
         "class_counts": dataset.class_counts,
         "best_score_in_checkpoint": checkpoint.get("best_score", None),
         "best_epoch_in_checkpoint": checkpoint.get("best_epoch", None),
         "saved_epoch": checkpoint.get("epoch", None),
     }
-
-    output_json = (
-        resolve_path(args.output_json)
-        if args.output_json is not None
-        else resolve_path(Path(cfg.train.experiment.output_dir) / f"eval_{args.split}.json")
-    )
     save_json(result, output_json)
 
     print("=" * 80)
-    print("Evaluation Finished")
+    print("Temperature Calibration Finished")
     print("=" * 80)
     print(f"Saved result to: {output_json}")
 

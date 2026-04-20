@@ -221,6 +221,27 @@ class Trainer:
             else:
                 moved[key] = value
         return moved
+    
+    def _extract_logits(self, model_output: Any) -> torch.Tensor:
+        """
+        모델 출력에서 실제 분류 logits를 꺼낸다.
+        - 일반 모델: Tensor logits 반환
+        - dict 반환 모델: 아래 키 중 하나를 우선 사용
+          logits / fused_logits / output / pred
+        """
+        if torch.is_tensor(model_output):
+            return model_output
+
+        if isinstance(model_output, Mapping):
+            for key in ("logits", "fused_logits", "output", "pred"):
+                value = model_output.get(key, None)
+                if torch.is_tensor(value):
+                    return value
+
+        raise TypeError(
+            "Model output must be a tensor or a mapping containing one of: "
+            "'logits', 'fused_logits', 'output', 'pred'."
+        )
 
     def _extract_monitor_value(self, metrics: Dict[str, float], name: str) -> float:
         """
@@ -318,7 +339,8 @@ class Trainer:
             labels = batch["label"]
 
             with self._autocast_context():
-                logits = self.model(images)
+                model_output = self.model(images)
+                logits = self._extract_logits(model_output)
                 loss = self.criterion(logits, labels)
                 loss_to_backward = loss / self.grad_accum_steps
 
@@ -362,9 +384,14 @@ class Trainer:
         return metrics
 
     @torch.no_grad()
-    def evaluate(self, loader, split: str = "val") -> Dict[str, float]:
+    def evaluate(self, loader, split: str = "val", temperature: Optional[float] = None, threshold: Optional[float] = None,) -> Dict[str, float]:
         self.model.eval()
         meter = ClassificationMeter()
+        threshold_value = self.threshold if threshold is None else float(threshold)
+        temperature_value = None if temperature is None else float(temperature)
+
+        if temperature_value is not None and temperature_value <= 0:
+            raise ValueError("temperature must be > 0.")
 
         iterator = loader
         if self.use_tqdm and tqdm is not None:
@@ -376,20 +403,28 @@ class Trainer:
             labels = batch["label"]
 
             with self._autocast_context():
-                logits = self.model(images)
+                model_output = self.model(images)
+                logits = self._extract_logits(model_output)
+
+                if temperature_value is not None and temperature_value != 1.0:
+                   logits = logits / temperature_value
+
                 loss = self.criterion(logits, labels)
 
             meter.update(
                 logits=logits.detach(),
                 targets=labels.detach(),
                 loss=loss.detach(),
-                threshold=self.threshold,
+                threshold=threshold_value,
             )
 
             if self.use_tqdm and tqdm is not None:
                 iterator.set_postfix(loss=f"{meter.loss_meter.avg:.4f}")
 
         metrics = meter.compute()
+        if temperature_value is not None:
+            metrics["temperature"] = temperature_value
+        metrics["threshold"] = threshold_value
         return metrics
 
     def _step_scheduler(self, metrics_for_scheduler: Optional[Dict[str, float]] = None) -> None:

@@ -53,6 +53,7 @@ evaluation:
     - f1
     - auc
   threshold: 0.5
+  temperature_json: null
 
 wandb:
   enabled: true
