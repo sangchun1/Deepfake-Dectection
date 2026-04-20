@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_merged_merged",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/merged/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/merged/merged/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 2.852145195007324,
+  "nll_before": 0.17991027235984802,
+  "nll_after": 0.09966128319501877,
+  "metrics_before": {
+    "accuracy": 0.9620793832690905,
+    "precision": 0.9725151805688719,
+    "recall": 0.9510365663089905,
+    "f1": 0.9616559570209628,
+    "auc": 0.993515364599446,
+    "loss": 0.17991894338885772
+  },
+  "metrics_after": {
+    "accuracy": 0.9620793832690905,
+    "precision": 0.9725151805688719,
+    "recall": 0.9510365663089905,
+    "f1": 0.9616559570209628,
+    "auc": 0.9942995069035703,
+    "loss": 0.09966128319501877
+  },
+  "dataset_size": 19198,
+  "class_counts": {
+    "0": 9599,
+    "1": 9599
+  },
+  "best_score_in_checkpoint": 0.993515364599446,
+  "best_epoch_in_checkpoint": 12,
+  "saved_epoch": 12
+}

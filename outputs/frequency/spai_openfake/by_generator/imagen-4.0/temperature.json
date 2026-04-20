@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_by_generator_imagen-4.0",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/imagen-4.0/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/imagen-4.0/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 1.8432915210723877,
+  "nll_before": 0.11931270360946655,
+  "nll_after": 0.09592410922050476,
+  "metrics_before": {
+    "accuracy": 0.9675,
+    "precision": 0.9832041343669251,
+    "recall": 0.95125,
+    "f1": 0.9669631512071156,
+    "auc": 0.99544375,
+    "loss": 0.11931873008608818
+  },
+  "metrics_after": {
+    "accuracy": 0.9675,
+    "precision": 0.9832041343669251,
+    "recall": 0.95125,
+    "f1": 0.9669631512071156,
+    "auc": 0.99545703125,
+    "loss": 0.09592410922050476
+  },
+  "dataset_size": 1600,
+  "class_counts": {
+    "0": 800,
+    "1": 800
+  },
+  "best_score_in_checkpoint": 0.9954500000000001,
+  "best_epoch_in_checkpoint": 5,
+  "saved_epoch": 5
+}

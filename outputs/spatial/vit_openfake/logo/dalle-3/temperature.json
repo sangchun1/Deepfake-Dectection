@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_logo_dalle-3",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/dalle-3/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/dalle-3/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 2.726900815963745,
+  "nll_before": 0.12365051358938217,
+  "nll_after": 0.07200443744659424,
+  "metrics_before": {
+    "accuracy": 0.9716477272727273,
+    "precision": 0.9734230637618342,
+    "recall": 0.9697727272727272,
+    "f1": 0.9715944668981613,
+    "auc": 0.9958771629648762,
+    "loss": 0.12365720315413041
+  },
+  "metrics_after": {
+    "accuracy": 0.9716477272727273,
+    "precision": 0.9734230637618342,
+    "recall": 0.9697727272727272,
+    "f1": 0.9715944668981613,
+    "auc": 0.996862816373967,
+    "loss": 0.07200443744659424
+  },
+  "dataset_size": 17600,
+  "class_counts": {
+    "0": 8800,
+    "1": 8800
+  },
+  "best_score_in_checkpoint": 0.9958771629648762,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

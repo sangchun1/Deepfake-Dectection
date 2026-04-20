@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_by_generator_flux-mvc5000",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux-mvc5000/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/flux-mvc5000/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 1.6799356937408447,
+  "nll_before": 0.10209019482135773,
+  "nll_after": 0.0857764407992363,
+  "metrics_before": {
+    "accuracy": 0.968125,
+    "precision": 0.9746514575411914,
+    "recall": 0.96125,
+    "f1": 0.9679043423536816,
+    "auc": 0.9954640625,
+    "loss": 0.10209380589425564
+  },
+  "metrics_after": {
+    "accuracy": 0.968125,
+    "precision": 0.9746514575411914,
+    "recall": 0.96125,
+    "f1": 0.9679043423536816,
+    "auc": 0.9956984375,
+    "loss": 0.0857764407992363
+  },
+  "dataset_size": 1600,
+  "class_counts": {
+    "0": 800,
+    "1": 800
+  },
+  "best_score_in_checkpoint": 0.995459375,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

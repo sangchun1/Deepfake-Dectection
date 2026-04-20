@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_by_generator_ideogram-3.0",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/ideogram-3.0/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/ideogram-3.0/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 1.4409666061401367,
+  "nll_before": 0.08132766932249069,
+  "nll_after": 0.07451041042804718,
+  "metrics_before": {
+    "accuracy": 0.97625,
+    "precision": 0.9738805970149254,
+    "recall": 0.97875,
+    "f1": 0.9763092269326683,
+    "auc": 0.9958906249999999,
+    "loss": 0.08132853083312512
+  },
+  "metrics_after": {
+    "accuracy": 0.97625,
+    "precision": 0.9738805970149254,
+    "recall": 0.97875,
+    "f1": 0.9763092269326683,
+    "auc": 0.9960257812500001,
+    "loss": 0.07451041042804718
+  },
+  "dataset_size": 1600,
+  "class_counts": {
+    "0": 800,
+    "1": 800
+  },
+  "best_score_in_checkpoint": 0.99588828125,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

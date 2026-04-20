@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_logo_ideogram-3.0",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/ideogram-3.0/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/ideogram-3.0/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 2.716109275817871,
+  "nll_before": 0.12941773235797882,
+  "nll_after": 0.077238067984581,
+  "metrics_before": {
+    "accuracy": 0.9698295454545455,
+    "precision": 0.9747387759788725,
+    "recall": 0.9646590909090909,
+    "f1": 0.9696727397338512,
+    "auc": 0.9948481469524795,
+    "loss": 0.12942446773025124
+  },
+  "metrics_after": {
+    "accuracy": 0.9698295454545455,
+    "precision": 0.9747387759788725,
+    "recall": 0.9646590909090909,
+    "f1": 0.9696727397338512,
+    "auc": 0.9962847688533057,
+    "loss": 0.077238067984581
+  },
+  "dataset_size": 17600,
+  "class_counts": {
+    "0": 8800,
+    "1": 8800
+  },
+  "best_score_in_checkpoint": 0.9948471074380166,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
+}

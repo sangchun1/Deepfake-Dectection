@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_by_generator_hidream-i1-full",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/hidream-i1-full/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/hidream-i1-full/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 1.5032906532287598,
+  "nll_before": 0.12550853192806244,
+  "nll_after": 0.11376051604747772,
+  "metrics_before": {
+    "accuracy": 0.9525,
+    "precision": 0.9513715710723192,
+    "recall": 0.95375,
+    "f1": 0.9525593008739076,
+    "auc": 0.99147734375,
+    "loss": 0.12551114037632943
+  },
+  "metrics_after": {
+    "accuracy": 0.9525,
+    "precision": 0.9513715710723192,
+    "recall": 0.95375,
+    "f1": 0.9525593008739076,
+    "auc": 0.9917304687499999,
+    "loss": 0.11376051604747772
+  },
+  "dataset_size": 1600,
+  "class_counts": {
+    "0": 800,
+    "1": 800
+  },
+  "best_score_in_checkpoint": 0.9914804687500001,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
+}

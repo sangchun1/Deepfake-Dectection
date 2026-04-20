@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_logo_grok-2-image-1212",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/grok-2-image-1212/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/grok-2-image-1212/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 2.7041258811950684,
+  "nll_before": 0.15305274724960327,
+  "nll_after": 0.09069028496742249,
+  "metrics_before": {
+    "accuracy": 0.9653409090909091,
+    "precision": 0.9676793056190041,
+    "recall": 0.9628409090909091,
+    "f1": 0.9652540442014126,
+    "auc": 0.9940467781508264,
+    "loss": 0.15306015616790813
+  },
+  "metrics_after": {
+    "accuracy": 0.9653409090909091,
+    "precision": 0.9676793056190041,
+    "recall": 0.9628409090909091,
+    "f1": 0.9652540442014126,
+    "auc": 0.9949202221074381,
+    "loss": 0.09069028496742249
+  },
+  "dataset_size": 17600,
+  "class_counts": {
+    "0": 8800,
+    "1": 8800
+  },
+  "best_score_in_checkpoint": 0.9940468039772729,
+  "best_epoch_in_checkpoint": 8,
+  "saved_epoch": 8
+}

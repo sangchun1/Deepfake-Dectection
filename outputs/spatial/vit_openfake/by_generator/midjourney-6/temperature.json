@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_by_generator_midjourney-6",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/midjourney-6/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/midjourney-6/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 1.560033917427063,
+  "nll_before": 0.056628160178661346,
+  "nll_after": 0.049448080360889435,
+  "metrics_before": {
+    "accuracy": 0.98125,
+    "precision": 0.9824561403508771,
+    "recall": 0.98,
+    "f1": 0.981226533166458,
+    "auc": 0.9977734375,
+    "loss": 0.05663002260029316
+  },
+  "metrics_after": {
+    "accuracy": 0.98125,
+    "precision": 0.9824561403508771,
+    "recall": 0.98,
+    "f1": 0.981226533166458,
+    "auc": 0.99820234375,
+    "loss": 0.049448080360889435
+  },
+  "dataset_size": 1600,
+  "class_counts": {
+    "0": 800,
+    "1": 800
+  },
+  "best_score_in_checkpoint": 0.9977734375,
+  "best_epoch_in_checkpoint": 3,
+  "saved_epoch": 3
+}
