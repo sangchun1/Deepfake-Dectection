@@ -1,0 +1,30 @@
+{
+  "dataset_name": "openfake_by_generator_flux.1-dev",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/flux.1-dev/test.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux.1-dev/best.pth",
+  "temperature": 2.6329092979431152,
+  "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux.1-dev/temperature.json",
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.965603502188868,
+    "precision": 0.9570288520564764,
+    "recall": 0.9749843652282677,
+    "f1": 0.9659231722428748,
+    "auc": 0.9949841618491233,
+    "loss": 0.09424121860994854,
+    "temperature": 2.6329092979431152,
+    "threshold": 0.5
+  },
+  "dataset_size": 3198,
+  "class_counts": {
+    "0": 1599,
+    "1": 1599
+  },
+  "best_score_in_checkpoint": 0.9946171875,
+  "best_epoch_in_checkpoint": 15,
+  "saved_epoch": 15
+}

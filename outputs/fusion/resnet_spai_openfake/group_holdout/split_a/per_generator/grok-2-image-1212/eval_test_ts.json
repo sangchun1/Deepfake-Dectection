@@ -1,0 +1,30 @@
+{
+  "dataset_name": "openfake_group_holdout_split_a",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/grok-2-image-1212.csv",
+  "split_csv_override_used": true,
+  "generator_name": "grok-2-image-1212",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_a/best.pth",
+  "temperature": 2.911621570587158,
+  "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_a/temperature.json",
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.7565962235838439,
+    "precision": 0.95,
+    "recall": 0.5417031386770039,
+    "f1": 0.6899737198375409,
+    "auc": 0.931725428672616,
+    "loss": 0.6690493969301947,
+    "temperature": 2.911621570587158,
+    "threshold": 0.5
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9927390190972223,
+  "best_epoch_in_checkpoint": 15,
+  "saved_epoch": 15
+}

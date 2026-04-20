@@ -1,0 +1,30 @@
+{
+  "dataset_name": "openfake_group_holdout_split_b",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/midjourney-6.csv",
+  "split_csv_override_used": true,
+  "generator_name": "midjourney-6",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/best.pth",
+  "temperature": 3.115041971206665,
+  "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/temperature.json",
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.6698762035763411,
+    "precision": 0.9158249158249159,
+    "recall": 0.3741403026134801,
+    "f1": 0.53125,
+    "auc": 0.8754644048789774,
+    "loss": 1.1235414745510408,
+    "temperature": 3.115041971206665,
+    "threshold": 0.5
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9932583333333335,
+  "best_epoch_in_checkpoint": 15,
+  "saved_epoch": 15
+}

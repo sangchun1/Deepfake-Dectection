@@ -68,7 +68,7 @@ The project evaluates performance with:
 
 ## Main Results
 
-### Main Results on OpenFake (AUC/F1)
+### Main Results (AUC/F1)
 
 | Model           | Merged            | By-generator      | LOGO holdout      | Group holdout     |
 |-----------------|------------------:|------------------:|------------------:|------------------:|
@@ -78,7 +78,14 @@ The project evaluates performance with:
 | ResNet18 + SPAI |     99.41 / 96.49 |     99.68 / 97.82 |     96.50 / 84.49 |     94.86 / 79.71 |
 | ViT + SPAI      |     99.35 / 96.29 |     99.66 / 97.70 |     96.17 / 82.84 |     94.21 / 78.49 |
 
-### Robustness on OpenFake Corruptions (AUC/F1)
+### Main Results with Temperature Scaling (AUC/F1)
+| Model    | Merged        | By-generator  | LOGO holdout  | Group holdout |
+|----------|--------------:|--------------:|--------------:|--------------:|
+| ResNet18 | 99.14 / 95.50 | 99.49 / 96.95 | 95.93 / 85.43 | 94.53 / 82.69 |
+| ViT      | 99.59 / 96.92 | 99.80 / 98.09 | 96.72 / 84.43 | 94.14 / 77.24 |
+
+
+### Robustness Corruptions (AUC/F1)
 
 | Model           | Clean         | JPEG          | Blur          | Noise         | Resize        | Mean          | Drop ↓       | Worst         |
 |-----------------|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|-------------:|--------------:|

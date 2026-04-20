@@ -1,0 +1,30 @@
+{
+  "dataset_name": "openfake_logo_sdxl-epic-realism",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/sdxl-epic-realism/test.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/sdxl-epic-realism/best.pth",
+  "temperature": 2.482386350631714,
+  "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/sdxl-epic-realism/temperature.json",
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.839,
+    "precision": 0.9749562171628722,
+    "recall": 0.695875,
+    "f1": 0.812107950401167,
+    "auc": 0.9720898671875,
+    "loss": 0.410477041952312,
+    "temperature": 2.482386350631714,
+    "threshold": 0.5
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.994382212035124,
+  "best_epoch_in_checkpoint": 8,
+  "saved_epoch": 8
+}

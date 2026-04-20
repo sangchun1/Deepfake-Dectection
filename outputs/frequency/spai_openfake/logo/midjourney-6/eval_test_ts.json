@@ -1,0 +1,30 @@
+{
+  "dataset_name": "openfake_logo_midjourney-6",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/logo/midjourney-6/test.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/midjourney-6/best.pth",
+  "temperature": 3.058197021484375,
+  "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/midjourney-6/temperature.json",
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.7921875,
+    "precision": 0.9587831207065751,
+    "recall": 0.610625,
+    "f1": 0.746086292478045,
+    "auc": 0.94581584375,
+    "loss": 0.5761656136140227,
+    "temperature": 3.058197021484375,
+    "threshold": 0.5
+  },
+  "dataset_size": 16000,
+  "class_counts": {
+    "0": 8000,
+    "1": 8000
+  },
+  "best_score_in_checkpoint": 0.994552524535124,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
+}
