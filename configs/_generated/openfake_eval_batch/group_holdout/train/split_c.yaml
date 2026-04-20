@@ -1,7 +1,7 @@
 experiment:
-  name: spatial_resnet18_openfake
+  name: spatial_vit_openfake
   task: spatial_classification
-  output_dir: /home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/group_holdout/split_c
+  output_dir: /home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_c
   seed: 42
   device: cuda
   use_amp: true
@@ -52,10 +52,10 @@ wandb:
   enabled: true
   project: Deepfake-Fusion
   entity: null
-  name: spatial_resnet18_openfake
+  name: spatial_vit_openfake
   tags:
   - openfake
-  - resnet18
+  - vit
   - spatial
   mode: online
   log_model: false
