@@ -4,19 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/gpt-image-1/best.pth",
   "metrics": {
-    "accuracy": 0.9651875,
-    "precision": 0.9729317575295463,
-    "recall": 0.957,
-    "f1": 0.9649001197302918,
-    "auc": 0.9936158593750001,
-    "loss": 0.1656235400289297
+    "accuracy": 0.9661875,
+    "precision": 0.9840363400389358,
+    "recall": 0.94775,
+    "f1": 0.9655523718560968,
+    "auc": 0.9957750625,
+    "loss": 0.1866129549946636,
+    "threshold": 0.5,
+    "loss_total": 0.1866129549946636,
+    "loss_spatial_aux": 0.1741866665035486,
+    "loss_spectral_aux": 0.1276118144467473
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9944231727789257,
-  "best_epoch_in_checkpoint": 15,
-  "saved_epoch": 15
+  "best_score_in_checkpoint": 0.9951602079028925,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
 }

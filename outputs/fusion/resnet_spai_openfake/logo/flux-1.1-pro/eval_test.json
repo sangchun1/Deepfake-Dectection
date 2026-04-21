@@ -4,19 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/flux-1.1-pro/best.pth",
   "metrics": {
-    "accuracy": 0.6969375,
-    "precision": 0.9523399368360609,
-    "recall": 0.414625,
-    "f1": 0.5777235913959766,
-    "auc": 0.8883572656250001,
-    "loss": 2.9342125615105035
+    "accuracy": 0.7168125,
+    "precision": 0.9580142593081595,
+    "recall": 0.4535,
+    "f1": 0.6155934504114703,
+    "auc": 0.8928551796875,
+    "loss": 3.9466479881191625,
+    "threshold": 0.5,
+    "loss_total": 3.9466479881191625,
+    "loss_spatial_aux": 2.1575202805474403,
+    "loss_spectral_aux": 2.3928427324965598
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9962421745867769,
+  "best_score_in_checkpoint": 0.9965476949896693,
   "best_epoch_in_checkpoint": 15,
   "saved_epoch": 15
 }

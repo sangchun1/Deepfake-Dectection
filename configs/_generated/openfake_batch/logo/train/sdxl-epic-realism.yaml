@@ -1,7 +1,7 @@
 experiment:
-  name: fusion_vit_spai_openfake
+  name: fusion_resnet_spai_openfake
   task: fusion_classification
-  output_dir: /home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sdxl-epic-realism
+  output_dir: /home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/sdxl-epic-realism
   seed: 42
   device: cuda
   use_amp: true
@@ -26,6 +26,10 @@ scheduler:
 loss:
   name: cross_entropy
   label_smoothing: 0.0
+  auxiliary:
+    enabled: true
+    spatial_weight: 0.2
+    spectral_weight: 0.2
 logging:
   log_interval: 50
   val_interval: 1
@@ -47,15 +51,16 @@ evaluation:
   - f1
   - auc
   threshold: 0.5
+  temperature_json: null
 wandb:
   enabled: true
   project: Deepfake-Fusion
   entity: null
-  name: fusion_vit_spai_openfake_holdout_sdxl_epic_realism
+  name: fusion_resnet_spai_openfake_holdout_sdxl_epic_realism
   tags:
   - openfake
   - fusion
-  - vit
+  - resnet18
   - spai
   mode: online
   log_model: false

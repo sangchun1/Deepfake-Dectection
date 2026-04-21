@@ -6,20 +6,27 @@
   "split_csv_override_used": true,
   "generator_name": "ideogram-3.0",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_a/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9300362635988496,
-    "precision": 0.967382440880674,
-    "recall": 0.8900837814180318,
-    "f1": 0.9271247150765223,
-    "auc": 0.9861161359293654,
-    "loss": 0.34221946607683096
+    "accuracy": 0.9079029636113543,
+    "precision": 0.9816893089190786,
+    "recall": 0.8313117419032137,
+    "f1": 0.9002640666260411,
+    "auc": 0.9868226813640836,
+    "loss": 0.6374788914261065,
+    "threshold": 0.5,
+    "loss_total": 0.6374278747141361,
+    "loss_spatial_aux": 0.4999228501021862,
+    "loss_spectral_aux": 0.33692377326637507
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9927390190972223,
-  "best_epoch_in_checkpoint": 15,
-  "saved_epoch": 15
+  "best_score_in_checkpoint": 0.9947271918402778,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }
