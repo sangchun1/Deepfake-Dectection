@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-04-21T22:10:53",
+  "mode": "group_holdout",
+  "resolved_modes": [
+    "group_holdout"
+  ],
+  "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
+  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml",
+  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_spai_openfake.yaml",
+  "splits_root": "/home/user/SC/Deepfake-Fusion/data/splits/openfake",
+  "generated_config_dir": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch",
+  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake",
+  "root_dir_override": "/home/user/DATA/deepfake",
+  "fit_split": "val",
+  "checkpoint_name": "best.pth",
+  "temperature_json_name": "temperature.json",
+  "selected_names": null,
+  "results": [
+    {
+      "mode": "group_holdout",
+      "experiment_name": "split_a",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/data/split_a.yaml",
+      "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/train/split_a.yaml",
+      "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_a",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_a/best.pth",
+      "temperature_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_a/temperature.json",
+      "fit_split": "val",
+      "status": "success",
+      "error": null
+    },
+    {
+      "mode": "group_holdout",
+      "experiment_name": "split_b",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/data/split_b.yaml",
+      "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/train/split_b.yaml",
+      "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_b",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_b/best.pth",
+      "temperature_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_b/temperature.json",
+      "fit_split": "val",
+      "status": "success",
+      "error": null
+    },
+    {
+      "mode": "group_holdout",
+      "experiment_name": "split_c",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/data/split_c.yaml",
+      "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/train/split_c.yaml",
+      "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_c",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_c/best.pth",
+      "temperature_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_c/temperature.json",
+      "fit_split": "val",
+      "status": "success",
+      "error": null
+    }
+  ]
+}
