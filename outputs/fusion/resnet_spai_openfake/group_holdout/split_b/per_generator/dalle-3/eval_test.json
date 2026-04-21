@@ -6,20 +6,27 @@
   "split_csv_override_used": true,
   "generator_name": "dalle-3",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_b/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.8034262848568213,
-    "precision": 0.9560233038902461,
-    "recall": 0.636113542578467,
-    "f1": 0.7639285177954648,
-    "auc": 0.9420378646744311,
-    "loss": 1.464272009218814
+    "accuracy": 0.7351506815055646,
+    "precision": 0.9436187780136824,
+    "recall": 0.5001875703388771,
+    "f1": 0.6538084341288003,
+    "auc": 0.9184546102374984,
+    "loss": 1.8590468092681438,
+    "threshold": 0.5,
+    "loss_total": 1.8591893354654312,
+    "loss_spatial_aux": 0.7260937449932099,
+    "loss_spectral_aux": 1.5830550355911255
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9947258680555555,
-  "best_epoch_in_checkpoint": 15,
-  "saved_epoch": 15
+  "best_score_in_checkpoint": 0.9941236328125,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
 }

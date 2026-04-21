@@ -1,0 +1,32 @@
+{
+  "dataset_name": "openfake_group_holdout_split_c",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/flux.1-dev.csv",
+  "split_csv_override_used": true,
+  "generator_name": "flux.1-dev",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_c/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.912217081405527,
+    "precision": 0.9501570394647003,
+    "recall": 0.8700762786044767,
+    "f1": 0.908355091383812,
+    "auc": 0.9760651850671336,
+    "loss": 0.5014741271082067,
+    "threshold": 0.5,
+    "loss_total": 0.501573402017355,
+    "loss_spatial_aux": 0.3038170336633921,
+    "loss_spectral_aux": 0.4508997265994549
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9936843315972222,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
+}

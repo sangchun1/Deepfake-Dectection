@@ -4,19 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/dalle-3/best.pth",
   "metrics": {
-    "accuracy": 0.9771732332707942,
-    "precision": 0.9792713567839196,
-    "recall": 0.9749843652282677,
-    "f1": 0.9771231588843623,
-    "auc": 0.9968867346344124,
-    "loss": 0.07710054078796941
+    "accuracy": 0.9793621013133208,
+    "precision": 0.980564263322884,
+    "recall": 0.9781113195747342,
+    "f1": 0.9793362554790231,
+    "auc": 0.9973249775794049,
+    "loss": 0.10124737522876434,
+    "threshold": 0.5,
+    "loss_total": 0.10135664152912796,
+    "loss_spatial_aux": 0.07537106782197953,
+    "loss_spectral_aux": 0.07550183951854705
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.9979,
-  "best_epoch_in_checkpoint": 4,
-  "saved_epoch": 4
+  "best_score_in_checkpoint": 0.99720703125,
+  "best_epoch_in_checkpoint": 2,
+  "saved_epoch": 2
 }

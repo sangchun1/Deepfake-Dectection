@@ -1,0 +1,32 @@
+{
+  "dataset_name": "openfake_group_holdout_split_c",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/ideogram-3.0.csv",
+  "split_csv_override_used": true,
+  "generator_name": "ideogram-3.0",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/group_holdout/split_c/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.9037764161560585,
+    "precision": 0.9550450958286358,
+    "recall": 0.8474427910466424,
+    "f1": 0.8980322003577818,
+    "auc": 0.975165307160249,
+    "loss": 0.5208622919994398,
+    "threshold": 0.5,
+    "loss_total": 0.5207729839682579,
+    "loss_spatial_aux": 0.32355794656276704,
+    "loss_spectral_aux": 0.44606722939014437
+  },
+  "dataset_size": 15994,
+  "class_counts": {
+    "0": 7997,
+    "1": 7997
+  },
+  "best_score_in_checkpoint": 0.9936843315972222,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
+}

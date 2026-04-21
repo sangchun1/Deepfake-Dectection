@@ -1,22 +1,30 @@
 {
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sdxl-epic-realism/best.pth",
-  "best_epoch": 6,
+  "best_epoch": 5,
   "best_monitor": "val_auc",
-  "best_score": 0.99963828125,
+  "best_score": 0.99971875,
   "val_metrics": {
-    "accuracy": 0.98625,
-    "precision": 0.9924050632911392,
-    "recall": 0.98,
-    "f1": 0.9861635220125786,
-    "auc": 0.99963828125,
-    "loss": 0.03369427315890789
+    "accuracy": 0.9925,
+    "precision": 0.9925,
+    "recall": 0.9925,
+    "f1": 0.9925,
+    "auc": 0.99971875,
+    "loss": 0.043352579411584886,
+    "threshold": 0.5,
+    "loss_total": 0.043352579411584886,
+    "loss_spatial_aux": 0.029948735684156416,
+    "loss_spectral_aux": 0.043505532294511796
   },
   "test_metrics": {
-    "accuracy": 0.9887429643527205,
-    "precision": 0.9930599369085173,
-    "recall": 0.9843652282676673,
-    "f1": 0.9886934673366834,
-    "auc": 0.9994725831224252,
-    "loss": 0.03489722182311402
+    "accuracy": 0.9912445278298937,
+    "precision": 0.9906308557151781,
+    "recall": 0.991869918699187,
+    "f1": 0.99125,
+    "auc": 0.9997434293869566,
+    "loss": 0.04299094494382121,
+    "threshold": 0.5,
+    "loss_total": 0.042966508746612814,
+    "loss_spatial_aux": 0.028049589168513193,
+    "loss_spectral_aux": 0.04322516229003668
   }
 }
