@@ -4,19 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6/best.pth",
   "metrics": {
-    "accuracy": 0.7854375,
-    "precision": 0.956426144313412,
-    "recall": 0.598125,
-    "f1": 0.7359840036914558,
-    "auc": 0.9376595234375,
-    "loss": 1.755529917784035
+    "accuracy": 0.7813125,
+    "precision": 0.9391219512195121,
+    "recall": 0.601625,
+    "f1": 0.7334095238095238,
+    "auc": 0.935989671875,
+    "loss": 0.8756306025013327,
+    "threshold": 0.5,
+    "loss_total": 0.8756306025013327,
+    "loss_spatial_aux": 0.6873394272476435,
+    "loss_spectral_aux": 0.4539474909007549
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9933203383264463,
-  "best_epoch_in_checkpoint": 14,
-  "saved_epoch": 14
+  "best_score_in_checkpoint": 0.9928199315599173,
+  "best_epoch_in_checkpoint": 2,
+  "saved_epoch": 2
 }

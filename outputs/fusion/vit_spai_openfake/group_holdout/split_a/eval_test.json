@@ -4,19 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/best.pth",
   "metrics": {
-    "accuracy": 0.8545913050727356,
-    "precision": 0.9638495092693566,
-    "recall": 0.7368179734066942,
-    "f1": 0.8351798918050601,
-    "auc": 0.957945833344431,
-    "loss": 1.163010372937056
+    "accuracy": 0.8688570714017757,
+    "precision": 0.9204618345093009,
+    "recall": 0.8074903088658247,
+    "f1": 0.8602830974188177,
+    "auc": 0.9509561652099329,
+    "loss": 0.6026656156999204,
+    "threshold": 0.5,
+    "loss_total": 0.6026376579801241,
+    "loss_spatial_aux": 0.4614373640368382,
+    "loss_spectral_aux": 0.3601701990514994
   },
   "dataset_size": 95964,
   "class_counts": {
     "0": 47982,
     "1": 47982
   },
-  "best_score_in_checkpoint": 0.9928875434027777,
-  "best_epoch_in_checkpoint": 15,
-  "saved_epoch": 15
+  "best_score_in_checkpoint": 0.9932167317708334,
+  "best_epoch_in_checkpoint": 3,
+  "saved_epoch": 3
 }

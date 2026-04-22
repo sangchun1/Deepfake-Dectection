@@ -83,10 +83,10 @@ The project evaluates performance with:
 | ResNet18 + SPAI |     99.50 / 96.82 |     99.65 / 97.50 |     96.47 / 84.07 |     94.30 / 76.99 |
 | ViT + SPAI      |     99.53 / 96.66 |     99.72 / 98.01 |     ----- / ----- |     ----- / ----- |
 
-### Main Results w/ Branch Dropout & Auxiliary Loss + ts
+### Main Results w/ Branch Dropout & Auxiliary Loss + TS
 | Model           | Merged            | By-generator      | LOGO holdout      | Group holdout     |
 |-----------------|------------------:|------------------:|------------------:|------------------:|
-| ResNet18 + SPAI |     99.51 / 96.49 |     99.70 / 97.60 |     96.97 / 84.91 |     ----- / ----- |
+| ResNet18 + SPAI |     99.51 / 96.49 |     99.70 / 97.60 |     96.97 / 84.91 |     94.32 / 76.99 |
 | ViT + SPAI      |     ----- / ----- |     ----- / ----- |     ----- / ----- |     ----- / ----- |
 
 ### Robustness Corruptions (AUC/F1)

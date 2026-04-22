@@ -6,20 +6,27 @@
   "split_csv_override_used": true,
   "generator_name": "flux-mvc5000",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.7591596848818307,
-    "precision": 0.9425581891949605,
-    "recall": 0.5519569838689509,
-    "f1": 0.6962145110410095,
-    "auc": 0.9241416637904212,
-    "loss": 1.904419149341204
+    "accuracy": 0.7905464549205953,
+    "precision": 0.9154300017879492,
+    "recall": 0.6402400900337627,
+    "f1": 0.753495217071376,
+    "auc": 0.9160037411803592,
+    "loss": 1.1934235766930656,
+    "threshold": 0.5,
+    "loss_total": 1.1934235708117484,
+    "loss_spatial_aux": 0.9674336097240448,
+    "loss_spectral_aux": 0.6841254588961602
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9932492187499999,
-  "best_epoch_in_checkpoint": 14,
-  "saved_epoch": 14
+  "best_score_in_checkpoint": 0.9935139756944444,
+  "best_epoch_in_checkpoint": 5,
+  "saved_epoch": 5
 }
