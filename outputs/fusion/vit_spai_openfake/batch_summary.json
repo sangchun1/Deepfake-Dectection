@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-21T14:48:45",
+  "timestamp": "2026-04-23T09:36:19",
   "mode": "all",
   "resolved_modes": [
     "merged",
@@ -32,15 +32,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/merged/train/merged.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/merged/merged",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/merged/merged/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/merged/merged/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/merged/merged/openfake_merged_merged/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/merged/data/merged.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/merged/train/merged.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/merged/merged', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -50,15 +50,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/dalle-3.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_dalle_3",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/dalle-3",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/dalle-3/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/dalle-3/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/dalle-3/openfake_by_generator_dalle-3/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/dalle-3.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/dalle-3.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/dalle-3', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -68,15 +68,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/flux-1.1-pro.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_flux_1_1_pro",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-1.1-pro",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-1.1-pro/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-1.1-pro/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-1.1-pro/openfake_by_generator_flux-1.1-pro/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/flux-1.1-pro.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/flux-1.1-pro.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-1.1-pro', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -86,15 +86,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/flux-mvc5000.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_flux_mvc5000",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux-mvc5000/openfake_by_generator_flux-mvc5000/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/flux-mvc5000.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/flux-mvc5000.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -104,15 +104,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/flux.1-dev.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_flux_1_dev",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux.1-dev",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux.1-dev/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux.1-dev/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/flux.1-dev/openfake_by_generator_flux.1-dev/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/flux.1-dev.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/flux.1-dev.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux.1-dev', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -122,15 +122,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/gpt-image-1.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_gpt_image_1",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/gpt-image-1",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/gpt-image-1/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/gpt-image-1/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/gpt-image-1/openfake_by_generator_gpt-image-1/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/gpt-image-1.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/gpt-image-1.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/gpt-image-1', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -140,15 +140,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/grok-2-image-1212.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_grok_2_image_1212",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/grok-2-image-1212",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/grok-2-image-1212/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/grok-2-image-1212/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/grok-2-image-1212/openfake_by_generator_grok-2-image-1212/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/grok-2-image-1212.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/grok-2-image-1212.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/grok-2-image-1212', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -158,15 +158,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/hidream-i1-full.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_hidream_i1_full",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/hidream-i1-full",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/hidream-i1-full/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/hidream-i1-full/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/hidream-i1-full/openfake_by_generator_hidream-i1-full/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/hidream-i1-full.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/hidream-i1-full.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/hidream-i1-full', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -176,15 +176,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/ideogram-3.0.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_ideogram_3_0",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/ideogram-3.0",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/ideogram-3.0/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/ideogram-3.0/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/ideogram-3.0/openfake_by_generator_ideogram-3.0/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/ideogram-3.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/ideogram-3.0.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/ideogram-3.0', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -194,15 +194,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/imagen-4.0.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_imagen_4_0",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/imagen-4.0",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/imagen-4.0/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/imagen-4.0/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/imagen-4.0/openfake_by_generator_imagen-4.0/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/imagen-4.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/imagen-4.0.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/imagen-4.0', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -212,15 +212,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/midjourney-6.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_midjourney_6",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/midjourney-6",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/midjourney-6/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/midjourney-6/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/midjourney-6/openfake_by_generator_midjourney-6/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/midjourney-6.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/midjourney-6.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/midjourney-6', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -230,15 +230,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/sd-3.5.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_sd_3_5",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sd-3.5",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sd-3.5/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sd-3.5/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/sd-3.5/openfake_by_generator_sd-3.5/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/sd-3.5.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/sd-3.5.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sd-3.5', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "by_generator",
@@ -248,15 +248,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/sdxl-epic-realism.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_sdxl_epic_realism",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sdxl-epic-realism",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sdxl-epic-realism/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sdxl-epic-realism/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/by_generator/sdxl-epic-realism/openfake_by_generator_sdxl-epic-realism/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/data/sdxl-epic-realism.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/by_generator/train/sdxl-epic-realism.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/sdxl-epic-realism', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -266,15 +266,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/dalle-3.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_dalle_3",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/dalle-3",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/dalle-3/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/dalle-3/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/dalle-3/openfake_logo_dalle-3/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/dalle-3.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/dalle-3.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/dalle-3', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -284,15 +284,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/flux-1.1-pro.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_flux_1_1_pro",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-1.1-pro",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-1.1-pro/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-1.1-pro/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/flux-1.1-pro/openfake_logo_flux-1.1-pro/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/flux-1.1-pro.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/flux-1.1-pro.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-1.1-pro', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -302,15 +302,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/flux-mvc5000.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_flux_mvc5000",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-mvc5000",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-mvc5000/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-mvc5000/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/flux-mvc5000/openfake_logo_flux-mvc5000/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/flux-mvc5000.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/flux-mvc5000.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux-mvc5000', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -320,15 +320,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/flux.1-dev.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_flux_1_dev",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux.1-dev",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux.1-dev/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux.1-dev/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/flux.1-dev/openfake_logo_flux.1-dev/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/flux.1-dev.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/flux.1-dev.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/flux.1-dev', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -338,15 +338,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/gpt-image-1.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_gpt_image_1",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/gpt-image-1",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/gpt-image-1/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/gpt-image-1/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/gpt-image-1/openfake_logo_gpt-image-1/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/gpt-image-1.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/gpt-image-1.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/gpt-image-1', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -356,15 +356,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/grok-2-image-1212.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_grok_2_image_1212",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/grok-2-image-1212",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/grok-2-image-1212/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/grok-2-image-1212/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/grok-2-image-1212/openfake_logo_grok-2-image-1212/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/grok-2-image-1212.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/grok-2-image-1212.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/grok-2-image-1212', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -374,15 +374,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/hidream-i1-full.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_hidream_i1_full",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/hidream-i1-full/openfake_logo_hidream-i1-full/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/hidream-i1-full.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/hidream-i1-full.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -392,15 +392,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/ideogram-3.0.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_ideogram_3_0",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/ideogram-3.0",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/ideogram-3.0/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/ideogram-3.0/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/ideogram-3.0/openfake_logo_ideogram-3.0/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/ideogram-3.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/ideogram-3.0.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/ideogram-3.0', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -410,15 +410,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/imagen-4.0.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_imagen_4_0",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/imagen-4.0",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/imagen-4.0/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/imagen-4.0/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/imagen-4.0/openfake_logo_imagen-4.0/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/imagen-4.0.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/imagen-4.0.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/imagen-4.0', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -428,15 +428,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/midjourney-6.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_midjourney_6",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/midjourney-6/openfake_logo_midjourney-6/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/midjourney-6.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/midjourney-6.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -446,15 +446,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/sd-3.5.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_sd_3_5",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sd-3.5",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sd-3.5/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sd-3.5/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/sd-3.5/openfake_logo_sd-3.5/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/sd-3.5.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/sd-3.5.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sd-3.5', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "logo",
@@ -464,15 +464,15 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/sdxl-epic-realism.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_holdout_sdxl_epic_realism",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sdxl-epic-realism",
-      "train_status": "done",
-      "eval_status": "generated_in_train",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sdxl-epic-realism/best.pth",
       "group_holdout_test_csvs": [],
       "group_holdout_eval_paths": {},
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sdxl-epic-realism/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/logo/sdxl-epic-realism/openfake_logo_sdxl-epic-realism/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/data/sdxl-epic-realism.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/logo/train/sdxl-epic-realism.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sdxl-epic-realism', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "group_holdout",
@@ -482,8 +482,8 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_a.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_group_holdout_split_a",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a",
-      "train_status": "done",
-      "eval_status": "done",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/best.pth",
       "group_holdout_test_csvs": [
@@ -505,7 +505,7 @@
       },
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/group_holdout/split_a/openfake_group_holdout_split_a/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_a.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_a.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "group_holdout",
@@ -515,8 +515,8 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_b.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_group_holdout_split_b",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b",
-      "train_status": "done",
-      "eval_status": "done",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/best.pth",
       "group_holdout_test_csvs": [
@@ -538,7 +538,7 @@
       },
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/group_holdout/split_b/openfake_group_holdout_split_b/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_b.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_b.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b', '--device', 'cuda']' returned non-zero exit status 1."
     },
     {
       "mode": "group_holdout",
@@ -548,8 +548,8 @@
       "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_c.yaml",
       "wandb_run_name": "fusion_vit_spai_openfake_group_holdout_split_c",
       "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c",
-      "train_status": "done",
-      "eval_status": "done",
+      "train_status": "failed",
+      "eval_status": "failed",
       "explain_status": "not_run",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
       "group_holdout_test_csvs": [
@@ -571,7 +571,7 @@
       },
       "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/eval_test.json",
       "explain_summary_path": "/home/user/SC/Deepfake-Fusion/outputs/explain/fusion/openfake/rollout/group_holdout/split_c/openfake_group_holdout_split_c/test/best/clean/summary.json",
-      "error": null
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', 'scripts/train.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/data/split_c.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_batch/group_holdout/train/split_c.yaml', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c', '--device', 'cuda']' returned non-zero exit status 1."
     }
   ]
 }

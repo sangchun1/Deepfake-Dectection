@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-04-23T09:49:24",
+  "mode": "group_holdout",
+  "resolved_modes": [
+    "group_holdout"
+  ],
+  "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
+  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/fusion_vit.yaml",
+  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/fusion_vit_spai_openfake.yaml",
+  "splits_root": "/home/user/SC/Deepfake-Fusion/data/splits/openfake",
+  "generated_config_dir": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch",
+  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake",
+  "root_dir_override": "/home/user/DATA/deepfake",
+  "split": "test",
+  "checkpoint_name": "best.pth",
+  "temperature_json_name": "temperature.json",
+  "eval_suffix": "_ts",
+  "selected_names": null,
+  "results": [
+    {
+      "mode": "group_holdout",
+      "experiment_name": "split_a",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/data/split_a.yaml",
+      "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/train/split_a.yaml",
+      "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/best.pth",
+      "temperature_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/temperature.json",
+      "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/eval_test_ts.json",
+      "eval_suffix": "_ts",
+      "group_holdout_test_csvs": [
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/flux-1.1-pro.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/gpt-image-1.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/grok-2-image-1212.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/hidream-i1-full.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/ideogram-3.0.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_a/tests/sdxl-epic-realism.csv"
+      ],
+      "group_holdout_eval_paths": {
+        "pooled": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/eval_test_pooled_ts.json",
+        "flux-1.1-pro": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/per_generator/flux-1.1-pro/eval_test_ts.json",
+        "gpt-image-1": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/per_generator/gpt-image-1/eval_test_ts.json",
+        "grok-2-image-1212": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/per_generator/grok-2-image-1212/eval_test_ts.json",
+        "hidream-i1-full": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/per_generator/hidream-i1-full/eval_test_ts.json",
+        "ideogram-3.0": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/per_generator/ideogram-3.0/eval_test_ts.json",
+        "sdxl-epic-realism": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_a/per_generator/sdxl-epic-realism/eval_test_ts.json"
+      },
+      "eval_status": "done",
+      "error": null
+    },
+    {
+      "mode": "group_holdout",
+      "experiment_name": "split_b",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/data/split_b.yaml",
+      "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/train/split_b.yaml",
+      "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/best.pth",
+      "temperature_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/temperature.json",
+      "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/eval_test_ts.json",
+      "eval_suffix": "_ts",
+      "group_holdout_test_csvs": [
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/dalle-3.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/flux-mvc5000.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/flux.1-dev.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/grok-2-image-1212.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/midjourney-6.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_b/tests/sd-3.5.csv"
+      ],
+      "group_holdout_eval_paths": {
+        "pooled": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/eval_test_pooled_ts.json",
+        "dalle-3": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/per_generator/dalle-3/eval_test_ts.json",
+        "flux-mvc5000": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/per_generator/flux-mvc5000/eval_test_ts.json",
+        "flux.1-dev": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/per_generator/flux.1-dev/eval_test_ts.json",
+        "grok-2-image-1212": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/per_generator/grok-2-image-1212/eval_test_ts.json",
+        "midjourney-6": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/per_generator/midjourney-6/eval_test_ts.json",
+        "sd-3.5": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_b/per_generator/sd-3.5/eval_test_ts.json"
+      },
+      "eval_status": "done",
+      "error": null
+    },
+    {
+      "mode": "group_holdout",
+      "experiment_name": "split_c",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/data/split_c.yaml",
+      "generated_train_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_eval_batch/group_holdout/train/split_c.yaml",
+      "output_dir": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/best.pth",
+      "temperature_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/temperature.json",
+      "eval_json_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/eval_test_ts.json",
+      "eval_suffix": "_ts",
+      "group_holdout_test_csvs": [
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/dalle-3.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/flux-mvc5000.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/flux.1-dev.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/ideogram-3.0.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/imagen-4.0.csv",
+        "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/tests/sdxl-epic-realism.csv"
+      ],
+      "group_holdout_eval_paths": {
+        "pooled": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/eval_test_pooled_ts.json",
+        "dalle-3": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/per_generator/dalle-3/eval_test_ts.json",
+        "flux-mvc5000": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/per_generator/flux-mvc5000/eval_test_ts.json",
+        "flux.1-dev": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/per_generator/flux.1-dev/eval_test_ts.json",
+        "ideogram-3.0": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/per_generator/ideogram-3.0/eval_test_ts.json",
+        "imagen-4.0": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/per_generator/imagen-4.0/eval_test_ts.json",
+        "sdxl-epic-realism": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/group_holdout/split_c/per_generator/sdxl-epic-realism/eval_test_ts.json"
+      },
+      "eval_status": "done",
+      "error": null
+    }
+  ]
+}
