@@ -7,7 +7,6 @@ from typing import Any, Mapping, Optional, Sequence, Tuple, Union
 import torch
 from PIL import Image
 from torchvision import transforms as T
-from torchvision.transforms import InterpolationMode
 
 
 IMAGENET_MEAN = (0.485, 0.456, 0.406)
@@ -98,7 +97,7 @@ class RandomResizeDownUp:
         scale_min: float = 0.5,
         scale_max: float = 0.9,
         p: float = 0.0,
-        interpolation: InterpolationMode = InterpolationMode.BILINEAR,
+        interpolation: int = Image.Resampling.BILINEAR,
     ) -> None:
         if not (0.0 < scale_min <= 1.0 and 0.0 < scale_max <= 1.0):
             raise ValueError("scale_min/scale_max must be in (0, 1].")
@@ -140,7 +139,7 @@ class AddGaussianNoise:
         self.std = float(std)
         self.p = float(p)
 
-   def __call__(self, x: torch.Tensor) -> torch.Tensor:
+    def __call__(self, x: torch.Tensor) -> torch.Tensor:
         if self.p <= 0.0 or random.random() >= self.p or self.std == 0.0:
             return x
         noise = torch.randn_like(x) * self.std
