@@ -26,6 +26,10 @@ scheduler:
 loss:
   name: cross_entropy
   label_smoothing: 0.0
+  auxiliary:
+    enabled: true
+    spatial_weight: 0.2
+    spectral_weight: 0.2
 logging:
   log_interval: 50
   val_interval: 1

@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/dalle-3/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 3.0012404918670654,
-  "nll_before": 0.17686760425567627,
-  "nll_after": 0.09222772717475891,
+  "temperature": 2.0001614093780518,
+  "nll_before": 0.1320992410182953,
+  "nll_after": 0.09815163165330887,
   "metrics_before": {
-    "accuracy": 0.9642045454545455,
-    "precision": 0.9771081523008642,
-    "recall": 0.9506818181818182,
-    "f1": 0.963713857850478,
-    "auc": 0.9940578124999999,
-    "loss": 0.17687913763252172
+    "accuracy": 0.9597727272727272,
+    "precision": 0.962611479533501,
+    "recall": 0.9567045454545454,
+    "f1": 0.9596489228314146,
+    "auc": 0.9938926136363636,
+    "loss": 0.13210186637938023
   },
   "metrics_after": {
-    "accuracy": 0.9642045454545455,
-    "precision": 0.9771081523008642,
-    "recall": 0.9506818181818182,
-    "f1": 0.963713857850478,
-    "auc": 0.9951789062499999,
-    "loss": 0.09222772717475891
+    "accuracy": 0.9597727272727272,
+    "precision": 0.962611479533501,
+    "recall": 0.9567045454545454,
+    "f1": 0.9596489228314146,
+    "auc": 0.994213190857438,
+    "loss": 0.09815163165330887
   },
   "dataset_size": 17600,
   "class_counts": {
     "0": 8800,
     "1": 8800
   },
-  "best_score_in_checkpoint": 0.9940578124999999,
-  "best_epoch_in_checkpoint": 13,
-  "saved_epoch": 13
+  "best_score_in_checkpoint": 0.9938926136363636,
+  "best_epoch_in_checkpoint": 6,
+  "saved_epoch": 6
 }

@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/hidream-i1-full/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 2.143167734146118,
-  "nll_before": 0.18133054673671722,
-  "nll_after": 0.12738485634326935,
+  "temperature": 2.1910641193389893,
+  "nll_before": 0.05548933520913124,
+  "nll_after": 0.036452993750572205,
   "metrics_before": {
-    "accuracy": 0.949375,
-    "precision": 0.915606936416185,
-    "recall": 0.99,
-    "f1": 0.9513513513513514,
-    "auc": 0.99670234375,
-    "loss": 0.18132814444601536
+    "accuracy": 0.988125,
+    "precision": 0.9887359198998749,
+    "recall": 0.9875,
+    "f1": 0.9881175734834271,
+    "auc": 0.99867578125,
+    "loss": 0.055487348660826684
   },
   "metrics_after": {
-    "accuracy": 0.949375,
-    "precision": 0.915606936416185,
-    "recall": 0.99,
-    "f1": 0.9513513513513514,
-    "auc": 0.99673046875,
-    "loss": 0.12738485634326935
+    "accuracy": 0.988125,
+    "precision": 0.9887359198998749,
+    "recall": 0.9875,
+    "f1": 0.9881175734834271,
+    "auc": 0.999175,
+    "loss": 0.036452993750572205
   },
   "dataset_size": 1600,
   "class_counts": {
     "0": 800,
     "1": 800
   },
-  "best_score_in_checkpoint": 0.99670234375,
-  "best_epoch_in_checkpoint": 4,
-  "saved_epoch": 4
+  "best_score_in_checkpoint": 0.99867578125,
+  "best_epoch_in_checkpoint": 15,
+  "saved_epoch": 15
 }

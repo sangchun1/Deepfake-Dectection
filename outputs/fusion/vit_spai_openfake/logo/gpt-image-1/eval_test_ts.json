@@ -6,25 +6,28 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/gpt-image-1/best.pth",
-  "temperature": 3.1085598468780518,
+  "temperature": 2.6561079025268555,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/gpt-image-1/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9635,
-    "precision": 0.9657121326299924,
-    "recall": 0.961125,
-    "f1": 0.9634131061270518,
-    "auc": 0.9943900703124999,
-    "loss": 0.09692259466648102,
-    "temperature": 3.1085598468780518,
-    "threshold": 0.5
+    "accuracy": 0.96325,
+    "precision": 0.9619795562203939,
+    "recall": 0.964625,
+    "f1": 0.9633004618649357,
+    "auc": 0.9942508984374999,
+    "loss": 0.16061617040634155,
+    "temperature": 2.6561079025268555,
+    "threshold": 0.5,
+    "loss_total": 0.16061617040634155,
+    "loss_spatial_aux": 0.166708230368793,
+    "loss_spectral_aux": 0.15027446009963752
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9931399405991735,
-  "best_epoch_in_checkpoint": 13,
-  "saved_epoch": 13
+  "best_score_in_checkpoint": 0.993025464876033,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }

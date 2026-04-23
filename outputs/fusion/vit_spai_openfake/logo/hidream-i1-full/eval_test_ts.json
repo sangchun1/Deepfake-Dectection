@@ -6,25 +6,28 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full/best.pth",
-  "temperature": 2.8056282997131348,
+  "temperature": 2.8652567863464355,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9219375,
-    "precision": 0.9764290755116444,
-    "recall": 0.86475,
-    "f1": 0.9172025190586676,
-    "auc": 0.98703771875,
-    "loss": 0.19926438492536544,
-    "temperature": 2.8056282997131348,
-    "threshold": 0.5
+    "accuracy": 0.945,
+    "precision": 0.9696569920844327,
+    "recall": 0.91875,
+    "f1": 0.9435173299101413,
+    "auc": 0.9899222968750001,
+    "loss": 0.2542198563925922,
+    "temperature": 2.8652567863464355,
+    "threshold": 0.5,
+    "loss_total": 0.2542198563925922,
+    "loss_spatial_aux": 0.29080284909158943,
+    "loss_spectral_aux": 0.24383389945328235
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9931989927685951,
-  "best_epoch_in_checkpoint": 11,
-  "saved_epoch": 11
+  "best_score_in_checkpoint": 0.994021455320248,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }
