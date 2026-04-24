@@ -6,20 +6,25 @@
   "split_csv_override_used": true,
   "generator_name": "midjourney-6",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/group_holdout/split_b/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.7767287732899838,
-    "precision": 0.9267258002313922,
-    "recall": 0.6009753657621608,
-    "f1": 0.7291208374421604,
-    "auc": 0.9240760520908733,
-    "loss": 0.9804760430609567
+    "accuracy": 0.7872952357133925,
+    "precision": 0.8938796502657295,
+    "recall": 0.6519944979367263,
+    "f1": 0.7540130151843818,
+    "auc": 0.9033026702882784,
+    "loss": 0.8646707428206768,
+    "threshold": 0.5,
+    "loss_total": 0.8646262410879135
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9900644748263887,
+  "best_score_in_checkpoint": 0.9814443142361112,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

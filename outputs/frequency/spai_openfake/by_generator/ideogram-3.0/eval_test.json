@@ -2,21 +2,23 @@
   "dataset_name": "openfake_by_generator_ideogram-3.0",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/ideogram-3.0/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/ideogram-3.0/best.pth",
   "metrics": {
-    "accuracy": 0.982801751094434,
-    "precision": 0.9789081885856079,
-    "recall": 0.9868667917448405,
-    "f1": 0.9828713796325133,
-    "auc": 0.9976836288784305,
-    "loss": 0.07270574112602739
+    "accuracy": 0.9790494058786742,
+    "precision": 0.9751861042183623,
+    "recall": 0.9831144465290806,
+    "f1": 0.9791342260977889,
+    "auc": 0.9972698305421502,
+    "loss": 0.07040789594822532,
+    "threshold": 0.5,
+    "loss_total": 0.07036726201884448
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.9987281250000001,
-  "best_epoch_in_checkpoint": 10,
-  "saved_epoch": 10
+  "best_score_in_checkpoint": 0.99759296875,
+  "best_epoch_in_checkpoint": 5,
+  "saved_epoch": 5
 }

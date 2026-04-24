@@ -2,21 +2,23 @@
   "dataset_name": "openfake_by_generator_hidream-i1-full",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/hidream-i1-full/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/hidream-i1-full/best.pth",
   "metrics": {
-    "accuracy": 0.9812382739212008,
-    "precision": 0.978247358607831,
-    "recall": 0.9843652282676673,
-    "f1": 0.9812967581047382,
-    "auc": 0.9976124461778606,
-    "loss": 0.08035884406638935
+    "accuracy": 0.9749843652282677,
+    "precision": 0.9639584605986561,
+    "recall": 0.9868667917448405,
+    "f1": 0.9752781211372065,
+    "auc": 0.9964729362981319,
+    "loss": 0.09248448025669351,
+    "threshold": 0.5,
+    "loss_total": 0.09243060090579093
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.9986695312499999,
-  "best_epoch_in_checkpoint": 8,
-  "saved_epoch": 8
+  "best_score_in_checkpoint": 0.9982890624999999,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }

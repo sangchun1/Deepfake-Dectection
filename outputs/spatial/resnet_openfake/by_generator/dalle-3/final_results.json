@@ -1,22 +1,26 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/spatial/resnet18_openfake/by_generator/dalle-3/best.pth",
-  "best_epoch": 6,
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/dalle-3/best.pth",
+  "best_epoch": 7,
   "best_monitor": "val_auc",
-  "best_score": 0.99689609375,
+  "best_score": 0.9956234374999999,
   "val_metrics": {
-    "accuracy": 0.978125,
-    "precision": 0.9885057471264368,
-    "recall": 0.9675,
-    "f1": 0.9778900821225521,
-    "auc": 0.99689609375,
-    "loss": 0.07434498287737369
+    "accuracy": 0.97625,
+    "precision": 0.9738805970149254,
+    "recall": 0.97875,
+    "f1": 0.9763092269326683,
+    "auc": 0.9956234374999999,
+    "loss": 0.088689197152853,
+    "threshold": 0.5,
+    "loss_total": 0.088689197152853
   },
   "test_metrics": {
-    "accuracy": 0.9787367104440275,
-    "precision": 0.983575489576753,
-    "recall": 0.9737335834896811,
-    "f1": 0.978629792583281,
-    "auc": 0.9971155361719587,
-    "loss": 0.07084871462783342
+    "accuracy": 0.9784240150093808,
+    "precision": 0.9733910891089109,
+    "recall": 0.983739837398374,
+    "f1": 0.9785381026438569,
+    "auc": 0.9970869848689828,
+    "loss": 0.07246264288804172,
+    "threshold": 0.5,
+    "loss_total": 0.072458815574646
   }
 }

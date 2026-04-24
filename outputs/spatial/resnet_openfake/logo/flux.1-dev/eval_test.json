@@ -2,21 +2,23 @@
   "dataset_name": "openfake_logo_flux.1-dev",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/spatial/resnet18_openfake/logo/flux.1-dev/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/flux.1-dev/best.pth",
   "metrics": {
-    "accuracy": 0.9475,
-    "precision": 0.950314465408805,
-    "recall": 0.944375,
-    "f1": 0.9473354231974922,
-    "auc": 0.9881683359374999,
-    "loss": 0.21439540798962117
+    "accuracy": 0.9290625,
+    "precision": 0.9280458910088539,
+    "recall": 0.93025,
+    "f1": 0.9291466383669392,
+    "auc": 0.9805232734375,
+    "loss": 0.25731009227782486,
+    "threshold": 0.5,
+    "loss_total": 0.25731009227782486
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9900403667355373,
+  "best_score_in_checkpoint": 0.9839294615185951,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

@@ -10,23 +10,23 @@
   "temperature_json": null,
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.741840690258847,
-    "precision": 0.9470642625982432,
-    "recall": 0.5123171189195949,
-    "f1": 0.6649354864886797,
-    "auc": 0.9190144050048529,
-    "loss": 1.8982819593800921,
+    "accuracy": 0.773289983743904,
+    "precision": 0.935445307830245,
+    "recall": 0.587095160685257,
+    "f1": 0.7214197910264291,
+    "auc": 0.9232284086650038,
+    "loss": 2.158471359079057,
     "threshold": 0.5,
-    "loss_total": 1.8987051594257354,
-    "loss_spatial_aux": 0.8494355874061584,
-    "loss_spectral_aux": 1.7309756011962891
+    "loss_total": 2.159043421506882,
+    "loss_spatial_aux": 1.1345000990629197,
+    "loss_spectral_aux": 1.4230670778751373
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9941236328125,
-  "best_epoch_in_checkpoint": 7,
-  "saved_epoch": 7
+  "best_score_in_checkpoint": 0.9918111979166667,
+  "best_epoch_in_checkpoint": 14,
+  "saved_epoch": 14
 }

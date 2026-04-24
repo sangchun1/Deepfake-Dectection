@@ -1,30 +1,30 @@
 {
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/midjourney-6/best.pth",
-  "best_epoch": 9,
+  "best_epoch": 7,
   "best_monitor": "val_auc",
-  "best_score": 0.9949153473657024,
+  "best_score": 0.9919778667355372,
   "val_metrics": {
-    "accuracy": 0.9663636363636363,
-    "precision": 0.9716157205240175,
-    "recall": 0.9607954545454546,
-    "f1": 0.9661752942520855,
-    "auc": 0.9949153473657024,
-    "loss": 0.19783428773622622,
+    "accuracy": 0.9535227272727272,
+    "precision": 0.9688674812030075,
+    "recall": 0.9371590909090909,
+    "f1": 0.9527495378927912,
+    "auc": 0.9919778667355372,
+    "loss": 0.21505525010553272,
     "threshold": 0.5,
-    "loss_total": 0.19783428773622622,
-    "loss_spatial_aux": 0.19184091800315814,
-    "loss_spectral_aux": 0.13289016908542675
+    "loss_total": 0.21505525010553272,
+    "loss_spatial_aux": 0.23376712261275812,
+    "loss_spectral_aux": 0.15014296317642387
   },
   "test_metrics": {
-    "accuracy": 0.7931875,
-    "precision": 0.9551717446147875,
-    "recall": 0.61525,
-    "f1": 0.7484224131376872,
-    "auc": 0.9487916875000001,
-    "loss": 1.461394682906568,
+    "accuracy": 0.79575,
+    "precision": 0.9520443255636225,
+    "recall": 0.622875,
+    "f1": 0.753060299229258,
+    "auc": 0.9438395859375,
+    "loss": 1.013836827404797,
     "threshold": 0.5,
-    "loss_total": 1.461394682906568,
-    "loss_spatial_aux": 0.6367770489156246,
-    "loss_spectral_aux": 1.024415657237172
+    "loss_total": 1.013836827404797,
+    "loss_spatial_aux": 0.6495682613104582,
+    "loss_spectral_aux": 0.6785460079610348
   }
 }

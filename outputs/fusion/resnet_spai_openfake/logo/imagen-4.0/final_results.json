@@ -1,30 +1,30 @@
 {
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/imagen-4.0/best.pth",
-  "best_epoch": 9,
+  "best_epoch": 11,
   "best_monitor": "val_auc",
-  "best_score": 0.9946241670971074,
+  "best_score": 0.9913432980371901,
   "val_metrics": {
-    "accuracy": 0.9638636363636364,
-    "precision": 0.97223507635354,
-    "recall": 0.955,
-    "f1": 0.9635404723687228,
-    "auc": 0.9946241670971074,
-    "loss": 0.20636199216951023,
+    "accuracy": 0.9575,
+    "precision": 0.9647887323943662,
+    "recall": 0.949659090909091,
+    "f1": 0.95716412782041,
+    "auc": 0.9913432980371901,
+    "loss": 0.28205930337309837,
     "threshold": 0.5,
-    "loss_total": 0.20636199216951023,
-    "loss_spatial_aux": 0.17670495444400744,
-    "loss_spectral_aux": 0.15745434747500853
+    "loss_total": 0.28205930337309837,
+    "loss_spatial_aux": 0.25196342634883795,
+    "loss_spectral_aux": 0.1881410165266557
   },
   "test_metrics": {
-    "accuracy": 0.9346629986244842,
-    "precision": 0.9743449781659389,
-    "recall": 0.8928348130548955,
-    "f1": 0.931810766721044,
-    "auc": 0.9887865680654379,
-    "loss": 0.3914301638657173,
+    "accuracy": 0.9312867325246967,
+    "precision": 0.9653264975715057,
+    "recall": 0.8947105164436664,
+    "f1": 0.9286780452982023,
+    "auc": 0.9853476768806434,
+    "loss": 0.45599551311810194,
     "threshold": 0.5,
-    "loss_total": 0.3915405281074345,
-    "loss_spatial_aux": 0.2732955424562097,
-    "loss_spectral_aux": 0.24952708211541175
+    "loss_total": 0.4561279991734773,
+    "loss_spatial_aux": 0.36433681556582453,
+    "loss_spectral_aux": 0.26444021736085416
   }
 }

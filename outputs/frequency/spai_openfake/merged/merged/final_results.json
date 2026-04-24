@@ -1,22 +1,26 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/merged/merged/best.pth",
-  "best_epoch": 9,
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/merged/merged/best.pth",
+  "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.9944655951059076,
+  "best_score": 0.993070529091667,
   "val_metrics": {
-    "accuracy": 0.9687467444525472,
-    "precision": 0.9731833000315491,
-    "recall": 0.9640587561204292,
-    "f1": 0.9685995394599121,
-    "auc": 0.9944655951059076,
-    "loss": 0.15943364767199172
+    "accuracy": 0.9663506615272425,
+    "precision": 0.96859625248613,
+    "recall": 0.9639545786019377,
+    "f1": 0.9662698412698413,
+    "auc": 0.993070529091667,
+    "loss": 0.16802591702033734,
+    "threshold": 0.5,
+    "loss_total": 0.16804235731561978
   },
   "test_metrics": {
-    "accuracy": 0.9709605167204918,
-    "precision": 0.9736497459269736,
-    "recall": 0.9681216793415981,
-    "f1": 0.9708778436545041,
-    "auc": 0.9946472857881927,
-    "loss": 0.15041304961256727
+    "accuracy": 0.9670538597770602,
+    "precision": 0.967370341412562,
+    "recall": 0.9667152828419627,
+    "f1": 0.9670427011958419,
+    "auc": 0.9931217794601113,
+    "loss": 0.16039662571366423,
+    "threshold": 0.5,
+    "loss_total": 0.16038751025063297
   }
 }

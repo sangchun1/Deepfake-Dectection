@@ -1,30 +1,30 @@
 {
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/hidream-i1-full/best.pth",
-  "best_epoch": 15,
+  "best_epoch": 13,
   "best_monitor": "val_auc",
-  "best_score": 0.99867578125,
+  "best_score": 0.9974968750000001,
   "val_metrics": {
-    "accuracy": 0.988125,
-    "precision": 0.9887359198998749,
-    "recall": 0.9875,
-    "f1": 0.9881175734834271,
-    "auc": 0.99867578125,
-    "loss": 0.08571036105975509,
+    "accuracy": 0.98125,
+    "precision": 0.98125,
+    "recall": 0.98125,
+    "f1": 0.98125,
+    "auc": 0.9974968750000001,
+    "loss": 0.13038455366622656,
     "threshold": 0.5,
-    "loss_total": 0.08571036105975509,
-    "loss_spatial_aux": 0.06418370150029659,
-    "loss_spectral_aux": 0.08693136274814606
+    "loss_total": 0.13038455366622656,
+    "loss_spatial_aux": 0.07907867431640625,
+    "loss_spectral_aux": 0.14214035674929618
   },
   "test_metrics": {
-    "accuracy": 0.9871794871794872,
-    "precision": 0.9838509316770186,
-    "recall": 0.9906191369606003,
-    "f1": 0.9872234340916173,
-    "auc": 0.9970519801893069,
-    "loss": 0.09824955620202443,
+    "accuracy": 0.9771732332707942,
+    "precision": 0.9739130434782609,
+    "recall": 0.9806128830519074,
+    "f1": 0.977251480211904,
+    "auc": 0.9965558524108837,
+    "loss": 0.14333401207088156,
     "threshold": 0.5,
-    "loss_total": 0.09819059531204402,
-    "loss_spatial_aux": 0.07541064545046539,
-    "loss_spectral_aux": 0.06476612789556384
+    "loss_total": 0.14324959887657315,
+    "loss_spatial_aux": 0.08109517807140947,
+    "loss_spectral_aux": 0.13864791935309767
   }
 }

@@ -6,20 +6,25 @@
   "split_csv_override_used": true,
   "generator_name": "gpt-image-1",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_a/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9504189070901589,
-    "precision": 0.9783532536520584,
-    "recall": 0.9212204576716269,
-    "f1": 0.9489276743736716,
-    "auc": 0.992282486387566,
-    "loss": 0.1945782054606506
+    "accuracy": 0.9338501938226835,
+    "precision": 0.9714635140644109,
+    "recall": 0.893960235088158,
+    "f1": 0.9311018494399583,
+    "auc": 0.9888172082287515,
+    "loss": 0.19056687044459342,
+    "threshold": 0.5,
+    "loss_total": 0.19055487209558486
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9942655381944445,
-  "best_epoch_in_checkpoint": 7,
-  "saved_epoch": 7
+  "best_score_in_checkpoint": 0.9925757378472222,
+  "best_epoch_in_checkpoint": 5,
+  "saved_epoch": 5
 }

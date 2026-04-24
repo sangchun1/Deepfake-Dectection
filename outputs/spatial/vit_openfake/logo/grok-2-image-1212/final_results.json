@@ -1,22 +1,26 @@
 {
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/grok-2-image-1212/best.pth",
-  "best_epoch": 8,
+  "best_epoch": 9,
   "best_monitor": "val_auc",
-  "best_score": 0.9946835356404958,
+  "best_score": 0.9929350271177686,
   "val_metrics": {
-    "accuracy": 0.9603409090909091,
-    "precision": 0.981459472308058,
-    "recall": 0.9384090909090909,
-    "f1": 0.9594516091553387,
-    "auc": 0.9946835356404958,
-    "loss": 0.1544393749670549
+    "accuracy": 0.9607386363636363,
+    "precision": 0.9593293304633511,
+    "recall": 0.9622727272727273,
+    "f1": 0.9607987746071368,
+    "auc": 0.9929350271177686,
+    "loss": 0.15473521188578823,
+    "threshold": 0.5,
+    "loss_total": 0.15473521188578823
   },
   "test_metrics": {
-    "accuracy": 0.7176875,
-    "precision": 0.9687752355316286,
-    "recall": 0.449875,
-    "f1": 0.6144259496372172,
-    "auc": 0.9237306718749999,
-    "loss": 1.8479671269059181
+    "accuracy": 0.82775,
+    "precision": 0.9537902388369678,
+    "recall": 0.688875,
+    "f1": 0.7999709682101902,
+    "auc": 0.9477972265624999,
+    "loss": 0.9904504105374217,
+    "threshold": 0.5,
+    "loss_total": 0.9904504105374217
   }
 }

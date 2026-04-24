@@ -74,6 +74,16 @@ train:
   augmentation:
     rotation_degrees: 0.0
     color_jitter_prob: 0.0
+    gaussian_blur_prob: 0.2
+    gaussian_blur_kernel: 3
+    gaussian_noise_prob: 0.2
+    gaussian_noise_std: 0.02
+    jpeg_prob: 0.2
+    jpeg_quality_min: 40
+    jpeg_quality_max: 90
+    resize_downup_prob: 0.2
+    resize_scale_min: 0.5
+    resize_scale_max: 0.9
   scheduler:
     name: cosine
     t_max: 10
@@ -102,6 +112,7 @@ train:
     - f1
     - auc
     threshold: 0.5
+    temperature_json: null
   wandb:
     enabled: true
     project: Deepfake-Fusion

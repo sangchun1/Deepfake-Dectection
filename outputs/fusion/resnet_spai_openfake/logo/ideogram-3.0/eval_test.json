@@ -4,23 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/logo/ideogram-3.0/best.pth",
   "metrics": {
-    "accuracy": 0.9506875,
-    "precision": 0.9718623216856432,
-    "recall": 0.92825,
-    "f1": 0.9495556550092705,
-    "auc": 0.9908758593749999,
-    "loss": 0.3967200602432713,
+    "accuracy": 0.91675,
+    "precision": 0.9588494357280485,
+    "recall": 0.870875,
+    "f1": 0.9127472815406786,
+    "auc": 0.97979728125,
+    "loss": 0.40600665226578714,
     "threshold": 0.5,
-    "loss_total": 0.3967200602432713,
-    "loss_spatial_aux": 0.29432268741726875,
-    "loss_spectral_aux": 0.31917607453465463
+    "loss_total": 0.40600665226578714,
+    "loss_spatial_aux": 0.3016662909984589,
+    "loss_spectral_aux": 0.3113140541538596
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9953364411157024,
-  "best_epoch_in_checkpoint": 14,
-  "saved_epoch": 14
+  "best_score_in_checkpoint": 0.9920577156508265,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
 }

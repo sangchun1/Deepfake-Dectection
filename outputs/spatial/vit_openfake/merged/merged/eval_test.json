@@ -4,19 +4,21 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/merged/merged/best.pth",
   "metrics": {
-    "accuracy": 0.9693718095634962,
-    "precision": 0.9756651182432432,
-    "recall": 0.9627565371392853,
-    "f1": 0.96916784646846,
-    "auc": 0.9950116683378951,
-    "loss": 0.1425810694719357
+    "accuracy": 0.9659860402125221,
+    "precision": 0.962756052141527,
+    "recall": 0.9694759870819877,
+    "f1": 0.9661043342849728,
+    "auc": 0.9934923685436595,
+    "loss": 0.14678086831751236,
+    "threshold": 0.5,
+    "loss_total": 0.14678029698630174
   },
   "dataset_size": 38396,
   "class_counts": {
     "0": 19198,
     "1": 19198
   },
-  "best_score_in_checkpoint": 0.9948537510543238,
-  "best_epoch_in_checkpoint": 9,
-  "saved_epoch": 9
+  "best_score_in_checkpoint": 0.993710191427574,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }

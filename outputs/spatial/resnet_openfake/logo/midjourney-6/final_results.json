@@ -1,22 +1,26 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/spatial/resnet18_openfake/logo/midjourney-6/best.pth",
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/midjourney-6/best.pth",
   "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.9902171358471076,
+  "best_score": 0.9838638623450413,
   "val_metrics": {
-    "accuracy": 0.9526704545454545,
-    "precision": 0.954685538180573,
-    "recall": 0.9504545454545454,
-    "f1": 0.952565343659245,
-    "auc": 0.9902171358471076,
-    "loss": 0.182092149393125
+    "accuracy": 0.9363636363636364,
+    "precision": 0.9365620736698499,
+    "recall": 0.9361363636363637,
+    "f1": 0.9363491702659695,
+    "auc": 0.9838638623450413,
+    "loss": 0.2234158693728122,
+    "threshold": 0.5,
+    "loss_total": 0.2234158693728122
   },
   "test_metrics": {
-    "accuracy": 0.821625,
-    "precision": 0.9427047487955953,
-    "recall": 0.684875,
-    "f1": 0.7933680857225601,
-    "auc": 0.9467859140625,
-    "loss": 0.8134360684230924
+    "accuracy": 0.8106875,
+    "precision": 0.9140429785107447,
+    "recall": 0.685875,
+    "f1": 0.7836892094551168,
+    "auc": 0.9249072109375,
+    "loss": 0.7797578549534082,
+    "threshold": 0.5,
+    "loss_total": 0.7797578549534082
   }
 }

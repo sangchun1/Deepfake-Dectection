@@ -1,22 +1,26 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/spatial/resnet18_openfake/logo/sdxl-epic-realism/best.pth",
-  "best_epoch": 9,
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/sdxl-epic-realism/best.pth",
+  "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.988823256714876,
+  "best_score": 0.9823326510847106,
   "val_metrics": {
-    "accuracy": 0.949659090909091,
-    "precision": 0.9497613093884973,
-    "recall": 0.9495454545454546,
-    "f1": 0.9496533697011024,
-    "auc": 0.988823256714876,
-    "loss": 0.19547260251912205
+    "accuracy": 0.9303977272727273,
+    "precision": 0.9232316459939658,
+    "recall": 0.9388636363636363,
+    "f1": 0.9309820271564595,
+    "auc": 0.9823326510847106,
+    "loss": 0.2408846544677561,
+    "threshold": 0.5,
+    "loss_total": 0.2408846544677561
   },
   "test_metrics": {
-    "accuracy": 0.875875,
-    "precision": 0.9416862514688602,
-    "recall": 0.801375,
-    "f1": 0.8658833063209076,
-    "auc": 0.9637090781250001,
-    "loss": 0.5160071398988366
+    "accuracy": 0.8801875,
+    "precision": 0.9184206906039345,
+    "recall": 0.8345,
+    "f1": 0.8744515030453861,
+    "auc": 0.95822821875,
+    "loss": 0.437370820119977,
+    "threshold": 0.5,
+    "loss_total": 0.437370820119977
   }
 }

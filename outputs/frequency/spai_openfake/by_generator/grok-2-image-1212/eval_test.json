@@ -2,21 +2,23 @@
   "dataset_name": "openfake_by_generator_grok-2-image-1212",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/grok-2-image-1212/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/by_generator/grok-2-image-1212/best.pth",
   "metrics": {
-    "accuracy": 0.99812382739212,
-    "precision": 0.99812382739212,
-    "recall": 0.99812382739212,
-    "f1": 0.99812382739212,
-    "auc": 0.9995965661778136,
-    "loss": 0.010380960166868904
+    "accuracy": 0.9968730456535334,
+    "precision": 0.9962523422860712,
+    "recall": 0.9974984365228268,
+    "f1": 0.996875,
+    "auc": 0.9999168883303785,
+    "loss": 0.01320465170940635,
+    "threshold": 0.5,
+    "loss_total": 0.01319645138035412
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.9999953125000001,
-  "best_epoch_in_checkpoint": 6,
-  "saved_epoch": 6
+  "best_score_in_checkpoint": 0.999971875,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }

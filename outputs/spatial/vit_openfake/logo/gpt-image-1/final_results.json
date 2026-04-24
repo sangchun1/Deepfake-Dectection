@@ -2,21 +2,25 @@
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/gpt-image-1/best.pth",
   "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.9946185175619837,
+  "best_score": 0.9938724948347109,
   "val_metrics": {
-    "accuracy": 0.9713636363636363,
-    "precision": 0.9728682170542635,
-    "recall": 0.9697727272727272,
-    "f1": 0.9713180059185067,
-    "auc": 0.9946185175619837,
-    "loss": 0.13790041192011399
+    "accuracy": 0.965625,
+    "precision": 0.9616901408450704,
+    "recall": 0.9698863636363636,
+    "f1": 0.9657708628005658,
+    "auc": 0.9938724948347109,
+    "loss": 0.1485822551494295,
+    "threshold": 0.5,
+    "loss_total": 0.1485822551494295
   },
   "test_metrics": {
-    "accuracy": 0.9673125,
-    "precision": 0.9748507557474915,
-    "recall": 0.959375,
-    "f1": 0.967050967050967,
-    "auc": 0.9941850312499999,
-    "loss": 0.1630236346721649
+    "accuracy": 0.9628125,
+    "precision": 0.9644962990841801,
+    "recall": 0.961,
+    "f1": 0.9627449752676727,
+    "auc": 0.9932208125,
+    "loss": 0.16191808224469423,
+    "threshold": 0.5,
+    "loss_total": 0.16191808224469423
   }
 }

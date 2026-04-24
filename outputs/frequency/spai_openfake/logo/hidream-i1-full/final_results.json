@@ -1,22 +1,26 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/hidream-i1-full/best.pth",
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/hidream-i1-full/best.pth",
   "best_epoch": 9,
   "best_monitor": "val_auc",
-  "best_score": 0.9947125129132232,
+  "best_score": 0.9933007489669422,
   "val_metrics": {
-    "accuracy": 0.9690340909090909,
-    "precision": 0.975792507204611,
-    "recall": 0.9619318181818182,
-    "f1": 0.9688125894134478,
-    "auc": 0.9947125129132232,
-    "loss": 0.14765709692104295
+    "accuracy": 0.9647159090909091,
+    "precision": 0.968603185516214,
+    "recall": 0.9605681818181818,
+    "f1": 0.964568950761682,
+    "auc": 0.9933007489669422,
+    "loss": 0.16158056388524444,
+    "threshold": 0.5,
+    "loss_total": 0.16158056388524444
   },
   "test_metrics": {
-    "accuracy": 0.942875,
-    "precision": 0.9759537882858678,
-    "recall": 0.908125,
-    "f1": 0.9408184408184408,
-    "auc": 0.9895987734375,
-    "loss": 0.30380443423241377
+    "accuracy": 0.9404375,
+    "precision": 0.9687375282692563,
+    "recall": 0.91025,
+    "f1": 0.9385834890764967,
+    "auc": 0.9874071796875001,
+    "loss": 0.28636853072047236,
+    "threshold": 0.5,
+    "loss_total": 0.28636853072047236
   }
 }

@@ -1,22 +1,26 @@
 {
-  "best_checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/midjourney-6/best.pth",
-  "best_epoch": 9,
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/midjourney-6/best.pth",
+  "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.994552524535124,
+  "best_score": 0.9938700477789256,
   "val_metrics": {
-    "accuracy": 0.9693181818181819,
-    "precision": 0.9753683241252302,
-    "recall": 0.9629545454545455,
-    "f1": 0.9691216834400732,
-    "auc": 0.994552524535124,
-    "loss": 0.15420298413119532
+    "accuracy": 0.9659659090909091,
+    "precision": 0.9662308129619102,
+    "recall": 0.9656818181818182,
+    "f1": 0.9659562375674907,
+    "auc": 0.9938700477789256,
+    "loss": 0.14900105524469506,
+    "threshold": 0.5,
+    "loss_total": 0.14900105524469506
   },
   "test_metrics": {
-    "accuracy": 0.792125,
-    "precision": 0.9587750294464076,
-    "recall": 0.6105,
-    "f1": 0.7459905300137467,
-    "auc": 0.9426955312499999,
-    "loss": 1.4998465115129949
+    "accuracy": 0.8136875,
+    "precision": 0.9504577275175013,
+    "recall": 0.661875,
+    "f1": 0.7803404318031095,
+    "auc": 0.9451162812499999,
+    "loss": 1.148260737642646,
+    "threshold": 0.5,
+    "loss_total": 1.148260737642646
   }
 }

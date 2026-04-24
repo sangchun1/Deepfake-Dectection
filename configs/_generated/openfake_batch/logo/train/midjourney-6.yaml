@@ -1,12 +1,12 @@
 experiment:
-  name: fusion_vit_spai_openfake
-  task: fusion_classification
-  output_dir: /home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6
+  name: spatial_vit_openfake
+  task: spatial_classification
+  output_dir: /home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/midjourney-6
   seed: 42
   device: cuda
   use_amp: true
 train:
-  epochs: 15
+  epochs: 10
   grad_accum_steps: 1
   clip_grad_norm: null
 optimizer:
@@ -19,17 +19,23 @@ optimizer:
 augmentation:
   rotation_degrees: 0.0
   color_jitter_prob: 0.0
+  gaussian_blur_prob: 0.2
+  gaussian_blur_kernel: 3
+  gaussian_noise_prob: 0.2
+  gaussian_noise_std: 0.02
+  jpeg_prob: 0.2
+  jpeg_quality_min: 40
+  jpeg_quality_max: 90
+  resize_downup_prob: 0.2
+  resize_scale_min: 0.5
+  resize_scale_max: 0.9
 scheduler:
   name: cosine
-  t_max: 15
+  t_max: 10
   eta_min: 1.0e-06
 loss:
   name: cross_entropy
   label_smoothing: 0.0
-  auxiliary:
-    enabled: true
-    spatial_weight: 0.2
-    spectral_weight: 0.2
 logging:
   log_interval: 50
   val_interval: 1
@@ -56,11 +62,10 @@ wandb:
   enabled: true
   project: Deepfake-Fusion
   entity: null
-  name: fusion_vit_spai_openfake_holdout_midjourney_6
+  name: spatial_vit_openfake_holdout_midjourney_6
   tags:
   - openfake
-  - fusion
   - vit
-  - spai
+  - spatial
   mode: online
   log_model: false

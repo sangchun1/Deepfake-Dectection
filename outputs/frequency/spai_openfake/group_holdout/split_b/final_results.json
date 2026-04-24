@@ -2,21 +2,25 @@
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_b/best.pth",
   "best_epoch": 9,
   "best_monitor": "val_auc",
-  "best_score": 0.9942764105902777,
+  "best_score": 0.9933327907986111,
   "val_metrics": {
-    "accuracy": 0.9679166666666666,
-    "precision": 0.9669438669438669,
-    "recall": 0.9689583333333334,
-    "f1": 0.9679500520291363,
-    "auc": 0.9942764105902777,
-    "loss": 0.1410259464631478
+    "accuracy": 0.9611458333333334,
+    "precision": 0.9641434262948207,
+    "recall": 0.9579166666666666,
+    "f1": 0.9610199602884314,
+    "auc": 0.9933327907986111,
+    "loss": 0.16425042012085517,
+    "threshold": 0.5,
+    "loss_total": 0.16425042012085517
   },
   "test_metrics": {
-    "accuracy": 0.7606602475928473,
-    "precision": 0.943856909645823,
-    "recall": 0.5542911925305323,
-    "f1": 0.6984243697478991,
-    "auc": 0.9183498693701885,
-    "loss": 1.8693384054398696
+    "accuracy": 0.7913905214455421,
+    "precision": 0.9479957704508315,
+    "recall": 0.6166062273352507,
+    "f1": 0.7472061219077926,
+    "auc": 0.9341828254110568,
+    "loss": 1.3886575737461024,
+    "threshold": 0.5,
+    "loss_total": 1.388558125436306
   }
 }

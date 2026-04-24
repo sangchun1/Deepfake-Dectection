@@ -1,22 +1,26 @@
 {
   "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/sdxl-epic-realism/best.pth",
-  "best_epoch": 4,
+  "best_epoch": 10,
   "best_monitor": "val_auc",
-  "best_score": 0.9993890624999999,
+  "best_score": 0.9996898437499999,
   "val_metrics": {
-    "accuracy": 0.989375,
-    "precision": 0.9936948297604036,
-    "recall": 0.985,
-    "f1": 0.9893283113622097,
-    "auc": 0.9993890624999999,
-    "loss": 0.0332679995149374
+    "accuracy": 0.98875,
+    "precision": 0.9827160493827161,
+    "recall": 0.995,
+    "f1": 0.9888198757763975,
+    "auc": 0.9996898437499999,
+    "loss": 0.038758683502674106,
+    "threshold": 0.5,
+    "loss_total": 0.038758683502674106
   },
   "test_metrics": {
-    "accuracy": 0.9915572232645403,
-    "precision": 0.993099121706399,
-    "recall": 0.9899937460913071,
-    "f1": 0.9915440025054807,
-    "auc": 0.9992944308141306,
-    "loss": 0.024379919977943698
+    "accuracy": 0.9946841776110069,
+    "precision": 0.9919154228855721,
+    "recall": 0.9974984365228268,
+    "f1": 0.9946990957280948,
+    "auc": 0.9994970277311375,
+    "loss": 0.024836399728161044,
+    "threshold": 0.5,
+    "loss_total": 0.024820885143926715
   }
 }

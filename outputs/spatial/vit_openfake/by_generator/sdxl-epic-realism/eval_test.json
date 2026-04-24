@@ -4,19 +4,21 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/sdxl-epic-realism/best.pth",
   "metrics": {
-    "accuracy": 0.9915572232645403,
-    "precision": 0.993099121706399,
-    "recall": 0.9899937460913071,
-    "f1": 0.9915440025054807,
-    "auc": 0.9992944308141306,
-    "loss": 0.024379919977943698
+    "accuracy": 0.9946841776110069,
+    "precision": 0.9919154228855721,
+    "recall": 0.9974984365228268,
+    "f1": 0.9946990957280948,
+    "auc": 0.9994970277311375,
+    "loss": 0.024836399728161044,
+    "threshold": 0.5,
+    "loss_total": 0.024820885143926715
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.9993890624999999,
-  "best_epoch_in_checkpoint": 4,
-  "saved_epoch": 4
+  "best_score_in_checkpoint": 0.9996898437499999,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }

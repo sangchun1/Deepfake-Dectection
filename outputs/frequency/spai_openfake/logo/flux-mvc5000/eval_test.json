@@ -2,21 +2,23 @@
   "dataset_name": "openfake_logo_flux-mvc5000",
   "dataset_class": "OpenFakeDataset",
   "split": "test",
-  "checkpoint": "C:/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/flux-mvc5000/best.pth",
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/flux-mvc5000/best.pth",
   "metrics": {
-    "accuracy": 0.8270625,
-    "precision": 0.9640007093456286,
-    "recall": 0.6795,
-    "f1": 0.7971258889947943,
-    "auc": 0.958555171875,
-    "loss": 1.1641267870664596
+    "accuracy": 0.86975,
+    "precision": 0.9483176720218248,
+    "recall": 0.782125,
+    "f1": 0.8572407179065625,
+    "auc": 0.9632166875,
+    "loss": 0.6826756097823381,
+    "threshold": 0.5,
+    "loss_total": 0.6826756097823381
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9943014075413223,
+  "best_score_in_checkpoint": 0.9925645080061983,
   "best_epoch_in_checkpoint": 9,
   "saved_epoch": 9
 }

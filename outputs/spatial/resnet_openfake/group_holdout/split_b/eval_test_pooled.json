@@ -6,20 +6,25 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/group_holdout/split_b/best.pth",
+  "temperature": null,
+  "temperature_json": null,
+  "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.8093764328289775,
-    "precision": 0.9310124560843182,
-    "recall": 0.6682714351215039,
-    "f1": 0.7780595222207394,
-    "auc": 0.930891648072472,
-    "loss": 0.8923500980910899
+    "accuracy": 0.8222979450627319,
+    "precision": 0.9027947802984919,
+    "recall": 0.7223750573131591,
+    "f1": 0.8025701881331404,
+    "auc": 0.9214461651149137,
+    "loss": 0.7231931483421105,
+    "threshold": 0.5,
+    "loss_total": 0.7234732099076112
   },
   "dataset_size": 95964,
   "class_counts": {
     "0": 47982,
     "1": 47982
   },
-  "best_score_in_checkpoint": 0.9900644748263887,
+  "best_score_in_checkpoint": 0.9814443142361112,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }
