@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/imagen-4.0/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 2.7382006645202637,
-  "nll_before": 0.13444170355796814,
-  "nll_after": 0.07689602673053741,
+  "temperature": 2.7167835235595703,
+  "nll_before": 0.15915296971797943,
+  "nll_after": 0.09300492703914642,
   "metrics_before": {
-    "accuracy": 0.9707954545454546,
-    "precision": 0.967607223476298,
-    "recall": 0.9742045454545455,
-    "f1": 0.9708946772366931,
-    "auc": 0.9951280862603307,
-    "loss": 0.13444780357182026
+    "accuracy": 0.9645454545454546,
+    "precision": 0.9720554272517321,
+    "recall": 0.956590909090909,
+    "f1": 0.9642611683848797,
+    "auc": 0.9940875193698349,
+    "loss": 0.15916001510891048
   },
   "metrics_after": {
-    "accuracy": 0.9708522727272727,
-    "precision": 0.9676108791332807,
-    "recall": 0.9743181818181819,
-    "f1": 0.9709529471717343,
-    "auc": 0.9964424845041322,
-    "loss": 0.07689602673053741
+    "accuracy": 0.9645454545454546,
+    "precision": 0.9720554272517321,
+    "recall": 0.956590909090909,
+    "f1": 0.9642611683848797,
+    "auc": 0.9947713455578512,
+    "loss": 0.09300492703914642
   },
   "dataset_size": 17600,
   "class_counts": {
     "0": 8800,
     "1": 8800
   },
-  "best_score_in_checkpoint": 0.9951280862603307,
+  "best_score_in_checkpoint": 0.9940875193698349,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

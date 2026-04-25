@@ -6,25 +6,26 @@
   "split_csv_override_used": true,
   "generator_name": "dalle-3",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_c/best.pth",
-  "temperature": 2.919187307357788,
+  "temperature": 2.9010629653930664,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/group_holdout/split_c/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.8675753407527823,
-    "precision": 0.9527183120283382,
-    "recall": 0.7735400775290734,
-    "f1": 0.8538302277432712,
-    "auc": 0.9655304651961754,
-    "loss": 0.3436513180708578,
-    "temperature": 2.919187307357788,
-    "threshold": 0.5
+    "accuracy": 0.8471926972614731,
+    "precision": 0.9583952451708767,
+    "recall": 0.7258972114542953,
+    "f1": 0.8260993311512737,
+    "auc": 0.955427123485675,
+    "loss": 0.4062923515336401,
+    "temperature": 2.9010629653930664,
+    "threshold": 0.5,
+    "loss_total": 0.40636855310201647
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.9936918619791668,
+  "best_score_in_checkpoint": 0.9919649088541668,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/by_generator/midjourney-6/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 1.5277369022369385,
-  "nll_before": 0.06297034025192261,
-  "nll_after": 0.056006599217653275,
+  "temperature": 1.7479671239852905,
+  "nll_before": 0.09013979136943817,
+  "nll_after": 0.07452861964702606,
   "metrics_before": {
-    "accuracy": 0.98125,
-    "precision": 0.972972972972973,
-    "recall": 0.99,
-    "f1": 0.9814126394052045,
-    "auc": 0.9967765625,
-    "loss": 0.06297453798353672
+    "accuracy": 0.971875,
+    "precision": 0.9564691656590084,
+    "recall": 0.98875,
+    "f1": 0.972341733251383,
+    "auc": 0.9962875,
+    "loss": 0.09014267221093178
   },
   "metrics_after": {
-    "accuracy": 0.98125,
-    "precision": 0.972972972972973,
-    "recall": 0.99,
-    "f1": 0.9814126394052045,
-    "auc": 0.99738671875,
-    "loss": 0.056006599217653275
+    "accuracy": 0.971875,
+    "precision": 0.9564691656590084,
+    "recall": 0.98875,
+    "f1": 0.972341733251383,
+    "auc": 0.9966789062500001,
+    "loss": 0.07452861964702606
   },
   "dataset_size": 1600,
   "class_counts": {
     "0": 800,
     "1": 800
   },
-  "best_score_in_checkpoint": 0.99677734375,
-  "best_epoch_in_checkpoint": 10,
-  "saved_epoch": 10
+  "best_score_in_checkpoint": 0.9962875,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
 }

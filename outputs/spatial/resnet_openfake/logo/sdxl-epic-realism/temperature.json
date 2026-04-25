@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/sdxl-epic-realism/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 2.477189779281616,
-  "nll_before": 0.1954636126756668,
-  "nll_after": 0.12960819900035858,
+  "temperature": 2.392385482788086,
+  "nll_before": 0.2408781796693802,
+  "nll_after": 0.16654153168201447,
   "metrics_before": {
-    "accuracy": 0.9497159090909091,
-    "precision": 0.9498692736160055,
-    "recall": 0.9495454545454546,
-    "f1": 0.9497073364778087,
-    "auc": 0.988821377840909,
-    "loss": 0.195470846275037
+    "accuracy": 0.9303977272727273,
+    "precision": 0.9232316459939658,
+    "recall": 0.9388636363636363,
+    "f1": 0.9309820271564595,
+    "auc": 0.9823326510847106,
+    "loss": 0.2408846544677561
   },
   "metrics_after": {
-    "accuracy": 0.949659090909091,
-    "precision": 0.9497613093884973,
-    "recall": 0.9495454545454546,
-    "f1": 0.9496533697011024,
-    "auc": 0.989602356663223,
-    "loss": 0.12960819900035858
+    "accuracy": 0.9303977272727273,
+    "precision": 0.9232316459939658,
+    "recall": 0.9388636363636363,
+    "f1": 0.9309820271564595,
+    "auc": 0.9832810950413222,
+    "loss": 0.16654153168201447
   },
   "dataset_size": 17600,
   "class_counts": {
     "0": 8800,
     "1": 8800
   },
-  "best_score_in_checkpoint": 0.988823256714876,
-  "best_epoch_in_checkpoint": 9,
-  "saved_epoch": 9
+  "best_score_in_checkpoint": 0.9823326510847106,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
 }

@@ -6,25 +6,26 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/midjourney-6/best.pth",
-  "temperature": 2.780179977416992,
+  "temperature": 2.705845832824707,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/midjourney-6/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.784125,
-    "precision": 0.9511710996427154,
-    "recall": 0.599,
-    "f1": 0.7350820678018101,
-    "auc": 0.9391153593749999,
-    "loss": 0.6407652331590652,
-    "temperature": 2.780179977416992,
-    "threshold": 0.5
+    "accuracy": 0.813375,
+    "precision": 0.948479427549195,
+    "recall": 0.66275,
+    "f1": 0.78027961736571,
+    "auc": 0.9444187890625001,
+    "loss": 0.5163846924901009,
+    "temperature": 2.705845832824707,
+    "threshold": 0.5,
+    "loss_total": 0.5163846924901009
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9949806753615703,
+  "best_score_in_checkpoint": 0.9937610537190082,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

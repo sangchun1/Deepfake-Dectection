@@ -6,25 +6,26 @@
   "split_csv_override_used": true,
   "generator_name": "flux-1.1-pro",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a/best.pth",
-  "temperature": 2.303311586380005,
+  "temperature": 2.561399221420288,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.6869451044141553,
-    "precision": 0.933082271147161,
-    "recall": 0.4027760410153808,
-    "f1": 0.5626692287536029,
-    "auc": 0.8768972527508871,
-    "loss": 1.0638331900511113,
-    "temperature": 2.303311586380005,
-    "threshold": 0.5
+    "accuracy": 0.7137051394272852,
+    "precision": 0.9255478087649402,
+    "recall": 0.46479929973740153,
+    "f1": 0.618829601265296,
+    "auc": 0.8812054989546927,
+    "loss": 0.8669770382874844,
+    "temperature": 2.561399221420288,
+    "threshold": 0.5,
+    "loss_total": 0.866975011587143
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.994670529513889,
-  "best_epoch_in_checkpoint": 8,
-  "saved_epoch": 8
+  "best_score_in_checkpoint": 0.9930968098958333,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
 }

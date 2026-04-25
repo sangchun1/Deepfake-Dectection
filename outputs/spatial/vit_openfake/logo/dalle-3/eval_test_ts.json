@@ -6,25 +6,26 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/dalle-3/best.pth",
-  "temperature": 2.726900815963745,
+  "temperature": 2.722008228302002,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/dalle-3/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.8895,
-    "precision": 0.9657698056801196,
-    "recall": 0.807625,
-    "f1": 0.879646017699115,
-    "auc": 0.976164828125,
-    "loss": 0.3063045251145959,
-    "temperature": 2.726900815963745,
-    "threshold": 0.5
+    "accuracy": 0.8840625,
+    "precision": 0.9629350610215459,
+    "recall": 0.798875,
+    "f1": 0.8732663797226208,
+    "auc": 0.9695974375,
+    "loss": 0.3147882868722081,
+    "temperature": 2.722008228302002,
+    "threshold": 0.5,
+    "loss_total": 0.3147882868722081
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9958771629648762,
+  "best_score_in_checkpoint": 0.9938507683367769,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

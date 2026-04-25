@@ -6,25 +6,26 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/ideogram-3.0/best.pth",
-  "temperature": 2.356121063232422,
+  "temperature": 2.2560083866119385,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/ideogram-3.0/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9346875,
-    "precision": 0.9545157495752189,
-    "recall": 0.912875,
-    "f1": 0.9332311034438694,
-    "auc": 0.9847015312499999,
-    "loss": 0.16515960907191038,
-    "temperature": 2.356121063232422,
-    "threshold": 0.5
+    "accuracy": 0.9054375,
+    "precision": 0.9322937491669999,
+    "recall": 0.874375,
+    "f1": 0.9024059859382055,
+    "auc": 0.9686393515625,
+    "loss": 0.2363608691394329,
+    "temperature": 2.2560083866119385,
+    "threshold": 0.5,
+    "loss_total": 0.2363608691394329
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9909630358987603,
+  "best_score_in_checkpoint": 0.9842426782024793,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

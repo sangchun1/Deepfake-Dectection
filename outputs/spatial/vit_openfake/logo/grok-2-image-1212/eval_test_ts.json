@@ -6,25 +6,26 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/grok-2-image-1212/best.pth",
-  "temperature": 2.3948521614074707,
+  "temperature": 2.5341198444366455,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/grok-2-image-1212/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.717875,
-    "precision": 0.9688004303388918,
-    "recall": 0.45025,
-    "f1": 0.6147806792968084,
-    "auc": 0.923753484375,
-    "loss": 0.8510921682491899,
-    "temperature": 2.3948521614074707,
-    "threshold": 0.5
+    "accuracy": 0.82775,
+    "precision": 0.9537902388369678,
+    "recall": 0.688875,
+    "f1": 0.7999709682101902,
+    "auc": 0.9481397109374999,
+    "loss": 0.4704481936171651,
+    "temperature": 2.5341198444366455,
+    "threshold": 0.5,
+    "loss_total": 0.4704481936171651
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9946835356404958,
-  "best_epoch_in_checkpoint": 8,
-  "saved_epoch": 8
+  "best_score_in_checkpoint": 0.9929350271177686,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
 }

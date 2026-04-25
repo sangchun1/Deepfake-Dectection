@@ -6,25 +6,26 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/hidream-i1-full/best.pth",
-  "temperature": 2.8981800079345703,
+  "temperature": 2.8111562728881836,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/frequency/spai_openfake/logo/hidream-i1-full/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9429375,
-    "precision": 0.9760849119978503,
-    "recall": 0.908125,
-    "f1": 0.9408793628181052,
-    "auc": 0.990453921875,
-    "loss": 0.14783921076357365,
-    "temperature": 2.8981800079345703,
-    "threshold": 0.5
+    "accuracy": 0.9404375,
+    "precision": 0.9687375282692563,
+    "recall": 0.91025,
+    "f1": 0.9385834890764967,
+    "auc": 0.988716234375,
+    "loss": 0.1500634975284338,
+    "temperature": 2.8111562728881836,
+    "threshold": 0.5,
+    "loss_total": 0.1500634975284338
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9947125129132232,
+  "best_score_in_checkpoint": 0.9933007489669422,
   "best_epoch_in_checkpoint": 9,
   "saved_epoch": 9
 }

@@ -4,23 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/sdxl-epic-realism/best.pth",
   "metrics": {
-    "accuracy": 0.8888125,
-    "precision": 0.9432806042468291,
-    "recall": 0.827375,
-    "f1": 0.8815342611706732,
-    "auc": 0.969947390625,
-    "loss": 0.6279594557955861,
+    "accuracy": 0.8838125,
+    "precision": 0.9627731725697061,
+    "recall": 0.7985,
+    "f1": 0.8729757430816536,
+    "auc": 0.973413765625,
+    "loss": 0.49004443631321193,
     "threshold": 0.5,
-    "loss_total": 0.6279594557955861,
-    "loss_spatial_aux": 0.4717425399944186,
-    "loss_spectral_aux": 0.34607069157063963
+    "loss_total": 0.49004443631321193,
+    "loss_spatial_aux": 0.32528317865729334,
+    "loss_spectral_aux": 0.3686740478873253
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9925298618285123,
-  "best_epoch_in_checkpoint": 8,
-  "saved_epoch": 8
+  "best_score_in_checkpoint": 0.9901489540289256,
+  "best_epoch_in_checkpoint": 5,
+  "saved_epoch": 5
 }

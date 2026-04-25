@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/resnet_openfake/logo/hidream-i1-full/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 2.454315662384033,
-  "nll_before": 0.18148134648799896,
-  "nll_after": 0.12128553539514542,
+  "temperature": 2.2847487926483154,
+  "nll_before": 0.2211499661207199,
+  "nll_after": 0.15816889703273773,
   "metrics_before": {
-    "accuracy": 0.9534090909090909,
-    "precision": 0.9554794520547946,
-    "recall": 0.9511363636363637,
-    "f1": 0.9533029612756264,
-    "auc": 0.9897938791322315,
-    "loss": 0.18148879127746279
+    "accuracy": 0.9371022727272728,
+    "precision": 0.9350752177355502,
+    "recall": 0.9394318181818182,
+    "f1": 0.9372484553029874,
+    "auc": 0.9837059852789257,
+    "loss": 0.22115991225974127
   },
   "metrics_after": {
-    "accuracy": 0.9534090909090909,
-    "precision": 0.9554794520547946,
-    "recall": 0.9511363636363637,
-    "f1": 0.9533029612756264,
-    "auc": 0.9908077350206611,
-    "loss": 0.12128553539514542
+    "accuracy": 0.9371022727272728,
+    "precision": 0.9350752177355502,
+    "recall": 0.9394318181818182,
+    "f1": 0.9372484553029874,
+    "auc": 0.984680888429752,
+    "loss": 0.15816889703273773
   },
   "dataset_size": 17600,
   "class_counts": {
     "0": 8800,
     "1": 8800
   },
-  "best_score_in_checkpoint": 0.9897974948347108,
+  "best_score_in_checkpoint": 0.9837059852789256,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

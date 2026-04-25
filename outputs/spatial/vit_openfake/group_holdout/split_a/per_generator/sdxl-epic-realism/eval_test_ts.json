@@ -6,25 +6,26 @@
   "split_csv_override_used": true,
   "generator_name": "sdxl-epic-realism",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a/best.pth",
-  "temperature": 2.303311586380005,
+  "temperature": 2.561399221420288,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_a/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.8575090658997124,
-    "precision": 0.9609803289261528,
-    "recall": 0.7452794798049268,
-    "f1": 0.839495739136559,
-    "auc": 0.9677497934427673,
-    "loss": 0.36539813201994215,
-    "temperature": 2.303311586380005,
-    "threshold": 0.5
+    "accuracy": 0.8615730899087157,
+    "precision": 0.9451886066204773,
+    "recall": 0.7676628735775916,
+    "f1": 0.8472260557548993,
+    "auc": 0.9621982008415092,
+    "loss": 0.3418162745081575,
+    "temperature": 2.561399221420288,
+    "threshold": 0.5,
+    "loss_total": 0.34187424504756925
   },
   "dataset_size": 15994,
   "class_counts": {
     "0": 7997,
     "1": 7997
   },
-  "best_score_in_checkpoint": 0.994670529513889,
-  "best_epoch_in_checkpoint": 8,
-  "saved_epoch": 8
+  "best_score_in_checkpoint": 0.9930968098958333,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
 }

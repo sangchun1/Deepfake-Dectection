@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/flux-mvc5000/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 2.755380868911743,
-  "nll_before": 0.1443210393190384,
-  "nll_after": 0.08072038739919662,
+  "temperature": 2.5189859867095947,
+  "nll_before": 0.17536738514900208,
+  "nll_after": 0.11171212792396545,
   "metrics_before": {
-    "accuracy": 0.9705113636363636,
-    "precision": 0.9678002485594848,
-    "recall": 0.9734090909090909,
-    "f1": 0.9705965667667554,
-    "auc": 0.9940420583677687,
-    "loss": 0.1443301786075939
+    "accuracy": 0.9577272727272728,
+    "precision": 0.9724372507623739,
+    "recall": 0.9421590909090909,
+    "f1": 0.9570587556273809,
+    "auc": 0.9922898050103306,
+    "loss": 0.17537386649711564
   },
   "metrics_after": {
-    "accuracy": 0.9705113636363636,
-    "precision": 0.9678002485594848,
-    "recall": 0.9734090909090909,
-    "f1": 0.9705965667667554,
-    "auc": 0.9958054106404959,
-    "loss": 0.08072038739919662
+    "accuracy": 0.9577272727272728,
+    "precision": 0.9724372507623739,
+    "recall": 0.9421590909090909,
+    "f1": 0.9570587556273809,
+    "auc": 0.9928479274276859,
+    "loss": 0.11171212792396545
   },
   "dataset_size": 17600,
   "class_counts": {
     "0": 8800,
     "1": 8800
   },
-  "best_score_in_checkpoint": 0.9940420583677687,
-  "best_epoch_in_checkpoint": 10,
-  "saved_epoch": 10
+  "best_score_in_checkpoint": 0.9922898050103306,
+  "best_epoch_in_checkpoint": 8,
+  "saved_epoch": 8
 }

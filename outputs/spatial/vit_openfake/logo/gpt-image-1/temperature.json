@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/gpt-image-1/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 2.8871681690216064,
-  "nll_before": 0.13789236545562744,
-  "nll_after": 0.07750508934259415,
+  "temperature": 2.6538710594177246,
+  "nll_before": 0.14857424795627594,
+  "nll_after": 0.08961598575115204,
   "metrics_before": {
-    "accuracy": 0.9713636363636363,
-    "precision": 0.9728682170542635,
-    "recall": 0.9697727272727272,
-    "f1": 0.9713180059185067,
-    "auc": 0.9946185175619837,
-    "loss": 0.13790041192011399
+    "accuracy": 0.965625,
+    "precision": 0.9616901408450704,
+    "recall": 0.9698863636363636,
+    "f1": 0.9657708628005658,
+    "auc": 0.9938724948347109,
+    "loss": 0.1485822551494295
   },
   "metrics_after": {
-    "accuracy": 0.9713636363636363,
-    "precision": 0.9728682170542635,
-    "recall": 0.9697727272727272,
-    "f1": 0.9713180059185067,
-    "auc": 0.996187454803719,
-    "loss": 0.07750508934259415
+    "accuracy": 0.965625,
+    "precision": 0.9616901408450704,
+    "recall": 0.9698863636363636,
+    "f1": 0.9657708628005658,
+    "auc": 0.9951125322830578,
+    "loss": 0.08961598575115204
   },
   "dataset_size": 17600,
   "class_counts": {
     "0": 8800,
     "1": 8800
   },
-  "best_score_in_checkpoint": 0.9946185175619837,
+  "best_score_in_checkpoint": 0.9938724948347109,
   "best_epoch_in_checkpoint": 10,
   "saved_epoch": 10
 }

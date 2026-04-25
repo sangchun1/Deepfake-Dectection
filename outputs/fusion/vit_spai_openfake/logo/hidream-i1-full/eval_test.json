@@ -4,23 +4,23 @@
   "split": "test",
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/hidream-i1-full/best.pth",
   "metrics": {
-    "accuracy": 0.945,
-    "precision": 0.9696569920844327,
-    "recall": 0.91875,
-    "f1": 0.9435173299101413,
-    "auc": 0.9889956249999999,
-    "loss": 0.4043404211802408,
+    "accuracy": 0.9231875,
+    "precision": 0.967287784679089,
+    "recall": 0.876,
+    "f1": 0.9193834043948835,
+    "auc": 0.9818297265625001,
+    "loss": 0.6931355741471052,
     "threshold": 0.5,
-    "loss_total": 0.4043404211802408,
-    "loss_spatial_aux": 0.29080284909158943,
-    "loss_spectral_aux": 0.24383389945328235
+    "loss_total": 0.6931355741471052,
+    "loss_spatial_aux": 0.4413600327372551,
+    "loss_spectral_aux": 0.4201259581744671
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.994021455320248,
-  "best_epoch_in_checkpoint": 10,
-  "saved_epoch": 10
+  "best_score_in_checkpoint": 0.9909478822314048,
+  "best_epoch_in_checkpoint": 13,
+  "saved_epoch": 13
 }
