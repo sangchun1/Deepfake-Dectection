@@ -6,28 +6,28 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000/best.pth",
-  "temperature": 1.3059368133544922,
+  "temperature": 1.4899502992630005,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/flux-mvc5000/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.9762351469668543,
-    "precision": 0.9941596365996106,
-    "recall": 0.9580988117573483,
-    "f1": 0.975796178343949,
-    "auc": 0.9992815240607305,
-    "loss": 0.08769641771185689,
-    "temperature": 1.3059368133544922,
+    "accuracy": 0.9790494058786742,
+    "precision": 0.9687882496940025,
+    "recall": 0.9899937460913071,
+    "f1": 0.9792762140426848,
+    "auc": 0.9989905354386204,
+    "loss": 0.07569203457286613,
+    "temperature": 1.4899502992630005,
     "threshold": 0.5,
-    "loss_total": 0.08773652825737371,
-    "loss_spatial_aux": 0.09133329883217811,
-    "loss_spectral_aux": 0.06662327840924263
+    "loss_total": 0.07567093740217387,
+    "loss_spatial_aux": 0.059405336305499074,
+    "loss_spectral_aux": 0.0810452226549387
   },
   "dataset_size": 3198,
   "class_counts": {
     "0": 1599,
     "1": 1599
   },
-  "best_score_in_checkpoint": 0.9993921875,
-  "best_epoch_in_checkpoint": 2,
-  "saved_epoch": 2
+  "best_score_in_checkpoint": 0.9983890625,
+  "best_epoch_in_checkpoint": 4,
+  "saved_epoch": 4
 }

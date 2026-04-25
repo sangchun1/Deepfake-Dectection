@@ -8,31 +8,31 @@
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/by_generator/dalle-3/best.pth",
   "threshold_for_reporting": 0.5,
   "temperature_init": 1.0,
-  "temperature": 1.5960651636123657,
-  "nll_before": 0.07557142525911331,
-  "nll_after": 0.06332413107156754,
+  "temperature": 2.577918529510498,
+  "nll_before": 0.10461943596601486,
+  "nll_after": 0.05500371381640434,
   "metrics_before": {
-    "accuracy": 0.97625,
-    "precision": 0.9738805970149254,
+    "accuracy": 0.98375,
+    "precision": 0.9886363636363636,
     "recall": 0.97875,
-    "f1": 0.9763092269326683,
-    "auc": 0.99720703125,
-    "loss": 0.07557283915579319
+    "f1": 0.9836683417085427,
+    "auc": 0.9963734375,
+    "loss": 0.10463410317897796
   },
   "metrics_after": {
-    "accuracy": 0.97625,
-    "precision": 0.9738805970149254,
+    "accuracy": 0.98375,
+    "precision": 0.9886363636363636,
     "recall": 0.97875,
-    "f1": 0.9763092269326683,
-    "auc": 0.99721015625,
-    "loss": 0.06332413107156754
+    "f1": 0.9836683417085427,
+    "auc": 0.9963898437500001,
+    "loss": 0.05500371381640434
   },
   "dataset_size": 1600,
   "class_counts": {
     "0": 800,
     "1": 800
   },
-  "best_score_in_checkpoint": 0.99720703125,
-  "best_epoch_in_checkpoint": 2,
-  "saved_epoch": 2
+  "best_score_in_checkpoint": 0.9963734375,
+  "best_epoch_in_checkpoint": 12,
+  "saved_epoch": 12
 }

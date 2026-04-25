@@ -6,28 +6,28 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/ideogram-3.0/best.pth",
-  "temperature": 3.255962610244751,
+  "temperature": 2.042724132537842,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/ideogram-3.0/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.91525,
-    "precision": 0.9786743515850144,
-    "recall": 0.849,
-    "f1": 0.9092369477911647,
-    "auc": 0.9877439687499999,
-    "loss": 0.38539568449929357,
-    "temperature": 3.255962610244751,
+    "accuracy": 0.9114375,
+    "precision": 0.953437112549938,
+    "recall": 0.865125,
+    "f1": 0.9071367717412675,
+    "auc": 0.9794890234375,
+    "loss": 0.32860772117972376,
+    "temperature": 2.042724132537842,
     "threshold": 0.5,
-    "loss_total": 0.38539568449929357,
-    "loss_spatial_aux": 0.5230874782949686,
-    "loss_spectral_aux": 0.31110674097388985
+    "loss_total": 0.32860772117972376,
+    "loss_spatial_aux": 0.3086124611720443,
+    "loss_spectral_aux": 0.2583123619481921
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9946496448863636,
-  "best_epoch_in_checkpoint": 11,
-  "saved_epoch": 11
+  "best_score_in_checkpoint": 0.992008819731405,
+  "best_epoch_in_checkpoint": 7,
+  "saved_epoch": 7
 }

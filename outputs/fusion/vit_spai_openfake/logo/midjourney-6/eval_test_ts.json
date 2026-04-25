@@ -6,28 +6,28 @@
   "split_csv_override_used": false,
   "generator_name": null,
   "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6/best.pth",
-  "temperature": 1.1514023542404175,
+  "temperature": 2.975053548812866,
   "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/fusion/vit_spai_openfake/logo/midjourney-6/temperature.json",
   "threshold_used": 0.5,
   "metrics": {
-    "accuracy": 0.7813125,
-    "precision": 0.9391219512195121,
-    "recall": 0.601625,
-    "f1": 0.7334095238095238,
-    "auc": 0.9359910390625,
-    "loss": 0.8173032528683544,
-    "temperature": 1.1514023542404175,
+    "accuracy": 0.7729375,
+    "precision": 0.9490026732469669,
+    "recall": 0.576875,
+    "f1": 0.7175619995335458,
+    "auc": 0.9325937187500001,
+    "loss": 1.1220984991788865,
+    "temperature": 2.975053548812866,
     "threshold": 0.5,
-    "loss_total": 0.8173032528683544,
-    "loss_spatial_aux": 0.6873394272476435,
-    "loss_spectral_aux": 0.4539474909007549
+    "loss_total": 1.1220984991788865,
+    "loss_spatial_aux": 1.3492222537919878,
+    "loss_spectral_aux": 1.0831659012213348
   },
   "dataset_size": 16000,
   "class_counts": {
     "0": 8000,
     "1": 8000
   },
-  "best_score_in_checkpoint": 0.9928199315599173,
-  "best_epoch_in_checkpoint": 2,
-  "saved_epoch": 2
+  "best_score_in_checkpoint": 0.9926864992252066,
+  "best_epoch_in_checkpoint": 12,
+  "saved_epoch": 12
 }
