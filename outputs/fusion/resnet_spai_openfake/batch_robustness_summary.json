@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-18T16:24:39",
+  "timestamp": "2026-04-25T21:00:06",
   "mode": "merged",
   "resolved_modes": [
     "merged"
@@ -22,7 +22,8 @@
       "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/merged",
       "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/merged/data/merged.yaml",
       "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/merged/merged/best.pth",
-      "robustness_status": "skipped_existing"
+      "robustness_status": "failed",
+      "error": "Command '['/home/user/SC/miniconda3/envs/deepfake/bin/python', '-u', 'scripts/evaluate_robustness.py', '--data_config', '/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/merged/data/merged.yaml', '--model_config', '/home/user/SC/Deepfake-Fusion/configs/model/fusion.yaml', '--train_config', '/home/user/SC/Deepfake-Fusion/configs/train/fusion_resnet_spai_openfake.yaml', '--robustness_config', '/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml', '--split', 'test', '--output_dir', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/merged/merged/robustness_test', '--checkpoint', '/home/user/SC/Deepfake-Fusion/outputs/fusion/resnet_spai_openfake/merged/merged/best.pth']' returned non-zero exit status 1."
     }
   ]
 }
