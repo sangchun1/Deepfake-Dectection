@@ -357,8 +357,9 @@ def evaluate_loader_with_details(
         labels = batch["label"]
 
         with trainer._autocast_context():
-            logits = trainer.model(images)
-            loss = trainer.criterion(logits, labels)
+            model_output = trainer.model(images)
+            logits = trainer._extract_logits(model_output)
+            loss, loss_dict = trainer._compute_loss(model_output, labels)
 
         meter.update(
             logits=logits.detach(),
