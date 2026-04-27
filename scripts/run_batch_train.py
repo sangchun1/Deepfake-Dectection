@@ -72,7 +72,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--generated_config_dir",
         type=str,
-        default="configs/_generated/openfake_batch",
+        default="configs/_generated/batch",
         help="Where generated per-experiment configs will be stored.",
     )
     parser.add_argument(

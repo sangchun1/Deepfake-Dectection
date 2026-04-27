@@ -61,7 +61,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--train_config", type=str, default="configs/train/fusion_resnet.yaml")
     parser.add_argument("--robustness_config", type=str, default="configs/train/robustness.yaml")
     parser.add_argument("--splits_root", type=str, default="data/splits")
-    parser.add_argument("--generated_config_dir", type=str, default="configs/_generated/openfake_robustness_batch")
+    parser.add_argument("--generated_config_dir", type=str, default="configs/_generated/robustness_batch")
     parser.add_argument("--output_root", type=str, default="outputs/fusion/resnet")
     parser.add_argument("--root_dir", type=str, default=None)
     parser.add_argument("--split", type=str, default="test", choices=["train", "val", "test"])

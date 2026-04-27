@@ -187,7 +187,7 @@ python scripts/train.py `
 ```bash
 python scripts/train.py `
   --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion.yaml `
+  --model_config configs/model/fusion_resnet.yaml `
   --train_config configs/train/fusion_resnet.yaml
 ```
 
@@ -196,7 +196,7 @@ python scripts/train.py `
 ```bash
 python scripts/train.py `
   --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion.yaml `
+  --model_config configs/model/fusion_vit.yaml `
   --train_config configs/train/fusion_vit.yaml
 ```
 

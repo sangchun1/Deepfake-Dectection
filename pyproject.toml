@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "deepfake-detection-fusion"
 version = "0.1.0"
-description = "Deepfake image detection with spatial-frequency fusion, explainability, robustness, and multi-dataset evaluation"
+description = "Deepfake image detection with spatial-frequency fusion, explainability, and robustness evaluation"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
