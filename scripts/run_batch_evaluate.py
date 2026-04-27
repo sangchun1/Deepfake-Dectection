@@ -66,7 +66,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--base_data_config",
         type=str,
-        default="configs/data/openfake.yaml",
+        default="configs/data/default.yaml",
         help="Base data config YAML.",
     )
     parser.add_argument(
@@ -78,13 +78,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--train_config",
         type=str,
-        default="configs/train/spatial_resnet_openfake.yaml",
+        default="configs/train/spatial_resnet.yaml",
         help="Base train config path.",
     )
     parser.add_argument(
         "--splits_root",
         type=str,
-        default="data/splits/openfake",
+        default="data/splits",
         help="Root directory containing merged/by_generator/logo/group_holdout split folders.",
     )
     parser.add_argument(
@@ -96,7 +96,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output_root",
         type=str,
-        default="outputs/spatial/openfake",
+        default="outputs/spatial",
         help="Base output directory that contains mode/exp_name/best.pth.",
     )
     parser.add_argument(

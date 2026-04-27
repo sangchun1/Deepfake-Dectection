@@ -1,7 +1,7 @@
 # Toward Generalizable and Robust Deepfake Detection: A Spatial-Frequency Fusion Baseline
 
 This repository presents a deepfake image detection project focused on **generalization** and **robustness**.  
-The core idea is to compare **spatial-only**, **frequency-only**, and **spatial-frequency fusion** models on **OpenFake**, and then evaluate whether the learned detector transfers to <!--**Semi-Truths** and--> corrupted test conditions.
+The core idea is to compare **spatial-only**, **frequency-only**, and **spatial-frequency fusion** models on **OpenFake**, and then evaluate whether the learned detector transfers to corrupted test conditions.
 
 ## Overview
 
@@ -12,7 +12,7 @@ The project is organized around three questions:
 
 - Can a spatial model alone generalize to unseen generators?
 - Does a frequency-based model capture useful artifacts missed by RGB-only models?
-- Does fusion improve robustness under distribution shift<!-- and external benchmarks-->?
+- Does fusion improve robustness under distribution shift
 
 ## Methods
 
@@ -31,7 +31,7 @@ We compare three detector families:
 
 The frequency branch uses transformed spectral representations to capture generator-specific artifacts that may be weak in pixel space. The fusion model combines spatial and spectral features to produce the final binary prediction.
 
-## Datasets
+## Dataset
 
 ### [OpenFake](https://huggingface.co/datasets/ComplexDataLab/OpenFake)
 Primary dataset for training and in-domain evaluation.
@@ -41,17 +41,7 @@ This project uses OpenFake under multiple evaluation settings:
 - **merged**: standard mixed-generator evaluation
 - **by_generator**: per-generator test splits for generalization analysis
 - **logo**: generator/logo holdout setting for stronger distribution shift
-
-<!-- ### [Semi-Truths](https://huggingface.co/datasets/semi-truths/Semi-Truths)
-External benchmark for out-of-distribution evaluation.
-
-Semi-Truths is used to assess whether a detector trained on OpenFake remains reliable across:
-
-- different edit types
-- semantic edit magnitude
-- area ratio
-- scene complexity/diversity
-- other grouped metadata conditions -->
+- **group_holdout**: group-level generator holdout evaluation
 
 ## Evaluation
 
@@ -62,7 +52,6 @@ The project evaluates performance with:
 - Recall
 - F1-score
 - ROC-AUC
-<!-- - Grouped metrics on Semi-Truths -->
 - Corruption robustness under JPEG, blur, noise, and resize degradations
 - Explainability with Grad-CAM, attention rollout, and frequency visualizations
 
@@ -109,16 +98,6 @@ The project evaluates performance with:
 | ViT + SPAI      |     99.30 / 95.62 |     99.64 / 97.19 |     95.90 / 82.81 |     93.27 / 80.97 |
 
 
-### Robustness Corruptions with Robust-Aware Training (AUC/F1)
-
-| Model           | Clean         | JPEG          | Blur          | Noise         | Resize        | Mean          | Drop ↓       | Worst         |
-|-----------------|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|-------------:|--------------:|
-| ResNet18        | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ---- / ----- | ----- / ----- |
-| ViT             | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ---- / ----- | ----- / ----- |
-| SPAI            | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ---- / ----- | ----- / ----- |
-| ResNet18 + SPAI | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ---- / ----- | ----- / ----- |
-| ViT + SPAI      | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ----- / ----- | ---- / ----- | ----- / ----- |
-
 ### Robustness Corruptions without Robust-Aware Training (AUC/F1)
 
 | Model           | Clean         | JPEG          | Blur          | Noise         | Resize        | Mean          | Drop ↓       | Worst         |
@@ -129,15 +108,16 @@ The project evaluates performance with:
 | ResNet18 + SPAI | 99.41 / 96.49 | 97.52 / 74.87 | 95.22 / 89.21 | 97.65 / 82.11 | 98.75 / 94.86 | 97.28 / 85.26 | 2.13 / 11.23 | 87.34 / 77.83 |
 | ViT + SPAI      | 99.35 / 96.29 | 97.62 / 76.36 | 97.06 / 91.15 | 97.93 / 83.94 | 98.95 / 95.36 | 97.89 / 86.71 | 1.46 / 9.58  | 92.76 / 82.43 |
 
-<!-- ### External Generalization on Semi-Truths
+### Robustness Corruptions with Robust-Aware Training (AUC/F1)
 
-| Model | Overall AUC | Overall F1 | Worst Group AUC | Group Gap ↓ |
-|---|---:|---:|---:|---:|
-| ResNet18 | - | - | - | - |
-| ViT | - | - | - | - |
-| SPAI | - | - | - | - |
-| ResNet18 + SPAI | - | - | - | - |
-| ViT + SPAI | - | - | - | - | -->
+| Model           | Clean         | JPEG          | Blur          | Noise         | Resize        | Mean          | Drop ↓       | Worst         |
+|-----------------|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|-------------:|--------------:|
+| ResNet18        | 98.45 / 93.75 | 97.76 / 88.43 | 97.77 / 92.48 | 98.12 / 92.31 | 98.10 / 93.11 | 97.94 / 91.58 | 0.51 / 2.16  | 95.86 / 75.97 |
+| ViT             | 99.35 / 96.61 | 98.40 / 88.16 | 99.14 / 95.90 | 99.16 / 95.71 | 99.26 / 96.29 | 98.99 / 94.01 | 0.36 / 2.60  | 96.25 / 71.40 |
+| SPAI            | 99.31 / 96.70 | 98.41 / 87.30 | 99.03 / 95.80 | 99.10 / 95.52 | 99.22 / 96.37 | 98.94 / 93.75 | 0.37 / 2.96  | 96.22 / 68.57 |
+| ResNet18 + SPAI | 99.26 / 95.57 | 98.47 / 86.28 | 98.83 / 94.76 | 99.10 / 94.33 | 99.06 / 95.26 | 98.86 / 92.66 | 0.40 / 2.91  | 96.53 / 67.87 |
+| ViT + SPAI      | 99.24 / 95.62 | 98.04 / 83.59 | 98.97 / 94.94 | 99.00 / 94.11 | 99.14 / 95.36 | 98.79 / 92.00 | 0.45 / 3.62  | 95.66 / 59.73 |
+
 
 ## Installation
 
@@ -175,40 +155,49 @@ pip install -e ".[dev]"
 
 ## Training
 
-### Spatial baseline (ResNet-18 on OpenFake)
+### Spatial baseline (ResNet-18)
 
 ```bash
 python scripts/train.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/resnet18.yaml `
-  --train_config configs/train/spatial_resnet_openfake.yaml
+  --train_config configs/train/spatial_resnet.yaml
 ```
 
-### Frequency baseline (SPAI on OpenFake)
+### Spatial baseline (ViT)
 
 ```bash
 python scripts/train.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
+  --model_config configs/model/vit.yaml `
+  --train_config configs/train/spatial_vit.yaml
+```
+
+### Frequency baseline (SPAI)
+
+```bash
+python scripts/train.py `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/spai.yaml `
-  --train_config configs/train/frequency_spai_openfake.yaml
+  --train_config configs/train/frequency.yaml
 ```
 
-### Fusion baseline (ResNet-18 + SPAI on OpenFake)
+### Fusion baseline (ResNet-18 + SPAI)
 
 ```bash
 python scripts/train.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml
+  --train_config configs/train/fusion_resnet.yaml
 ```
 
-### Fusion baseline (ViT + SPAI on OpenFake)
+### Fusion baseline (ViT + SPAI)
 
 ```bash
 python scripts/train.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_vit_spai_openfake.yaml
+  --train_config configs/train/fusion_vit.yaml
 ```
 
 ## Evaluation
@@ -217,30 +206,21 @@ python scripts/train.py `
 
 ```bash
 python scripts/evaluate.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml
+  --train_config configs/train/fusion_resnet.yaml
 ```
 
 ### Robustness evaluation
 
 ```bash
 python scripts/evaluate_robustness.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml `
+  --train_config configs/train/fusion_resnet.yaml `
   --robustness_config configs/train/robustness.yaml `
   --split test
 ```
-
-<!-- ### Semi-Truths evaluation
-
-```bash
-python scripts/evaluate_semitruths.py `
-  --data_config configs/data/semitruths_eval.yaml `
-  --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml
-``` -->
 
 ## Explainability
 
@@ -248,9 +228,9 @@ python scripts/evaluate_semitruths.py `
 
 ```bash
 python scripts/explain.py `
-  --data_config configs/data/openfake.yaml `
+  --data_config configs/data/default.yaml `
   --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet_spai_openfake.yaml `
+  --train_config configs/train/fusion_resnet.yaml `
   --split test
 ```
 
@@ -272,4 +252,4 @@ The final aim is to build a **simple but strong baseline for generalizable and r
 
 ## Citation
 
-If you use this repository or build on this project, please cite the repository and acknowledge the OpenFake dataset<!-- and Semi-Truths datasets--> accordingly.
+If you use this repository or build on this project, please cite the repository and acknowledge the OpenFake dataset accordingly.

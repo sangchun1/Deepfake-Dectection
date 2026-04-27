@@ -1,0 +1,38 @@
+{
+  "dataset_name": "openfake_by_generator_gpt-image-1",
+  "dataset_class": "OpenFakeDataset",
+  "fit_split": "val",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/by_generator/gpt-image-1/val.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/gpt-image-1/best.pth",
+  "threshold_for_reporting": 0.5,
+  "temperature_init": 1.0,
+  "temperature": 2.1667227745056152,
+  "nll_before": 0.07247142493724823,
+  "nll_after": 0.04953696206212044,
+  "metrics_before": {
+    "accuracy": 0.984375,
+    "precision": 0.9801734820322181,
+    "recall": 0.98875,
+    "f1": 0.984443061605476,
+    "auc": 0.9975531249999999,
+    "loss": 0.07246874637901783
+  },
+  "metrics_after": {
+    "accuracy": 0.984375,
+    "precision": 0.9801734820322181,
+    "recall": 0.98875,
+    "f1": 0.984443061605476,
+    "auc": 0.9977046875,
+    "loss": 0.04953696206212044
+  },
+  "dataset_size": 1600,
+  "class_counts": {
+    "0": 800,
+    "1": 800
+  },
+  "best_score_in_checkpoint": 0.9975531249999999,
+  "best_epoch_in_checkpoint": 10,
+  "saved_epoch": 10
+}

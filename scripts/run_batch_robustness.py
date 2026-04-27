@@ -56,13 +56,13 @@ def parse_args() -> argparse.Namespace:
         default="all",
         choices=["merged", "by_generator", "logo", "group_holdout", "all"],
     )
-    parser.add_argument("--base_data_config", type=str, default="configs/data/openfake.yaml")
+    parser.add_argument("--base_data_config", type=str, default="configs/data/default.yaml")
     parser.add_argument("--model_config", type=str, default="configs/model/fusion.yaml")
-    parser.add_argument("--train_config", type=str, default="configs/train/fusion_resnet_spai_openfake.yaml")
+    parser.add_argument("--train_config", type=str, default="configs/train/fusion_resnet.yaml")
     parser.add_argument("--robustness_config", type=str, default="configs/train/robustness.yaml")
-    parser.add_argument("--splits_root", type=str, default="data/splits/openfake")
+    parser.add_argument("--splits_root", type=str, default="data/splits")
     parser.add_argument("--generated_config_dir", type=str, default="configs/_generated/openfake_robustness_batch")
-    parser.add_argument("--output_root", type=str, default="outputs/fusion/resnet_spai_openfake")
+    parser.add_argument("--output_root", type=str, default="outputs/fusion/resnet")
     parser.add_argument("--root_dir", type=str, default=None)
     parser.add_argument("--split", type=str, default="test", choices=["train", "val", "test"])
     parser.add_argument("--names", nargs="*", default=None)

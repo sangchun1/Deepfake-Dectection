@@ -10,9 +10,7 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader
 
-from deepfake_fusion.datasets.cifake_dataset import CIFAKEDataset
-from deepfake_fusion.datasets.face130k_dataset import FACE130KDataset
-from deepfake_fusion.datasets.openfake_dataset import OpenFakeDataset
+from deepfake_fusion.datasets.binary_image_dataset import BinaryImageDataset
 from deepfake_fusion.models.build_model import build_model
 from deepfake_fusion.transforms.robustness import (
     build_clean_eval_transform,
@@ -64,23 +62,18 @@ from deepfake_fusion.visualization.gradcam import (
 
 
 DATASET_REGISTRY: Dict[str, Type] = {
-    "cifake": CIFAKEDataset,
-    "CIFAKEDataset": CIFAKEDataset,
-    "face130k": FACE130KDataset,
-    "FACE130KDataset": FACE130KDataset,
-    "openfake": OpenFakeDataset,
-    "OpenFakeDataset": OpenFakeDataset,
+    "default": BinaryImageDataset,
 }
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run confusion-matrix and error-case analysis.")
-    parser.add_argument("--data_config", type=str, default="configs/data/openfake.yaml")
+    parser.add_argument("--data_config", type=str, default="configs/data/default.yaml")
     parser.add_argument("--model_config", type=str, default="configs/model/resnet18.yaml")
     parser.add_argument(
         "--train_config",
         type=str,
-        default="configs/train/spatial_resnet_openfake.yaml",
+        default="configs/train/spatial_resnet.yaml",
     )
     parser.add_argument(
         "--robustness_config",

@@ -208,14 +208,13 @@ __marimo__/
 
 # Large Files
 data/raw/
-data/processed/
-outputs/*/*/wandb/
-outputs/*/*/*/*/wandb/
+outputs/**/wandb/
 *.pth
-outputs/*/*/sweeps/
+*.pt
+*.ckpt
+configs/_generated/
 
 command.md
-archive/
 
 *.wandb
 

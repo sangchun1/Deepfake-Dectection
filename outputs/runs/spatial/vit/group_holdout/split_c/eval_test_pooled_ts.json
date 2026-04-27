@@ -1,0 +1,31 @@
+{
+  "dataset_name": "openfake_group_holdout_split_c",
+  "dataset_class": "OpenFakeDataset",
+  "split": "test",
+  "evaluated_csv": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/group_holdout/split_c/test.csv",
+  "split_csv_override_used": false,
+  "generator_name": null,
+  "checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_c/best.pth",
+  "temperature": 2.5524957180023193,
+  "temperature_json": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/group_holdout/split_c/temperature.json",
+  "threshold_used": 0.5,
+  "metrics": {
+    "accuracy": 0.8621670626484932,
+    "precision": 0.9467108814683427,
+    "recall": 0.7675378266850069,
+    "f1": 0.847760781740962,
+    "auc": 0.9581353739107016,
+    "loss": 0.3503195369488589,
+    "temperature": 2.5524957180023193,
+    "threshold": 0.5,
+    "loss_total": 0.35029589002331096
+  },
+  "dataset_size": 95964,
+  "class_counts": {
+    "0": 47982,
+    "1": 47982
+  },
+  "best_score_in_checkpoint": 0.9921241102430556,
+  "best_epoch_in_checkpoint": 9,
+  "saved_epoch": 9
+}

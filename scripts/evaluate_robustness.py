@@ -11,7 +11,7 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 
-from deepfake_fusion.datasets.openfake_dataset import OpenFakeDataset
+from deepfake_fusion.datasets.binary_image_dataset import BinaryImageDataset
 from deepfake_fusion.engine.trainer import Trainer
 from deepfake_fusion.metrics.classification import (
     ClassificationMeter,
@@ -45,8 +45,7 @@ except Exception:
 
 
 DATASET_REGISTRY: Dict[str, Type] = {
-    "openfake": OpenFakeDataset,
-    "OpenFakeDataset": OpenFakeDataset,
+    "default": BinaryImageDataset,
 }
 
 
@@ -57,7 +56,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--data_config",
         type=str,
-        default="configs/data/cifake.yaml",
+        default="configs/data/default.yaml",
         help="Path to data config YAML.",
     )
     parser.add_argument(
@@ -69,7 +68,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--train_config",
         type=str,
-        default="configs/train/spatial_resnet_cifake.yaml",
+        default="configs/train/spatial_resnet.yaml",
         help="Path to train config YAML.",
     )
     parser.add_argument(

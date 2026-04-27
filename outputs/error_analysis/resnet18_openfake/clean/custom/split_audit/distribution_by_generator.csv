@@ -1,9 +1,0 @@
-﻿split,column,generator,count
-train,generator,real,67194
-train,generator,fake,67194
-val,generator,real,9599
-val,generator,fake,9599
-test,generator,real,19198
-test,generator,fake,19198
-custom,generator,real,19198
-custom,generator,fake,19198

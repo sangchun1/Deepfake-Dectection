@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-04-25T18:09:03",
+  "mode": "merged",
+  "resolved_modes": [
+    "merged"
+  ],
+  "base_data_config": "/home/user/SC/Deepfake-Fusion/configs/data/openfake.yaml",
+  "model_config": "/home/user/SC/Deepfake-Fusion/configs/model/vit.yaml",
+  "train_config": "/home/user/SC/Deepfake-Fusion/configs/train/spatial_vit_openfake.yaml",
+  "robustness_config": "/home/user/SC/Deepfake-Fusion/configs/train/robustness.yaml",
+  "splits_root": "/home/user/SC/Deepfake-Fusion/data/splits/openfake",
+  "generated_config_dir": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch",
+  "output_root": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake",
+  "root_dir_override": "/home/user/DATA/deepfake",
+  "split": "test",
+  "checkpoint_name": "best.pth",
+  "selected_names": null,
+  "results": [
+    {
+      "mode": "merged",
+      "exp_name": "merged",
+      "split_dir": "/home/user/SC/Deepfake-Fusion/data/splits/openfake/merged",
+      "generated_data_config": "/home/user/SC/Deepfake-Fusion/configs/_generated/openfake_robustness_batch/merged/data/merged.yaml",
+      "checkpoint_path": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/merged/merged/best.pth",
+      "robustness_status": "done",
+      "robustness_output_dir": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/merged/merged/robustness_test"
+    }
+  ]
+}

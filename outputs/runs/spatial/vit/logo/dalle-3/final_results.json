@@ -1,0 +1,26 @@
+{
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/logo/dalle-3/best.pth",
+  "best_epoch": 10,
+  "best_monitor": "val_auc",
+  "best_score": 0.9938507683367769,
+  "val_metrics": {
+    "accuracy": 0.9639204545454545,
+    "precision": 0.9688756173193982,
+    "recall": 0.9586363636363636,
+    "f1": 0.9637287941966071,
+    "auc": 0.9938507683367769,
+    "loss": 0.1550931221314452,
+    "threshold": 0.5,
+    "loss_total": 0.1550931221314452
+  },
+  "test_metrics": {
+    "accuracy": 0.8840625,
+    "precision": 0.9629350610215459,
+    "recall": 0.798875,
+    "f1": 0.8732663797226208,
+    "auc": 0.9689390000000001,
+    "loss": 0.6855395262166858,
+    "threshold": 0.5,
+    "loss_total": 0.6855395262166858
+  }
+}

@@ -57,7 +57,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output_dir",
         type=str,
-        default="data/splits/cifake",
+        default="data/splits",
         help="Directory where split CSV files will be saved.",
     )
     parser.add_argument(

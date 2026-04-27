@@ -1,0 +1,26 @@
+{
+  "best_checkpoint": "/home/user/SC/Deepfake-Fusion/outputs/spatial/vit_openfake/by_generator/midjourney-6/best.pth",
+  "best_epoch": 4,
+  "best_monitor": "val_auc",
+  "best_score": 0.9982421874999999,
+  "val_metrics": {
+    "accuracy": 0.984375,
+    "precision": 0.9813664596273292,
+    "recall": 0.9875,
+    "f1": 0.9844236760124611,
+    "auc": 0.9982421874999999,
+    "loss": 0.052299614250659945,
+    "threshold": 0.5,
+    "loss_total": 0.052299614250659945
+  },
+  "test_metrics": {
+    "accuracy": 0.9799874921826142,
+    "precision": 0.9866835764109068,
+    "recall": 0.9731081926203877,
+    "f1": 0.9798488664987406,
+    "auc": 0.9980663336724289,
+    "loss": 0.07049682271376187,
+    "threshold": 0.5,
+    "loss_total": 0.07047784548252821
+  }
+}
