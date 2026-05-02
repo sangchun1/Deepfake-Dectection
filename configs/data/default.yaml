@@ -1,5 +1,5 @@
 name: default
-dataset_class: BinaryImageDataset
+dataset_class: binaryimagedataset
 
 num_classes: 2
 task: binary_classification

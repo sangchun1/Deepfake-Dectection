@@ -25,7 +25,7 @@ from deepfake_fusion.utils.seed import (
 )
 
 DATASET_REGISTRY: Dict[str, Type] = {
-    "binary_image": BinaryImageDataset,
+    "binaryimagedataset": BinaryImageDataset,
 }
 
 

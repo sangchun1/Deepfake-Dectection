@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Mapping, Optional, Type
 
 import torch
+import numpy as np
 
 from deepfake_fusion.datasets.binary_image_dataset import BinaryImageDataset
 from deepfake_fusion.models.build_model import build_model
@@ -95,7 +96,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--target_layer",
         type=str,
-        default=None,
+        default="spatial_branch.backbone.layer4.1.conv2",
         help="Grad-CAM target layer. Example: backbone.layer4.1",
     )
     parser.add_argument(
@@ -295,7 +296,21 @@ def load_checkpoint_to_model(
     return checkpoint
 
 
-def get_prob_and_pred(logits: torch.Tensor) -> tuple[float, int]:
+def get_prob_and_pred(logits) -> tuple[float, int]:
+    # Fusion model may return a dict
+    if isinstance(logits, dict):
+        if "logits" in logits:
+            logits = logits["logits"]
+        elif "main_logits" in logits:
+            logits = logits["main_logits"]
+        elif "pred_logits" in logits:
+            logits = logits["pred_logits"]
+        else:
+            raise KeyError(
+                f"Model output is dict, but no logits key found. "
+                f"Available keys: {list(logits.keys())}"
+            )
+
     if logits.ndim == 1:
         prob_pos = float(torch.sigmoid(logits)[0].item())
         pred = int(prob_pos >= 0.5)
@@ -357,13 +372,42 @@ def resolve_frequency_explain_components(
     )
 
 
+def enhance_cam_for_presentation(
+    cam,
+    low_percentile: float = 80.0,
+    high_percentile: float = 99.5,
+    gamma: float = 0.65,
+    threshold: float = 0.18,
+):
+    cam = np.asarray(cam, dtype=np.float32)
+    cam = np.maximum(cam, 0)
+
+    lo = np.percentile(cam, low_percentile)
+    hi = np.percentile(cam, high_percentile)
+
+    if hi <= lo:
+        hi = cam.max() if cam.max() > 0 else 1.0
+        lo = cam.min()
+
+    cam = (cam - lo) / (hi - lo + 1e-8)
+    cam = np.clip(cam, 0, 1)
+
+    # 강한 영역 더 강조
+    cam = cam ** gamma
+
+    # 약한 activation 제거
+    cam[cam < threshold] = 0.0
+
+    return cam
+
+
 def get_dataset_class(cfg):
     dataset_key = None
 
     if getattr(cfg.data, "dataset_class", None) is not None:
-        dataset_key = str(cfg.data.dataset_class)
+        dataset_key = str(cfg.data.dataset_class).lower()
     elif getattr(cfg.data, "name", None) is not None:
-        dataset_key = str(cfg.data.name)
+        dataset_key = str(cfg.data.name).lower()
 
     if dataset_key is None:
         raise ValueError(
@@ -483,7 +527,8 @@ def build_explainer(
     if method == "gradcam":
         target_layer = resolve_target_layer(model, args.target_layer)
         print(f"Using target layer for Grad-CAM: {target_layer}")
-        explainer = GradCAM(model=model, target_layer=target_layer)
+        explainer_model = LogitsOnlyModel(model)
+        explainer = GradCAM(model=explainer_model, target_layer=target_layer)
         return explainer, target_layer
 
     if method == "rollout":
@@ -519,6 +564,49 @@ def build_explainer(
         return None, None
 
     raise ValueError(f"Unsupported explanation method: {method}")
+
+
+def extract_logits(output):
+    if isinstance(output, dict):
+        if "logits" in output:
+            return output["logits"]
+        if "main_logits" in output:
+            return output["main_logits"]
+        if "pred_logits" in output:
+            return output["pred_logits"]
+        raise KeyError(f"No logits key found in model output: {list(output.keys())}")
+    return output
+
+
+class LogitsOnlyModel(torch.nn.Module):
+    """Wrap models that return dict outputs so explainers receive logits tensor only."""
+
+    def __init__(self, model: torch.nn.Module):
+        super().__init__()
+        self.model = model
+
+    def forward(self, *args, **kwargs):
+        return extract_logits(self.model(*args, **kwargs))
+
+
+def make_original_overlay_panel(original_rgb: np.ndarray, overlay_rgb: np.ndarray) -> np.ndarray:
+    """Return a simple side-by-side panel: original image | Grad-CAM overlay."""
+    original_rgb = np.asarray(original_rgb)
+    overlay_rgb = np.asarray(overlay_rgb)
+
+    if original_rgb.ndim != 3 or overlay_rgb.ndim != 3:
+        raise ValueError(
+            f"Expected HWC RGB images, got original={original_rgb.shape}, "
+            f"overlay={overlay_rgb.shape}"
+        )
+
+    if original_rgb.shape != overlay_rgb.shape:
+        raise ValueError(
+            f"Original and overlay shapes must match, got "
+            f"original={original_rgb.shape}, overlay={overlay_rgb.shape}"
+        )
+
+    return np.concatenate([original_rgb, overlay_rgb], axis=1)
 
 
 def main() -> None:
@@ -747,7 +835,7 @@ def main() -> None:
                 target_class = pred_label if args.target_type == "pred" else true_label
             else:
                 with torch.no_grad():
-                    logits = model(x)
+                    logits = extract_logits(model(x))
                 pred_prob, pred_label = get_prob_and_pred(logits)
                 target_class = pred_label if args.target_type == "pred" else true_label
                 result = explainer.generate(x, target_class=target_class)
@@ -757,30 +845,22 @@ def main() -> None:
                 continue
 
             input_rgb = denormalize_image_tensor(image_tensor, mean=mean, std=std)
-            cam = result["cam"]
-            heatmap_rgb = apply_colormap_to_cam(cam)
-            overlay_rgb = overlay_cam_on_image(input_rgb, cam, alpha=args.alpha)
+            cam = enhance_cam_for_presentation(
+                result["cam"],
+                low_percentile=80,
+                high_percentile=99.5,
+                gamma=0.65,
+                threshold=0.18,
+            )
 
-            text_lines = [
-                (
-                    f"dataset={dataset_name} | split={args.split} | "
-                    f"group={group} | idx={idx} | method={method}"
-                ),
-                (
-                    f"true={short_label_name(true_label)}({true_label}) | "
-                    f"pred={short_label_name(pred_label)}({pred_label}) | "
-                    f"prob={pred_prob:.4f}"
-                ),
-                f"target_type={args.target_type} | target_class={target_class}",
-                f"condition={condition_name}",
-                f"path={Path(filepath).name}",
-            ]
+            overlay_rgb = overlay_cam_on_image(input_rgb, cam, alpha=0.60)
 
-            panel = make_gradcam_panel(
+            # Presentation-friendly output:
+            # left = original image, right = Grad-CAM overlay.
+            # No heatmap-only panel and no text block are added.
+            panel = make_original_overlay_panel(
                 original_rgb=input_rgb,
-                heatmap_rgb=heatmap_rgb,
                 overlay_rgb=overlay_rgb,
-                text_lines=text_lines,
             )
 
             filename = (

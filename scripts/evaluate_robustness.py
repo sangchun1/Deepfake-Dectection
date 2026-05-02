@@ -45,7 +45,7 @@ except Exception:
 
 
 DATASET_REGISTRY: Dict[str, Type] = {
-    "default": BinaryImageDataset,
+    "binaryimagedataset": BinaryImageDataset,
 }
 
 

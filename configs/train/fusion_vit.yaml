@@ -1,7 +1,7 @@
 experiment:
   name: fusion_vit
   task: fusion_classification
-  output_dir: outputs/fusion/vit
+  output_dir: outputs/runs/fusion/vit
   seed: 42
   device: cuda
   use_amp: true

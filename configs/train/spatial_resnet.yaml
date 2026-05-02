@@ -1,7 +1,7 @@
 experiment:
   name: spatial_resnet
   task: spatial_classification
-  output_dir: outputs/spatial/resnet
+  output_dir: outputs/runs/spatial/resnet
   seed: 42
   device: cuda
   use_amp: true

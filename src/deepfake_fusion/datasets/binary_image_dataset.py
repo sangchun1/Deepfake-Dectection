@@ -209,17 +209,17 @@ class BinaryImageDataset(Dataset):
         raise ValueError(f"Unsupported label value: {label}")
 
 
-def build_openfake_dataset(
+def build_binary_image_dataset(
     csv_path: PathLike,
     root_dir: Optional[PathLike] = None,
     transform: Optional[Callable] = None,
     image_mode: str = "RGB",
     validate_files: bool = True,
-) -> OpenFakeDataset:
+) -> BinaryImageDataset:
     """
     간단한 dataset 생성 helper.
     """
-    return OpenFakeDataset(
+    return BinaryImageDataset(
         csv_path=csv_path,
         root_dir=root_dir,
         transform=transform,
