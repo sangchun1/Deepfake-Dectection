@@ -244,24 +244,6 @@ python scripts/evaluate_robustness.py `
   --split test
 ```
 
-## Explainability
-
-### Standard explanation
-
-```bash
-python scripts/explain.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet.yaml `
-  --split test
-```
-
-The visualization method is selected according to model type:
-
-- **Grad-CAM** for CNN-based spatial models
-- **Attention rollout** for ViT-based models
-- **Frequency visualization** for SPAI-based spectral models
-
 ## Project Goal
 
 This repository is not only a benchmark implementation for deepfake classification, but also a study of:
