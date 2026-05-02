@@ -41,22 +41,7 @@ Branch dropout and auxiliary losses are applied only to fusion models, while tem
 OpenFake is used as the primary dataset for training and evaluation.  
 This project focuses on binary classification between real images and AI-generated images.
 
-The generated image subset consists of images from the following 12 generators:
-
-| Generator |
-|---|
-| DALL·E 3 |
-| FLUX 1.1 Pro |
-| FLUX MVC5000 |
-| FLUX.1 Dev |
-| GPT-Image-1 |
-| Grok-2-Image-1212 |
-| HiDream-I1-Full |
-| Ideogram 3.0 |
-| Imagen 4.0 |
-| Midjourney 6 |
-| Stable Diffusion 3.5 |
-| SDXL Epic Realism |
+The generated image subset consists of images from the following 12 generators: `DALL·E 3`, `FLUX 1.1 Pro`, `FLUX MVC5000`, `FLUX.1 Dev`, `GPT-Image-1`, `Grok-2-Image-1212`, `HiDream-I1-Full`, `Ideogram 3.0`, `Imagen 4.0`, `Midjourney 6`, `Stable Diffusion 3.5`, `SDXL Epic Realism`.
 
 This project uses OpenFake under multiple evaluation settings:
 
