@@ -14,6 +14,14 @@ The project is organized around three questions:
 - Does a frequency-based model capture useful artifacts missed by RGB-only models?
 - Does fusion improve robustness under distribution shift?
 
+<p align="center">
+  <img src="data/report/overall_framework.png" width="850">
+</p>
+
+<p align="center">
+  <b>Figure 1.</b> Overall framework of the proposed spatial-frequency deepfake detection pipeline.
+</p>
+
 ## Methods
 
 We compare three detector families:
@@ -33,6 +41,14 @@ The frequency branch uses transformed spectral representations to capture genera
 
 In the fusion models, spatial and spectral features are combined using a cross-attention-based fusion module. To improve training stability and generalization, fusion models are additionally trained with branch dropout and auxiliary classification heads for each branch. Temperature scaling is applied as a post-hoc calibration step. For robustness evaluation, robustness-aware training is used to expose models to image degradations during training.
 
+<p align="center">
+  <img src="data/report/branch_framework.png" width="850">
+</p>
+
+<p align="center">
+  <b>Figure 2.</b> Branch-level architecture of the spatial, frequency, and fusion-based detectors.
+</p>
+
 Branch dropout and auxiliary losses are applied only to fusion models, while temperature scaling and robustness-aware training can be applied to all model families.
 
 ## Dataset
@@ -49,6 +65,14 @@ This project uses OpenFake under multiple evaluation settings:
 - **By Generator**: per-generator test splits for generalization analysis
 - **LOGO holdout**: leave-one-generator-out evaluation, where one generator is excluded from training and used for testing
 - **Group holdout**: group-level generator holdout evaluation
+
+<p align="center">
+  <img src="data/report/evaluation_protocols.png" width="850">
+</p>
+
+<p align="center">
+  <b>Figure 3.</b> Evaluation protocols for merged, by-generator, LOGO holdout, group holdout, and robustness evaluation.
+</p>
 
 ## Evaluation
 
@@ -165,45 +189,45 @@ pip install -e ".[dev]"
 ### Spatial baseline (ResNet-18)
 
 ```bash
-python scripts/train.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/resnet18.yaml `
+python scripts/train.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/resnet18.yaml \
   --train_config configs/train/spatial_resnet.yaml
 ```
 
 ### Spatial baseline (ViT)
 
 ```bash
-python scripts/train.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/vit.yaml `
+python scripts/train.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/vit.yaml \
   --train_config configs/train/spatial_vit.yaml
 ```
 
 ### Frequency baseline (SPAI)
 
 ```bash
-python scripts/train.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/spai.yaml `
+python scripts/train.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/spai.yaml \
   --train_config configs/train/frequency.yaml
 ```
 
 ### Fusion baseline (ResNet-18 + SPAI)
 
 ```bash
-python scripts/train.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion_resnet.yaml `
+python scripts/train.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
   --train_config configs/train/fusion_resnet.yaml
 ```
 
 ### Fusion baseline (ViT + SPAI)
 
 ```bash
-python scripts/train.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion_vit.yaml `
+python scripts/train.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_vit.yaml \
   --train_config configs/train/fusion_vit.yaml
 ```
 
@@ -212,20 +236,20 @@ python scripts/train.py `
 ### Standard evaluation
 
 ```bash
-python scripts/evaluate.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion.yaml `
+python scripts/evaluate.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
   --train_config configs/train/fusion_resnet.yaml
 ```
 
 ### Robustness evaluation
 
 ```bash
-python scripts/evaluate_robustness.py `
-  --data_config configs/data/default.yaml `
-  --model_config configs/model/fusion.yaml `
-  --train_config configs/train/fusion_resnet.yaml `
-  --robustness_config configs/train/robustness.yaml `
+python scripts/evaluate_robustness.py \
+  --data_config configs/data/default.yaml \
+  --model_config configs/model/fusion.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --robustness_config configs/train/robustness.yaml \
   --split test
 ```
 
