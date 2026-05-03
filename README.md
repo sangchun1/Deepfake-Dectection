@@ -71,7 +71,7 @@ This project uses OpenFake under multiple evaluation settings:
 </p>
 
 <p align="center">
-  <b>Figure 3.</b> Evaluation protocols for merged, by-generator, LOGO holdout, group holdout, and robustness evaluation.
+  <b>Figure 3.</b> Evaluation protocols for merged, by-generator, LOGO holdout, and group holdout.
 </p>
 
 ## Evaluation
