@@ -84,7 +84,6 @@ The project evaluates performance with:
 - F1-score
 - ROC-AUC
 - Corruption robustness under JPEG, blur, noise, and resize degradations
-- Explainability with Grad-CAM, attention rollout, and frequency visualizations
 
 For by-generator and LOGO evaluations, results are averaged over 12 generator-specific evaluations. For group holdout, each generator appears in at least one held-out group evaluation. For corruption robustness, JPEG, blur, noise, and resize scores are averaged over severity levels.
 
