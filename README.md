@@ -183,73 +183,426 @@ For development dependencies:
 pip install -e ".[dev]"
 ```
 
+## Reproduction Pipeline
+
+A typical full reproduction pipeline is:
+
+```bash
+# 1. Download OpenFake subset
+python scripts/build_dataset.py \
+  --dataset-id ComplexDataLab/OpenFake \
+  --hf-split train \
+  --output-root data/raw/openfake \
+  --num-per-model 8000 \
+  --seed 42 \
+  --skip-bad-images
+
+# 2. Build merged / by-generator / LOGO splits
+python scripts/build_splits.py \
+  --input-root data/raw/openfake \
+  --output-root data/splits \
+  --seed 42
+
+# 3. Build group-holdout splits
+python scripts/build_group_holdout_splits.py \
+  --input_dir data/raw/openfake \
+  --output_dir data/splits/group_holdout \
+  --summary_json data/splits/summary.json \
+  --seed 42
+
+# 4. Train model
+python -u scripts/run_batch_train.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --skip_existing_train
+
+# 5. Fit temperature scaling
+python -u scripts/run_batch_calibrate.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/calibrate_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --fit_split val \
+  --skip_existing
+
+# 6. Evaluate with temperature scaling
+python -u scripts/run_batch_evaluate.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/eval_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --split test \
+  --skip_existing
+
+# 7. Evaluate corruption robustness
+python -u scripts/run_batch_robustness.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --robustness_config configs/train/robustness.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/robustness_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --split test \
+  --skip_existing
+```
+
+## Dataset Preparation
+
+This project uses the OpenFake dataset from Hugging Face.
+Raw images are not included in this repository. Please download the dataset separately and build the experiment splits using the provided scripts.
+
+### 1) Download the OpenFake subset
+
+The following command downloads a balanced OpenFake subset with 12 fake generators and matching real images.
+
+```bash
+python scripts/build_dataset.py \
+  --dataset-id ComplexDataLab/OpenFake \
+  --hf-split train \
+  --output-root data/raw/openfake \
+  --num-per-model 8000 \
+  --seed 42 \
+  --skip-bad-images
+```
+
+By default, the script uses the following 12 generators:
+
+```
+sd-3.5
+flux.1-dev
+flux-1.1-pro
+midjourney-6
+dalle-3
+gpt-image-1
+ideogram-3.0
+hidream-i1-full
+grok-2-image-1212
+imagen-4.0
+sdxl-epic-realism
+flux-mvc5000
+```
+
+The downloaded dataset is saved as:
+
+```
+data/raw/openfake/
+├── real/
+├── fake/
+│   ├── sd-3.5/
+│   ├── flux.1-dev/
+│   └── ...
+└── metadata/
+    ├── selection.json
+    ├── subset.csv
+    └── summary.json
+```
+
+### 2) Build merged, by-generator, and LOGO splits
+
+```bash
+python scripts/build_splits.py \
+  --input-root data/raw/openfake \
+  --output-root data/splits \
+  --seed 42
+```
+
+This creates:
+
+```
+data/splits/
+├── merged/
+│   ├── train.csv
+│   ├── val.csv
+│   └── test.csv
+├── by_generator/
+│   ├── sd-3.5/
+│   ├── flux.1-dev/
+│   └── ...
+├── logo/
+│   ├── sd-3.5/
+│   ├── flux.1-dev/
+│   └── ...
+└── summary.json
+```
+
+### 3) Build group-holdout splits
+```bash
+python scripts/build_group_holdout_splits.py \
+  --input_dir data/raw/openfake \
+  --output_dir data/splits/group_holdout \
+  --summary_json data/splits/summary.json \
+  --seed 42
+```
+
+This creates group-level generator holdout splits under:
+
+```
+data/splits/group_holdout/
+├── split_a/
+├── split_b/
+└── split_c/
+```
+
+Each group-holdout split contains:
+
+```
+train.csv
+val.csv
+test.csv
+tests/
+```
+
+The `tests/` directory stores per-generator unseen test CSV files.
+
 ## Training
 
-### Spatial baseline (ResNet-18)
+The recommended way to reproduce the experiments is to use the batch training script.
+It automatically generates per-split data configs and runs the selected experiment mode.
+
+### Train a single model family on all evaluation modes
+
+#### ResNet-18 spatial baseline
 
 ```bash
-python scripts/train.py \
-  --data_config configs/data/default.yaml \
+python -u scripts/run_batch_train.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
   --model_config configs/model/resnet18.yaml \
-  --train_config configs/train/spatial_resnet.yaml
+  --train_config configs/train/spatial_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/resnet18 \
+  --output_root outputs/spatial/resnet18 \
+  --skip_existing_train
 ```
 
-### Spatial baseline (ViT)
+#### ViT spatial baseline
 
 ```bash
-python scripts/train.py \
-  --data_config configs/data/default.yaml \
+python -u scripts/run_batch_train.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
   --model_config configs/model/vit.yaml \
-  --train_config configs/train/spatial_vit.yaml
+  --train_config configs/train/spatial_vit.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/vit \
+  --output_root outputs/spatial/vit \
+  --skip_existing_train
 ```
 
-### Frequency baseline (SPAI)
+#### SPAI frequency baseline
 
 ```bash
-python scripts/train.py \
-  --data_config configs/data/default.yaml \
+python -u scripts/run_batch_train.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
   --model_config configs/model/spai.yaml \
-  --train_config configs/train/frequency.yaml
+  --train_config configs/train/frequency.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/spai \
+  --output_root outputs/frequency/spai \
+  --skip_existing_train
 ```
 
-### Fusion baseline (ResNet-18 + SPAI)
+#### ResNet-18 + SPAI fusion model
 
 ```bash
-python scripts/train.py \
-  --data_config configs/data/default.yaml \
+python -u scripts/run_batch_train.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
   --model_config configs/model/fusion_resnet.yaml \
-  --train_config configs/train/fusion_resnet.yaml
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --skip_existing_train
 ```
 
-### Fusion baseline (ViT + SPAI)
+#### ViT + SPAI fusion model
 
 ```bash
-python scripts/train.py \
-  --data_config configs/data/default.yaml \
+python -u scripts/run_batch_train.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
   --model_config configs/model/fusion_vit.yaml \
-  --train_config configs/train/fusion_vit.yaml
+  --train_config configs/train/fusion_vit.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/fusion_vit \
+  --output_root outputs/fusion/vit_spai \
+  --skip_existing_train
+```
+
+### Train only one evaluation mode
+
+Use `--mode` to select a specific experiment family.
+
+```bash
+python -u scripts/run_batch_train.py \
+  --mode merged \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --skip_existing_train
+```
+
+Available modes:
+```
+merged
+by_generator
+logo
+group_holdout
+all
+```
+
+### Train only selected generators or splits
+
+```bash
+python -u scripts/run_batch_train.py \
+  --mode by_generator \
+  --names sd-3.5 flux.1-dev midjourney-6 \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --skip_existing_train
 ```
 
 ## Evaluation
 
 ### Standard evaluation
 
+If training was already completed, evaluate an existing checkpoint with:
+
 ```bash
 python scripts/evaluate.py \
   --data_config configs/data/default.yaml \
   --model_config configs/model/fusion_resnet.yaml \
-  --train_config configs/train/fusion_resnet.yaml
+  --train_config configs/train/fusion_resnet.yaml \
+  --checkpoint outputs/fusion/resnet_spai/merged/merged/best.pth \
+  --split test \
+  --output_json outputs/fusion/resnet_spai/merged/merged/eval_test.json
 ```
 
-### Robustness evaluation
+### Batch evaluation with temperature scaling
+
+After temperature calibration, use `run_batch_evaluate.py` to evaluate all checkpoints with temperature scaling.
 
 ```bash
-python scripts/evaluate_robustness.py \
-  --data_config configs/data/default.yaml \
-  --model_config configs/model/fusion.yaml \
+python -u scripts/run_batch_evaluate.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/eval_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --split test \
+  --skip_existing
+```
+
+By default, this script expects:
+```
+outputs/.../{mode}/{experiment_name}/best.pth
+outputs/.../{mode}/{experiment_name}/temperature.json
+```
+
+and saves temperature-scaled results as:
+```
+eval_test_ts.json
+```
+
+For group-holdout evaluation, it also evaluates each unseen generator separately using the CSV files under `tests/`.
+
+## Temperature Scaling
+
+Temperature scaling is used as a post-hoc calibration step.
+After training, run:
+
+```bash
+python -u scripts/run_batch_calibrate.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/calibrate_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --fit_split val \
+  --skip_existing
+```
+
+This saves:
+
+```
+temperature.json
+```
+
+under each experiment output directory.
+
+## Robustness Evaluation
+
+Robustness is evaluated under corrupted test conditions such as JPEG compression, blur, noise, and resizing.
+
+```bash
+python -u scripts/run_batch_robustness.py \
+  --mode all \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
   --train_config configs/train/fusion_resnet.yaml \
   --robustness_config configs/train/robustness.yaml \
-  --split test
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/robustness_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --split test \
+  --skip_existing
+```
+
+To evaluate only the merged split:
+
+```bash
+python -u scripts/run_batch_robustness.py \
+  --mode merged \
+  --root_dir . \
+  --base_data_config configs/data/default.yaml \
+  --model_config configs/model/fusion_resnet.yaml \
+  --train_config configs/train/fusion_resnet.yaml \
+  --robustness_config configs/train/robustness.yaml \
+  --splits_root data/splits \
+  --generated_config_dir configs/_generated/robustness_fusion_resnet \
+  --output_root outputs/fusion/resnet_spai \
+  --split test \
+  --skip_existing
 ```
 
 ## Project Goal
